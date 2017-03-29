@@ -115,7 +115,7 @@ ol,ul{
 }
 
 .know-us{
-	background-color: beige;
+	background-color: #FCFDDB;
 	height: 100vh;
 	width: 100%;
 }
@@ -138,43 +138,86 @@ ol,ul{
 
 .know-us-steps{
 	text-align:center;
-	background-color: lightblue;
 	width: 100%;
-	margin: 30px 0;
+	margin: 40px 0;
+}
+
+.know-us-steps-flex::before{
+	display:block;
+	position: absolute;
+	content:"";
+	width: 100%;
+	height: 1px;
+	background-color: grey;
 }
 
 .know-us-steps-flex{
-	background-color: #372819;
+	margin-top: 20px;
 	display: flex;
 	justify-content: space-around;
 	flex-direction: row;
 }
 
 .step {
-	background-color: yellow;
 	width: 10%;
 }
 
 .step::before{
 	display:block;
 	content:"";
-	height: 15px;
-	width: 15px;
+	height: 10px;
+	width: 10px;
 	border-radius: 50%;
-	margin:3px auto;
+	margin: 0 auto;
+	margin-top:-5px;
 	background-color: chocolate;
+	position: relative;
+	z-index: 1;
+}
+
+.circle-one::before{
+	background-color: #22C6E4;
+}
+
+.title-step-one{
+	color:#22C6E4;
+}
+
+.circle-two::before{
+	background-color: #E81560;
+}
+
+.title-step-two{
+	color: #E81560;
+}
+
+.circle-three::before{
+	background-color: #16BF0D;
+}
+
+.title-step-three{
+	color: #16BF0D;
+}
+
+.circle-four::before{
+	background-color: #FDB906;
+}
+
+.title-step-four{
+	color:#FDB906;
 }
 
 .know-us-buttons{
+	margin-top: 70px;
 	display:flex;
 	justify-content: space-around;
 	font-size: 1.5em;
 }
 
 .standard-button{
-	background-color: red;
+	border: solid 2px black;
 	display: inline-block;
-	padding: 20px;
+	padding: 25px;
 }
 
 .main-footer{
