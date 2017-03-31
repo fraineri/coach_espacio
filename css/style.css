@@ -89,7 +89,7 @@ ol,ul{
 }
 
 /*--SECTIONS BG--*/
-.mainSection.about{background-color: beige;}
+.mainSection.about{background-color: transparent;}
 
 /*----GENERAL SECTION ELEMENTS--*/
 .title{
@@ -116,8 +116,26 @@ ol,ul{
 }
 
 .standard-button{
-	border: solid 2px black;
-	padding: 25px;
+	border-radius: 30px;
+	padding: 10px 20px;
+	transition:.2s;
+}
+
+.standard-button:hover{
+	background-color: transparent;
+}
+
+.button-green:hover{color:#00d584;}
+.button-red:hover{color:#FF3B3B;}
+
+.button-green{
+	border:2px solid #00d584;
+	background-color: #00d584;
+}
+
+.button-red{
+	background-color: #FF3B3B;
+	border:2px solid #FF3B3B;
 }
 
 /*--ABOUT SECTION--*/
@@ -173,8 +191,8 @@ ol,ul{
 .step::before{
 	display:block;
 	content:"";
-	height: 10px;
-	width: 10px;
+	height: 13px;
+	width: 13px;
 	border-radius: 50%;
 	margin: 0 auto;
 	margin-top:-5px;
@@ -197,10 +215,11 @@ ol,ul{
 .title-step-four{color:#FDB906;}
 
 .about-buttonCont{
-
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
 	display:flex;
 	justify-content: space-around;
-	font-size: 1.5em;
 }
 
 /*--FAQ SECTION--*/
@@ -216,8 +235,9 @@ ol,ul{
 =================================*/
 
 .main-footer{
-	background-color: blue;
-	height: 100px;
+	/*background-image: url("../images/backgrounds/footer-wave.png");*/
+	background-size: cover;
+	height: 500px;
 	width: 100%;
 }
 
@@ -225,10 +245,6 @@ ol,ul{
 	display: flex;
 	justify-content:space-around;
 }
-
-/*.main-footer-nav ul{
-	width: 100%;
-}*/
 
 .main-footer-nav li{
 	display: inline-block;
