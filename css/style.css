@@ -20,47 +20,10 @@ ol,ul{
 	list-style-type: none;
 }
 
-.header-flex{
-	display:flex;
-	flex-direction: column;
-	background-color: white;
-}
-
-.horizontal-menu{
-	width: 100%;
-	background-color: rgba(0,0,0,.5);
-	z-index: 100;
-}
-
-.horizontal-menu a{
-	transition: background-color 0.5s;
-}
-
-.horizontal-menu a:hover{
-	background-color: skyblue;
-}
-
-.horizontal-menu a {
-	padding: 25px 10px;
-	text-transform: uppercase;
-}
-
-.horizontal-menu li{
-	display: inline-block;
-}
-
-.horizontal-menu-nav{
-	display:inline-block;
-	position: fixed;
-}
-
-.horizontal-menu-log{
-	display:inline-block;
-	position: fixed;
-	right: 0;
-}
-
-.header-image{
+/*===============================
+ HOME BANNER START
+=================================*/
+.banner{
 	background-image: url("../images/bg2.jpg");
 	background-size: cover;
 	width: 100%;
@@ -70,7 +33,7 @@ ol,ul{
 	justify-content: center;
 }
 
-.header-image-title{
+.banner-title{
 	text-align: center;
 	width: 100%;
 	font-size:4vw;
@@ -79,6 +42,56 @@ ol,ul{
 	background-color: rgba(52,221,221,.5);
 }
 
+.header-flex{
+	display:flex;
+	flex-direction: column;
+	background-color: white;
+}
+
+/*===============================
+ HORIZONTAL MENU BAR > nav & log
+=================================*/
+
+.horizontal-menu{
+	width: 100%;
+	background-color: rgba(255,255,255,.3);
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+}
+
+.horizontal-menu a{
+	transition: background-color 0.5s;
+	padding: 25px 10px;
+	text-transform: uppercase;
+
+}
+
+.horizontal-menu a:hover{
+	background-color: skyblue;
+}
+
+.horizontal-menu li{
+	display: inline-block;
+}
+
+/*===============================
+ SECTION CONTAINER > about & faq
+=================================*/
+.section-container{
+	width: 100%;
+	display: inline-block;
+}
+
+.mainSection{
+	width: 100%;
+	padding-top: 20px;
+}
+
+/*--SECTIONS BG--*/
+.mainSection.about{background-color: beige;}
+
+/*----GENERAL SECTION ELEMENTS--*/
 .title{
 	font-family: 'Special Elite', helvetica, sans-serif;
 	text-align: center;
@@ -102,47 +115,42 @@ ol,ul{
 	margin:0 auto;
 }
 
-.pink::after{
+.standard-button{
+	border: solid 2px black;
+	padding: 25px;
+}
+
+/*--ABOUT SECTION--*/
+
+.title.about::after{
 	background-color: pink;
 }
 
-.blue::after{
-	background-color: blue;
-}
-
-.green::after{
-	background-color: green;
-}
-
-.know-us{
-	background-color: #FCFDDB;
-	height: 100vh;
-	width: 100%;
-}
-
-.know-us-intro{
-	background-color: pink;
+.about.intro{
+	width: 90%;
+	margin: auto;
 	display:flex;
 	justify-content: space-around;
 }
 
-.know-us-intro .description{
-	background-color: red;
+.about.intro.description{
+	border: 1px solid green;
 	width: 75%;
 }
 
-.know-us-intro .image{
+.about.intro.image{
 	background-color: white;
 	width: 10%;
 }
 
-.know-us-steps{
+/*--WORK > steps--*/
+
+.about-work{
 	text-align:center;
 	width: 100%;
-	margin: 40px 0;
 }
 
-.know-us-steps-flex::before{
+.work-steps::before{
 	display:block;
 	position: absolute;
 	content:"";
@@ -151,8 +159,8 @@ ol,ul{
 	background-color: grey;
 }
 
-.know-us-steps-flex{
-	margin-top: 20px;
+.work-steps{
+	/*margin-top: 20px;*/
 	display: flex;
 	justify-content: space-around;
 	flex-direction: row;
@@ -175,53 +183,40 @@ ol,ul{
 	z-index: 1;
 }
 
-.circle-one::before{
-	background-color: #22C6E4;
-}
+/*--title & circles (steps)--*/
+.circle-one::before{background-color: #22C6E4;}
+.title-step-one{color:#22C6E4;}
 
-.title-step-one{
-	color:#22C6E4;
-}
+.circle-two::before{background-color: #E81560;}
+.title-step-two{color: #E81560;}
 
-.circle-two::before{
-	background-color: #E81560;
-}
+.circle-three::before{background-color: #16BF0D;}
+.title-step-three{color: #16BF0D;}
 
-.title-step-two{
-	color: #E81560;
-}
+.circle-four::before{background-color: #FDB906;}
+.title-step-four{color:#FDB906;}
 
-.circle-three::before{
-	background-color: #16BF0D;
-}
+.about-buttonCont{
 
-.title-step-three{
-	color: #16BF0D;
-}
-
-.circle-four::before{
-	background-color: #FDB906;
-}
-
-.title-step-four{
-	color:#FDB906;
-}
-
-.know-us-buttons{
-	margin-top: 70px;
 	display:flex;
 	justify-content: space-around;
 	font-size: 1.5em;
 }
 
-.standard-button{
-	border: solid 2px black;
-	display: inline-block;
-	padding: 25px;
-}
+/*--FAQ SECTION--*/
+
+/*/////////////*/
+/*/////////////*/
+/*/////////////*/
+/*/////////////*/
+
+
+/*===============================
+ FOOTER > footer-nav
+=================================*/
 
 .main-footer{
-	background-color: violet;
+	background-color: blue;
 	height: 100px;
 	width: 100%;
 }
