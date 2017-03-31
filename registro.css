@@ -1,0 +1,51 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+
+
+.container{
+	height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #F0F8FF;
+
+}
+
+
+.form{
+	height: 60%;
+	font-size: 24px;
+	border: solid grey 3px;
+	background-color: #FAEBD7;
+}
+
+
+.cuenta{
+	width: 100%;
+	text-align: center;
+	background-color: skyblue;
+	border: solid  black;
+	font-size: 32px;
+}
+
+
+.header{
+	display: flex;
+	align-items: center;
+	font-family: helvetica, sans-serif;
+	background-color: rgba(52,221,221,.6);
+	height: 10vh;
+
+}
+
+.header-title a{
+	text-decoration: none;
+	color: white;
+	font-size: 32px;
+	padding: 0 10px;
+	
+}
