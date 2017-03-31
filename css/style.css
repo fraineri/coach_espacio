@@ -78,7 +78,6 @@ ol,ul{
 /*===============================
  SECTION CONTAINER > about & faq
 =================================*/
-<<<<<<< HEAD
 .section-container{
 	width: 100%;
 	display: inline-block;
@@ -92,20 +91,6 @@ ol,ul{
 /*--SECTIONS BG--*/
 .mainSection.about{background-color: beige;}
 
-=======
-
-.mainSection{
-	width: 100%;
-	height: 100vh;
-	padding-top: 20px;
-}
-
-/*--SECTIONS BG--*/
-.mainSection.about{background-color: #FCFDDB;}
-.mainSection.faq{background-color: #EECCEE;}
-
-
->>>>>>> origin/master
 /*----GENERAL SECTION ELEMENTS--*/
 .title{
 	font-family: 'Special Elite', helvetica, sans-serif;
@@ -132,10 +117,6 @@ ol,ul{
 
 .standard-button{
 	border: solid 2px black;
-<<<<<<< HEAD
-=======
-	display: inline-block;
->>>>>>> origin/master
 	padding: 25px;
 }
 
@@ -153,11 +134,7 @@ ol,ul{
 }
 
 .about.intro.description{
-<<<<<<< HEAD
 	border: 1px solid green;
-=======
-	background-color: red;
->>>>>>> origin/master
 	width: 75%;
 }
 
@@ -183,11 +160,7 @@ ol,ul{
 }
 
 .work-steps{
-<<<<<<< HEAD
 	/*margin-top: 20px;*/
-=======
-	margin-top: 20px;
->>>>>>> origin/master
 	display: flex;
 	justify-content: space-around;
 	flex-direction: row;
@@ -224,10 +197,7 @@ ol,ul{
 .title-step-four{color:#FDB906;}
 
 .about-buttonCont{
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 	display:flex;
 	justify-content: space-around;
 	font-size: 1.5em;
