@@ -1,0 +1,279 @@
+/*
+--------------------------------------------------------------------------------
+ *************************
+ *****CSS SIGN-IN-UP******
+ *************************
+
+ Content:
+  
+  form-container:
+    Contenedor flex padre de la pagina.
+  ------
+  
+  form-title:
+    Titulo del form.
+  ------
+
+  form-button:
+    Boton inicio de sesion.
+  ------
+
+  ----------
+  #########
+  ##LOGIN##
+  #########
+  ----------
+
+  form-login-container:
+    Contenedor del titulo y login-form.
+  ------
+
+  form-login:
+    Form contenedor flex de los elementos.
+  ------
+
+  form-login-usuario:
+    Contenedor de txtUsuario y lblUsuario.
+  ------
+  
+  form-login-pass:
+    Contenedor de txtPass y lblPass.
+  ------
+
+  form-login-lblUsuario/form-login-lblPass:
+    Labels login form.
+  ------
+
+  form-login-txtUsuario/form-login-txtPass:
+    Input text login form.
+  ------
+
+  form-login-logup:
+    Sugerencia para registrarte.
+  ------
+
+  form-login-logup-link:
+    Link para registrarte.
+  ------
+
+  ----------
+  ###########
+  ##SIGN UP##
+  ###########
+  ----------
+  
+  form-register-container:
+    Contenedor del titulo y form-register.
+  ------
+  
+  form-register:
+    Form contenedor flex de los elementos.
+  ------
+  
+  form-register-lblNombre,
+  form-register-txtNombre,
+  form-register-lblApellido,
+  form-register-txtApellido,
+  form-register-lblEmail,
+  form-register-txtEmail,
+  form-register-lblGenero,
+  form-register-slctGenero,
+  form-register-lblUsuario,
+  form-register-txtUsuario,
+  form-register-lblPass,
+  form-register-txtPass:
+    Labels & inputs del form.
+  ------
+
+  form-register-login:
+    Sugerencia para login.
+  ------
+
+  form-register-login-link:
+    Link para el login.
+  ------
+
+--------------------------------------------------------------------------------
+  (header*            ---> style.css)
+  (standar-button     ---> style.css)
+  (button-green       ---> style.css)
+  (main-footer        ---> style.css)
+  (main-footer-nav    ---> style.css)
+
+--------------------------------------------------------------------------------
+*/
+
+.form-container{
+	background-color: grey;
+	background-image: url("../images/backgrounds/bg-pattern-02.jpg");
+	background-repeat: repeat;
+	padding-bottom: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.form-container > .form-login-container,
+.form-container > .form-register-container{
+	margin-top: 160px;
+}
+
+.form-title{
+	background-color: #99fe7a;
+	padding: 15px;
+	border-top-left-radius: 29px;
+	border-top-right-radius: 29px;
+	color: #fff;
+	text-shadow: 0 0 2px #000;
+	text-align: center;
+	font-size: 3vw;
+
+	display: block;
+}
+
+.form-button{
+	margin-top: 50px;
+	margin-bottom: 20px;
+	color: #000;
+	font-size: 25px;
+} 
+
+/*---------------------------
+	LOGIN
+---------------------------*/
+.form-login-container{
+	background-color: #D7FFF4;
+	width:60%;
+	border: solid rgba(0,255,0,.1) 5px;
+	border-radius: 30px;
+}
+
+.form-login{
+	font-size: 2vw;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-login-usuario,
+.form-login-pass{
+	padding: 30px;
+}
+
+.form-login-lblUsuario,
+.form-login-txtUsuario,
+.form-login-lblPass,
+.form-login-txtPass{
+	margin-top: 5px;
+	text-align: center;
+	font-weight: bold;
+	display: block;
+}
+
+.form-login-txtUsuario,
+.form-login-txtPass{
+	font-size: 1.3vw;
+	font-weight: normal;
+	padding: 5px;
+}
+
+.form-login-logup{
+	background-color: #99fe7a;
+	width: 100%;
+	padding: 15px;
+	border-bottom-left-radius: 29px;
+	border-bottom-right-radius: 29px;
+	
+	text-align: center;
+	font-size: 0.5em;
+
+}
+
+.form-login-logup-link{
+	color: blue;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+
+/*---------------------------
+	SIGN UP
+---------------------------*/
+
+.form-register-container{
+	background-color: #D7FFF4;
+	width:60%;
+	border: solid rgba(0,255,0,.1) 5px;
+	border-radius: 30px;
+}
+
+.form-register{
+	font-size: 2vw;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-register-nombre,
+.form-register-pass{
+	padding: 30px;
+}
+
+.form-register-lblNombre,
+.form-register-txtNombre,
+.form-register-lblApellido,
+.form-register-txtApellido,
+.form-register-lblEmail,
+.form-register-txtEmail,
+.form-register-lblGenero,
+.form-register-slctGenero,
+.form-register-lblUsuario,
+.form-register-txtUsuario,
+.form-register-lblPass,
+.form-register-txtPass{
+	margin-top: 20px;
+	text-align: center;
+	font-weight: bold;
+
+	display: block;
+	width: 100%;
+}
+
+.form-register-txtNombre,
+.form-register-txtApellido,
+.form-register-txtEmail,
+.form-register-slctGenero,
+.form-register-txtUsuario,
+.form-register-txtPass{
+	width: 20vw;
+	font-size: 1.3vw;
+	font-weight: normal;
+	padding: 5px;
+	
+ 	background: white;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+}
+
+
+.form-register-login{
+	background-color: #99fe7a;
+	width: 100%;
+	padding: 15px;
+	border-bottom-left-radius: 29px;
+	border-bottom-right-radius: 29px;
+	
+	text-align: center;
+	font-size: 0.5em;
+
+}
+
+.form-register-login-link{
+	color: blue;
+	font-size: 1.3em;
+	font-weight: bold;
+}

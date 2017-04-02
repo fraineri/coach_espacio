@@ -237,7 +237,7 @@ ol,ul{
 .main-footer{
 	/*background-image: url("../images/backgrounds/footer-wave.png");*/
 	background-size: cover;
-	height: 500px;
+	/*height: 500px;*/
 	width: 100%;
 }
 
