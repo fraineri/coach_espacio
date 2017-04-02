@@ -1,0 +1,86 @@
+/*
+--------------------------------------------------------------------------------
+ *************************
+ *****CSS MAIN******
+ *************************
+
+ Content:
+  
+  body:
+    Se define un BG, font y margin.
+  ------
+
+  a:
+    Link sin decoracion y con display block.
+  ------
+  
+  ol,ul{
+	Listas sin estilos.
+  }
+  ------
+  
+  ----------
+  ############
+  ## HEADER ##
+  ############
+  ----------
+
+  .home-header
+
+--------------------------------------------------------------------------------
+*/
+
+/*---------------------------
+	GENERIC ELEMENTS
+---------------------------*/
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: white;
+	font-family: helvetica, sans-serif;
+	margin: auto;
+}
+
+a{
+	text-decoration: none;
+	display: block;
+	color:black;
+}
+
+ol,ul{
+	list-style-type: none;
+}
+
+/*---------------------------
+	MAIN NAV
+---------------------------*/
+
+.page-active{background-color: skyblue}
+
+.horizontal-menu{
+	width: 100%;
+	background-color: rgba(255,255,255,.3);
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+}
+
+.horizontal-menu a{
+	transition: background-color 0.5s;
+	padding: 25px 10px;
+	text-transform: uppercase;
+
+}
+
+.horizontal-menu a:hover{
+	background-color: skyblue;
+}
+
+.horizontal-menu li{
+	display: inline-block;
+}
