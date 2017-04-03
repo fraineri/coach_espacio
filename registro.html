@@ -1,76 +1,64 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="registro.css">
-<link rel="stylesheet" type="text/css" href="index.html">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/sign-in-up.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Formulario de registro</title>
 </head>
 <body>
-		<header class="header">
-			
-			<ul class="header-title">
-				<li><a href="index.html">Coach espacios</a></li>
+	<header class ="home-header">
+		<nav class ="horizontal-menu">
+			<ul class ="horizontal-menu-nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">Productos</a></li>
+				<li><a href="#">Cursos</a></li>
+				<li><a href="#">Contactame</a></li>
+				<li><a href="#">faq</a></li>
 			</ul>
 
-			
-		</header>
+			<ul class ="horizontal-menu-log">
+				<li><a href="iniciosesion.html">Iniciar sesión</a></li>
+				<li><a href="registro.html">Registrate</a></li>
+			</ul>
+		</nav>
+	</header>
 
-		<div class="container">
-			<div class="form">
-				<form>
-					<label for="nombre">Nombre</label>
+	<div class="form-container">
+		<div class="form-register-container">
+			<h1 class="form-title">Sign Up</h1>
+			<form class="form-register">
+					<label class="form-register-lblNombre" for="nombre">Nombre</label>
 					
-					<input type="text" id="nombre" name="Nombre" placeholder="Ingrese aquí su nombre" required>
+					<input class="form-register-txtNombre" type="text" id="nombre" name="Nombre" placeholder="Ingrese aquí su nombre" required>
 					
-					<label for="apellido">Apellido</label>
+					<label class="form-register-lblApellido" for="apellido">Apellido</label>
 					
-					<input type="text" id="apellido" name="Apellido" placeholder="Ingrese aquí su apellido" required>
+					<input class="form-register-txtApellido" type="text" id="apellido" name="Apellido" placeholder="Ingrese aquí su apellido" required>
 
-					<br><br>
+					<label class="form-register-lblEmail" for="email">Email</label>
+					<input class="form-register-txtEmail" for="email" type="email" id="email" name="Email" placeholder="ejemplo@coach.com" required>
 
-					<label for="email">Email</label>
-					<input type="email" id="email" name="Email" placeholder="ejemplo@coach.com" required>
-
-					<br><br>
-
-					<label for="genero">Género</label>
-					<select id="genero" name="Género">
+					<label class="form-register-lblGenero" for="genero">Género</label>
+					<select class="form-register-slctGenero" id="genero" name="Género">
 						<option></option>
 						<option value="masculino">Masculino</option>
 						<option value="femenino">Femenino</option>
 					</select>
 
-					<br><br><br>
+					<label class="form-register-lblUsuario" for="usuario">Nombre de usuario</label>
+					<input class="form-register-txtUsuario" type="text" id="usuario" name="Usuario" required>
 
-					<label for="usuario">Nombre de usuario</label>
-					<input type="text" id="usuario" name="Usuario" required>
-
-					<br><br>
-
-					<label for="contraseña">Contraseña</label>
-					<input type="password" id="contraseña" name="contraseña" required>
-
-					<br><br>
-
-					<button class="cuenta" type="submit">Crear cuenta</button>
-
-					<br><br>
-
-					<ul>
-						<li class="registrate">Si ya posee cuenta<a href="iniciosesion.html"> iniciar sesión</a></li>
-					</ul>
-
-					
+					<label class="form-register-lblPass" for="contraseña">Contraseña</label>
+					<input class="form-register-txtPass" type="password" id="contraseña" name="contraseña" required>
 
 
-				</form>
+					<button class="form-button standard-button button-green" type="submit">Crear Cuenta</button>
 
-		
-			</div>
-
+					<span class="form-register-login">Si ya posee cuenta <a class="form-register-login-link" href="iniciosesion.html">iniciar sesión</a></span>
+			</form>
 		</div>
-
+	</div>
 </body>
 </html>

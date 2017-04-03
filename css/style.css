@@ -20,17 +20,17 @@ ol,ul{
 	list-style-type: none;
 }
 
+.page-active{background-color: skyblue}
+
 /*===============================
  HOME BANNER START
 =================================*/
+
 .banner{
 	background-image: url("../images/bg2.jpg");
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
-	display:flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .banner-title{
@@ -40,7 +40,40 @@ ol,ul{
 	padding: 15vh 0;
 	color:white;
 	background-color: rgba(52,221,221,.5);
+	position:absolute;
+	top:30%;
 }
+
+
+.banner-knowus{
+	position: absolute;
+	bottom: 0;
+	left:1%;
+	font-weight: bold;
+}
+.banner-knowus a{
+	display: inline-block;
+	padding: 40px 40px 20px 0;
+}	
+
+.display-inline{display:inline;}
+
+.banner-knowus::before{
+	display:inline-block;
+	content:url("../arrow3.png");	
+	margin-top: 10px;
+    animation: MoveUpDown 2.5s linear infinite;
+}
+
+@keyframes MoveUpDown {
+	75% {
+		transform:translate(0,-30%);
+	}
+	25% {
+		transform:translate(0,30%);
+	}
+}
+
 
 .header-flex{
 	display:flex;
@@ -162,7 +195,6 @@ ol,ul{
 }
 
 /*--WORK > steps--*/
-
 .about-work{
 	text-align:center;
 	width: 100%;
@@ -237,7 +269,7 @@ ol,ul{
 .main-footer{
 	/*background-image: url("../images/backgrounds/footer-wave.png");*/
 	background-size: cover;
-	height: 500px;
+	/*height: 500px;*/
 	width: 100%;
 }
 
