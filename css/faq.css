@@ -1,0 +1,10 @@
+/*hoja de estilos de las FAQ*/
+
+/*----PREGUNTAS----*/
+
+.container-faq{
+	display: block;
+	width: 80%;
+	margin: auto;
+	margin-top:50px;
+}

@@ -5,7 +5,8 @@
 }
 
 body{
-	background-color: white;
+	background-image: url("../images/backgrounds/bg-test.png");
+	background-size: cover;
 	font-family: helvetica, sans-serif;
 	margin: auto;
 }
@@ -27,7 +28,7 @@ ol,ul{
 =================================*/
 
 .banner{
-	background-image: url("../images/bg2.jpg");
+	background-image: url("../images/backgrounds/bg2.jpg");
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
@@ -60,7 +61,7 @@ ol,ul{
 
 .banner-knowus::before{
 	display:inline-block;
-	content:url("../arrow3.png");	
+	content:url("../images/icons/arrow3.png");	
 	margin-top: 10px;
     animation: MoveUpDown 2.5s linear infinite;
 }
@@ -118,34 +119,27 @@ ol,ul{
 
 .mainSection{
 	width: 100%;
-	padding-top: 20px;
 }
 
 /*--SECTIONS BG--*/
 .mainSection.about{background-color: transparent;}
 
 /*----GENERAL SECTION ELEMENTS--*/
-.title{
+.page-title{
 	font-family: 'Special Elite', helvetica, sans-serif;
-	text-align: center;
 	text-transform: uppercase;
-	padding: 20px 0;
+	text-align: center;
+	margin: 15px 0;
 }
 
-.title::before{
+.page-title::after, .page-title::before{
 	display: block;
-	height: 32px;
-	margin: auto;
-	content:url("../images/flower-bg.png");
-}
-
-.title::after{
-	display:block;
+	margin: 0 auto;
 	content:"";
-	height: 15px;
-	width: 15px;
-	border-radius: 50%;
-	margin:0 auto;
+	height: 13px;
+	width: 13px;
+	border: 2px solid grey;
+	transform: rotate(45deg);
 }
 
 .standard-button{
@@ -173,23 +167,19 @@ ol,ul{
 
 /*--ABOUT SECTION--*/
 
-.title.about::after{
-	background-color: pink;
-}
-
-.about.intro{
+.about-intro{
 	width: 90%;
 	margin: auto;
 	display:flex;
 	justify-content: space-around;
 }
 
-.about.intro.description{
+.about-intro-description{
 	border: 1px solid green;
 	width: 75%;
 }
 
-.about.intro.image{
+.about-intro-image{
 	background-color: white;
 	width: 10%;
 }
@@ -267,17 +257,72 @@ ol,ul{
 =================================*/
 
 .main-footer{
-	/*background-image: url("../images/backgrounds/footer-wave.png");*/
+	/*background-image: url("../images/backgrounds/footer-bg-2.png");*/
+	background-color: rgba(52,221,221,.5);
 	background-size: cover;
-	/*height: 500px;*/
+	height: 200px;
 	width: 100%;
+	margin-top:20px;
+	position: relative;
 }
 
-.main-footer-nav{
+.main-footer-data{
+	width: 100%;
 	display: flex;
-	justify-content:space-around;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	bottom:40%;
+	font-size: 1.2em;
+	color:white;
 }
 
-.main-footer-nav li{
+.main-footer-logo{
+	font-size: 1.4em;
+}
+
+.main-footer-data-social{
+	width: 400px;
 	display: inline-block;
+}
+
+.main-footer-copyright{
+	position: absolute;
+	bottom: 0;
+	right:0;
+}
+
+.display-flex{
+	display:flex;
+	justify-content: space-between;
+}
+
+.social{
+	height: 64px;
+	width: 64px;
+}
+
+.instagram:hover{
+	background-color:#A740A7;
+	border-radius: 50%;
+}
+
+.facebook:hover{
+	border-radius: 50%;
+	background-color: #3C5A99;
+}
+
+.skype:hover{
+	border-radius: 50%;
+	background-color: #00AFF0;
+}
+
+.linkedin:hover{
+	background-color: #006699;
+	border-radius: 50%;
+}
+
+.twitter:hover{
+	background-color: #6FAEDC;
+	border-radius: 50%;
 }
