@@ -34,6 +34,9 @@
 	GENERIC ELEMENTS
 ---------------------------*/
 
+/*============================
+			RESET
+============================*/
 *{
 	margin:0;
 	padding:0;
@@ -41,7 +44,8 @@
 }
 
 body{
-	background-color: white;
+	background-image: url("../images/backgrounds/bg-test.png");
+	background-size: cover;
 	font-family: helvetica, sans-serif;
 	margin: auto;
 }
@@ -56,11 +60,9 @@ ol,ul{
 	list-style-type: none;
 }
 
-/*---------------------------
-	MAIN NAV
----------------------------*/
-
-.page-active{background-color: skyblue}
+/*===============================
+ HORIZONTAL MENU BAR > nav & log
+=================================*/
 
 .horizontal-menu{
 	width: 100%;
@@ -78,9 +80,130 @@ ol,ul{
 }
 
 .horizontal-menu a:hover{
-	background-color: skyblue;
+	background-color: rgba(100,200,228,.8);
 }
 
 .horizontal-menu li{
 	display: inline-block;
 }
+
+
+/*===============================
+ FOOTER > footer-nav
+=================================*/
+
+.main-footer{
+	/*background-image: url("../images/backgrounds/footer-bg-2.png");*/
+	background-color: rgba(52,180,221,.7);
+	background-size: cover;
+	height: 200px;
+	width: 100%;
+	margin-top:20px;
+	position: relative;
+}
+
+.main-footer-data{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	bottom:40%;
+	font-size: 1.2em;
+	color:white;
+}
+
+.main-footer-logo{
+	font-size: 1.4em;
+}
+
+.main-footer-data-social{
+	width: 300px;
+	display: inline-block;
+}
+
+.main-footer-copyright{
+	position: absolute;
+	bottom: 0;
+	right:0;
+	color:grey;
+}
+
+.display-flex{
+	display:flex;
+	justify-content: space-between;
+}
+
+.social{
+	color:white;
+}
+
+.instagram:hover{
+	color:#A740A7;
+}
+
+.facebook:hover{
+	color: #3C5A99;
+}
+
+.skype:hover{
+	color: #00AFF0;
+}
+
+.linkedin:hover{
+	color: #006699;
+}
+
+.twitter:hover{
+	color: #6FAEDF;
+}
+
+/********************************
+*			General uses    	*
+********************************/
+.page-active{background-color: rgba(100,200,228,.8);}
+
+.mail-to{color:grey;}
+
+.page-title{
+	font-family: helvetica, sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top: 70px;
+	padding-bottom: 50px;
+}
+
+.page-title::after, .page-title::before{
+	display: block;
+	margin: 0 auto;
+	content:"";
+	height: 13px;
+	width: 13px;
+	border: 2px solid grey;
+	transform: rotate(45deg);
+}
+
+.standard-button{
+	border-radius: 30px;
+	padding: 10px 20px;
+	transition:.2s;
+}
+
+.standard-button:hover{
+	background-color: transparent;
+}
+
+.button-green:hover{color:#00d584;}
+.button-red:hover{color:#FF3B3B;}
+
+.button-green{
+	border:2px solid #00d584;
+	background-color: #00d584;
+}
+
+.button-red{
+	background-color: #FF3B3B;
+	border:2px solid #FF3B3B;
+}
+
+/***************************************************/

@@ -2,11 +2,9 @@
 
 /*----PRODUCTS----*/
 .containerProductos{
-	/*float: left;*/
+	
 	clear: both;
 	width: 80%;
-	position: relative;
-	overflow: hidden;
 	margin: auto;
 }
 /*img{
