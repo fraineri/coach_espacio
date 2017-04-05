@@ -218,6 +218,8 @@ ol,ul{
 
 .button-green:hover{color:#00d584;}
 .button-red:hover{color:#FF3B3B;}
+.button-cyan:hover{color:rgb(52,221,221);}
+.button-white:hover{color:#fff;}
 
 .button-green{
 	border:2px solid #00d584;
@@ -227,6 +229,16 @@ ol,ul{
 .button-red{
 	background-color: #FF3B3B;
 	border:2px solid #FF3B3B;
+}
+
+.button-cyan{
+	background-color: rgb(52,221,221);
+	border:2px solid rgb(52,221,221);
+}
+
+.button-white{
+	background-color: #fff;
+	border:2px solid #fff;
 }
 
 @media (max-width: 700px){

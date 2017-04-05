@@ -3,47 +3,75 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/sign-in-up.css">
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$logupVisibility = false;
+	    $(".form-login-icon").click(function(){
+	    	if(!$logupVisibility){
+		        $(".form-logup-container").fadeIn();
+		        $logupVisibility = true;
+		        $(".form-login-icon").css("background-color","white");
+		        $(".form-login-icon").css("color","rgb(52,221,221)");
+		        $(".form-login-icon > i").removeClass("fa-pencil");
+		        $(".form-login-icon > i").addClass("fa-times");
+	    	}else{
+	        	$(".form-logup-container").fadeOut();
+	        	$logupVisibility = false;
+	        	$(".form-login-icon").css("background-color","rgb(52,221,221)");
+		        $(".form-login-icon").css("color","white");
+		        $(".form-login-icon > i").removeClass("fa-times");
+		        $(".form-login-icon > i").addClass("fa-pencil");		        
+	    	}
+	    });
+	});
+	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Inicio de sesión</title>
 </head>
 <body>
-	<header class ="home-header">
-		<nav class ="horizontal-menu">
-			<ul class ="horizontal-menu-nav">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Productos</a></li>
-				<li><a href="#">Cursos</a></li>
-				<li><a href="#">Contactame</a></li>
-				<li><a href="#">faq</a></li>
-			</ul>
 
-			<ul class ="horizontal-menu-log">
-				<li><a class ="page-active" href="iniciosesion.html">Iniciar sesión</a></li>
-				<li><a href="registro.html">Registrate</a></li>
-			</ul>
-		</nav>
-	</header>
-	
 	<div class="form-container">
 		<div class="form-login-container">
-			<h1 class="form-title">Login</h1>
-			<form class="form-login">
-				<div class="form-login-usuario">
-					<label class="form-login-lblUsuario" for="ingreso"> Usuario </label>
-					<input class="form-login-txtUsuario" type="text" id="ingreso" name="Ingreso" required>
-				</div>
+			<div class="form-login-shadow"></div>
+			<div class="form-login-titleCont">
+				<h1 class="form-login-title">Login</h1>
+				<a class="form-login-icon" href="#"><i class="fa fa-pencil fa-4x" aria-hidden="true"></i></a>
+			</div>
+			<form class="form-login-inputs">
+				<input class="form-login-txtUsuario" type="text" id="ingreso" name="Ingreso" placeholder="Usuario" required>
+			
+				<input class="form-login-txtPass" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>		
 				
-				<div class="form-login-pass">
-					<label class="form-login-lblPass" for="contraseña"> Contraseña </label>
-					<input class="form-login-txtPass" type="password" id="contraseña" name="contraseña" required>		
+				<div class="form-login-remember">
+					<label class="form-login-lblRemember">Recordame!</label>
+					<input class="form-login-chkRemember" type="checkbox" name="">
 				</div>
 
-				<button class="form-button standard-button button-green" type="submit">Iniciar sesión</button>
-
-					<span class="form-login-logup">Si no posee cuenta puede <a class="form-login-logup-link" href="registro.html">registrarse aquí</a></span>
+				<button class="form-button-login standard-button button-cyan" type="submit">GO</button>
 			</form>
+			<a class="form-login-forgot" href="">Olvidaste tu contraseña?</a>
+				<!-- LOG UP -->
+				<div class="form-logup-container">
+					<div class="form-logup-titleCont">
+						<h1 class="form-logup-title">REGISTER</h1>
+					</div>
+					<form class="form-logup-inputs">
+						<input class="form-logup-txtUsuario" type="text" id="ingreso" name="Ingreso" placeholder="Usuario" required>
+					
+						<input class="form-logup-txtPass" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>							
+
+						<input class="form-logup-txtRePass" type="password" id="contraseña" name="contraseña" placeholder="Reingrese la contraseña" required>		
+
+						<button class="form-button-logup standard-button button-white" type="submit">GO</button>
+					</form>
+				</div>
+				<!-- END LOG UP -->
+
 		</div>
+
 	</div>
 </body>
 </html>

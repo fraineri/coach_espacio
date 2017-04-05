@@ -104,9 +104,6 @@
 */
 
 .form-container{
-	background-color: grey;
-	background-image: url("../images/backgrounds/bg-pattern-02.jpg");
-	background-repeat: repeat;
 	padding-bottom: 100px;
 	display: flex;
 	justify-content: center;
@@ -116,164 +113,199 @@
 
 .form-container > .form-login-container,
 .form-container > .form-register-container{
-	margin-top: 160px;
-}
-
-.form-title{
-	background-color: #99fe7a;
-	padding: 15px;
-	border-top-left-radius: 29px;
-	border-top-right-radius: 29px;
-	color: #fff;
-	text-shadow: 0 0 2px #000;
-	text-align: center;
-	font-size: 3vw;
-
-	display: block;
-}
-
-.form-button{
 	margin-top: 50px;
-	margin-bottom: 20px;
-	color: #000;
-	font-size: 25px;
-} 
+}
+
 
 /*---------------------------
 	LOGIN
 ---------------------------*/
 .form-login-container{
-	background-color: #D7FFF4;
-	width:60%;
-	border: solid rgba(0,255,0,.1) 5px;
-	border-radius: 30px;
+	background-color: #FFF;
+	border: solid #ccc 1px;
+	border-radius: 10px;
+	width: 500px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	position: relative;
 }
 
-.form-login{
-	font-size: 2vw;
+.form-login-shadow{
+	width: 90%;
+	height: 10px;
+	background-color: rgb(245,245,245);
+	border: 1px solid #ccc;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	display: block;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	transform: translateX(5%);
+}
 
+.form-login-titleCont{
+	padding-top: 20px;
+	display: block;
+	position: relative;
+}
+
+.form-login-title{
+	border-left: 7px solid rgb(52,221,221);
+	color: rgb(52,221,221);
+	font-size: 2em;
+	height: 2em;
+	line-height: 2em;
+	padding-left: 50px; 
+	display: block;
+	text-transform: uppercase;
+}
+
+.form-login-icon{
+	background-color: rgb(52,221,221);
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	text-align: center;
+	color: #fff;
+	line-height: 170px;
+	display: block;
+
+	position: absolute;
+	z-index: 999;
+	top: -20px;
+	left: 100%;
+	transform: translateX(-50%);
+}
+
+.form-login-inputs{
+	margin-top: 20px;
+	font-size: 1em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.form-login-usuario,
-.form-login-pass{
-	padding: 30px;
+.form-login-txtUsuario,
+.form-login-txtPass{
+	border: none;
+	border-bottom: 1px solid #888;
+	width: 70%;
+	font-size: 2em;
+	font-weight: normal;
+	padding: 5px;
+	margin-bottom: 50px;
 }
 
-.form-login-lblUsuario,
-.form-login-txtUsuario,
-.form-login-lblPass,
-.form-login-txtPass{
-	margin-top: 5px;
-	text-align: center;
-	font-weight: bold;
+.form-login-remember{
+	text-align: left;
+	width: 70%;
 	display: block;
 }
 
-.form-login-txtUsuario,
-.form-login-txtPass{
-	font-size: 1.3vw;
+.form-login-lblRemember{
+	color: #888;
+	font-size: 1.6em;
 	font-weight: normal;
 	padding: 5px;
+	margin-bottom: 50px;
+	display: inline-block;
 }
 
-.form-login-logup{
-	background-color: #99fe7a;
+.form-login-chkRemember{
+	display: inline-block;
+	transform: scale(1.3);
+}
+
+.form-button-login{
+	color: #fff;
+	font-weight: bold;
+	padding: 15px 70px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	font-size: 2em;
+}
+
+.form-login-forgot{
 	width: 100%;
 	padding: 15px;
-	border-bottom-left-radius: 29px;
-	border-bottom-right-radius: 29px;
 	
+	color: #888;
 	text-align: center;
-	font-size: 0.5em;
-
+	font-size: 1.5em;
 }
 
-.form-login-logup-link{
-	color: blue;
-	font-size: 1.3em;
-	font-weight: bold;
-}
+.form-login-forgot:hover{color: rgb(52,221,221);}
 
 
 /*---------------------------
-	SIGN UP
+	LOG UP
 ---------------------------*/
-
-.form-register-container{
-	background-color: #D7FFF4;
-	width:60%;
-	border: solid rgba(0,255,0,.1) 5px;
-	border-radius: 30px;
+.form-logup-container{
+	background-color: rgb(52,221,221);
+	
+	width: 500px;
+	height: 100%;
+	border: solid #ccc 1px;
+	border-radius: 10px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	
+	z-index: 1;
+	display: none;
+	font-size: 15px;
+	position: absolute;
+	top:0;
+	left: 0;
+	/*top: -30px;
+	left: -430px;*/
 }
 
-.form-register{
-	font-size: 2vw;
+.form-logup-titleCont{
+	padding-top: 20px;
+	display: block;
+	position: relative;
+}
 
+.form-logup-title{
+	border-left: 7px solid #fff;
+	color: #fff;
+	font-size: 2.1em;
+	height: 2em;
+	line-height: 2em;
+	display: block;
+	text-transform: uppercase;
+	text-align: left;
+	padding-left: 30px;
+}
+
+.form-logup-inputs{
+	margin-top: 20px;
+	font-size: 1em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.form-register-nombre,
-.form-register-pass{
-	padding: 30px;
-}
-
-.form-register-lblNombre,
-.form-register-txtNombre,
-.form-register-lblApellido,
-.form-register-txtApellido,
-.form-register-lblEmail,
-.form-register-txtEmail,
-.form-register-lblGenero,
-.form-register-slctGenero,
-.form-register-lblUsuario,
-.form-register-txtUsuario,
-.form-register-lblPass,
-.form-register-txtPass{
-	margin-top: 20px;
-	text-align: center;
-	font-weight: bold;
-
-	display: block;
-	width: 100%;
-}
-
-.form-register-txtNombre,
-.form-register-txtApellido,
-.form-register-txtEmail,
-.form-register-slctGenero,
-.form-register-txtUsuario,
-.form-register-txtPass{
-	width: 20vw;
-	font-size: 1.3vw;
+.form-logup-txtUsuario,
+.form-logup-txtPass,
+.form-logup-txtRePass{
+	background-color: rgb(52,221,221);
+	border: none;
+	border-bottom: 1px solid #fff;
+	width: 70%;
+	color: #fff;
+	font-size: 1.7em;
 	font-weight: normal;
 	padding: 5px;
-	
- 	background: white;
-	border: 0;
- 	box-shadow:none;
- 	border-radius: 0px;
+	margin-bottom: 50px;
 }
 
-
-.form-register-login{
-	background-color: #99fe7a;
-	width: 100%;
-	padding: 15px;
-	border-bottom-left-radius: 29px;
-	border-bottom-right-radius: 29px;
-	
-	text-align: center;
-	font-size: 0.5em;
-
-}
-
-.form-register-login-link{
-	color: blue;
-	font-size: 1.3em;
+.form-button-logup{
+	color: rgb(52,221,221);
 	font-weight: bold;
+	padding: 15px 70px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	font-size: 2em;
 }
