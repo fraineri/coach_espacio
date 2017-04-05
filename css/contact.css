@@ -1,0 +1,91 @@
+.form-container{
+	background-color: grey;
+	background-image: url("../images/backgrounds/bg-pattern-02.jpg");
+	background-repeat: repeat;
+	padding-bottom: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.form-container > .form-contact-container,
+.form-container > .form-contact-container{
+	margin-top: 160px;
+}
+
+.form-title{
+	background-color: #99fe7a;
+	padding: 15px;
+	border-top-left-radius: 29px;
+	border-top-right-radius: 29px;
+	color: #fff;
+	text-shadow: 0 0 2px #000;
+	text-align: center;
+	font-size: 3vw;
+
+	display: block;
+}
+
+.form-contact-container{
+	background-color: #D7FFF4;
+	width:60%;
+	border: solid rgba(0,255,0,.1) 5px;
+	border-radius: 30px;
+}
+
+
+
+.form-contact{
+	font-size: 2vw;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-contact-lblNombre,
+.form-contact-txtNombre,
+.form-contact-lblApellido,
+.form-contact-txtApellido,
+.form-contact-lblEmail,
+.form-contact-txtEmail,
+.form-contact-lblMensaje,
+.form-contact-txtMensaje
+{
+	margin-top: 20px;
+	text-align: center;
+	font-weight: bold;
+
+	display: block;
+	width: 100%;
+}
+
+.form-contact-lblNombre,
+.form-contact-txtNombre,
+.form-contact-lblApellido,
+.form-contact-txtApellido,
+.form-contact-lblEmail,
+.form-contact-txtEmail,
+.form-contact-lblMensaje,
+.form-contact-txtMensaje
+{
+	width: 20vw;
+	font-size: 1.3vw;
+	font-weight: normal;
+	padding: 5px;
+ 	background: white;
+	border: 0;
+ 	box-shadow:none;
+ 	border-radius: 0px;
+}
+
+
+.form-button{
+	margin-top: 50px;
+	margin-bottom: 20px;
+	color: #000;
+	font-size: 25px;
+} 
+
+
