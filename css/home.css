@@ -61,8 +61,7 @@
 /*--ABOUT SECTION--*/
 
 .about-intro{
-	width: 90%;
-	margin: auto;
+	width: 100%;
 	position: relative;
 	height: 200px;
 	padding: 30px;
@@ -73,15 +72,23 @@
 	width: 100%;
 	height: 100%;
 	margin: auto;
-	display: block;
+	display: flex;
+	align-items: center;
 	position: absolute;
 	top: 0;
 	left: 0;
 	font-size: 1.5em;
+	justify-content: center;
 	text-align: center;
 	z-index: 8;
-	background-color: pink;
-	border-radius: 20px;
+	color:#EEE;
+	font-weight: bold;
+	box-shadow: inset 0px 0px 40px #EEE;
+}
+
+.intro-description-title{
+	font-family: 'Righteous', helvetica;
+	font-weight: normal;
 }
 
 .about-intro-description.active{
@@ -165,7 +172,28 @@
 
 /*Media for tablets and big devices*/
 
-@media (max-width: 800px){
+
+@media(max-width: 480px){
+	.about-intro{
+		height: 350px;
+	}	
+
+	.work-step-title{
+		font-size:1.3em;
+	}
+
+}
+
+@media (max-width: 750px){
+	.banner-title{
+		top:20%;
+		font-size: 3em;
+	}
+
+	.about-intro-description{
+		font-size: 1.2em;
+	}
+
 	.about-buttonCont{
 		margin:0;
 		width: 100%;
@@ -204,11 +232,11 @@
 	}
 	
 	.work-step-text{
-		width: 60%;
+		width: 45%;
 	}
 
 	.work-step-title{
-		width: 40%;
+		width: 55%;
 	}
 
 	.work-step-title::before{
