@@ -46,9 +46,9 @@
 body{
 	background-image: url("../images/backgrounds/bg-test.png");
 	background-size: cover;
-	font-family: helvetica, sans-serif;
+	font-family: 'Yantramanav', helvetica;
 	margin: auto;
-	font-size: 1em;
+	font-size: 1.15em;
 }
 
 a{
@@ -93,11 +93,12 @@ ol,ul{
  FOOTER > footer-nav
 =================================*/
 .main-footer-wave{
-	background-image: url("../images/backgrounds/footer-wave-2-3.png");
+	background-image: url("../images/backgrounds/footer-wave-2-3-1.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 203px;
+	height: 250px;
+	width:100%;
 	opacity: .7;
 	position: relative;
 	margin-top: 50px;
@@ -159,6 +160,7 @@ ol,ul{
 
 .social{
 	color:white;
+	display: block;
 }
 
 .instagram:hover{
@@ -189,11 +191,11 @@ ol,ul{
 .mail-to{color:grey;}
 
 .page-title{
-	font-family: helvetica, sans-serif;
 	text-transform: uppercase;
 	text-align: center;
 	padding-top: 70px;
 	padding-bottom: 50px;
+	color:#444;
 }
 
 .page-title::after, .page-title::before{
@@ -216,19 +218,19 @@ ol,ul{
 	background-color: transparent;
 }
 
-.button-green:hover{color:#00d584;}
-.button-red:hover{color:#FF3B3B;}
+.button-green:hover{color:#89DA90;}
+.button-red:hover{color:#FF8B94;}
 .button-cyan:hover{color:rgb(52,221,221);}
 .button-white:hover{color:#fff;}
 
 .button-green{
-	border:2px solid #00d584;
-	background-color: #00d584;
+	border:2px solid #89DA90;
+	background-color: #89DA90;
 }
 
 .button-red{
-	background-color: #FF3B3B;
-	border:2px solid #FF3B3B;
+	background-color: #FF8B94;
+	border:2px solid #FF8B94;
 }
 
 .button-cyan{
@@ -241,10 +243,21 @@ ol,ul{
 	border:2px solid #fff;
 }
 
-@media (max-width: 700px){
+.bgc-violet{background-color: #CDA7C0;}
+.bgc-blue{background-color: #ABB6D6;}
+.bgc-green{background-color: #B1B666;}
+.bgc-pink{background-color: #E7B2AA;}
+.bgc-lightblue{background-color: #A5C3DD;}
+.bgc-brown{background-color: #E8BA86;}
+
+/*@media(max-width: 480px){
 	body{
-		font-size: .8em;
+		font-size: .95em;
 	}
+}*/
+
+@media (max-width: 750px){
+
 
 	.page-title::before,.page-title::after{
 		width: 10px;
@@ -260,14 +273,14 @@ ol,ul{
 	}
 
 	.main-footer-data{
-		bottom:8%;
+		bottom:12%;
 		flex-wrap: wrap;
 		align-content: center;
 	}
 
 	.main-footer-data-social{
-		margin-left: 20px;
-		margin-right: 20px;
+		margin-left: 40px;
+		margin-right: 40px;
 	}
 
 	.main-footer{

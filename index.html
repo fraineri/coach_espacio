@@ -5,10 +5,13 @@
 		<link rel="stylesheet" type="text/css" href="css/home.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Yantramanav|Righteous" rel="stylesheet"> 
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<script src="http://code.jquery.com/jquery-latest.min.js"
-        type="text/javascript"></script>
+        type="text/javascript"></script>	
 		<title>Coaching | Home</title>
 	</head>
 	<body>
@@ -24,8 +27,8 @@
 				</ul>
 
 				<ul class ="horizontal-menu-log">
-					<li><a href="iniciosesion.html">Iniciar sesión</a></li>
-					<li><a href="iniciosesion.html">Registrarse</a></li>
+					<li><a href="sign-in-up.html">Iniciar sesión</a></li>
+					<li><a href="sign-in-up.html">Registrarse</a></li>
 				</ul>
 			</nav>
 
@@ -61,7 +64,7 @@
 				}
 
 				$(function() {
-				    setInterval( "slideSwitch()", 3800 );
+				    setInterval( "slideSwitch()", 3000 );
 				});
 
 			</script>
@@ -69,82 +72,75 @@
 			<div id ="knowus" class ="mainSection about">
 				<h1 class ="page-title">Quiénes somos</h1>
 				<div class="about-intro">
-
-					<!-- La idea de los divs about intro description
-					es crear un slide de texto y que ellos vayan cambiando-->
-					<div class ="about-intro-description active">
+					<div class ="about-intro-description active bgc-violet">
 						<div>
 							<p>Somos una organización especializada en coaching de espacios. Nosotros te podremos guiar y enseñar cómo acomodar el lugar deseado. Te ayudaremos a descubrir las cosas que ya no utilizas para que te deshagas de ellas y poder aprovechar y disfrutar al máximo tu espacio.</p>
 						</div>
 					</div>
-					<div class ="about-intro-description">
+					<div class ="about-intro-description bgc-blue">
 						<div>
-							<h2>¿No tenes tiempo para acomodar la habitación?</h2>
+							<h2 class="intro-description-title">¿No tenes tiempo para acomodar la habitación?</h2>
 							<p>Nosotros pensamos por vos! Te ayudaremos a notar qué cosas ya no son necesarias en tu lugar.</p>
 						</div>
 					</div>
 
-					<div class ="about-intro-description">
+					<div class ="about-intro-description bgc-green">
 						<div>
-							<h2>¿Llegas todos los días a tu casa tarde?</h2>
+							<h2 class="intro-description-title">¿Llegas todos los días a tu casa tarde?</h2>
 							<p>Podremos hacer el trabajo durante el fin de semana para que no pierdas más tiempo.</p>
 						</div>
 					</div>
 
-					<div class ="about-intro-description">
+					<div class ="about-intro-description bgc-pink">
 						<div>
-							<h2>¿No sabes por dónde arrancar en tu placard?</h2>
+							<h2 class ="intro-description-title">¿No sabes por dónde arrancar en tu placard?</h2>
 							<p>Nosotros te ayudamos a limpiar tu placard y a implementar distintos métodos para que facilmente mantengas el orden.</p>
 						</div>
 					</div>
 
-					<div class ="about-intro-description">
+					<div class ="about-intro-description bgc-lightblue">
 						<div>
-							<h2>¿Tenes una oficina nueva?</h2>
+							<h2 class ="intro-description-title">¿Tenes una oficina nueva?</h2>
 							<p>Es importante tener una buena presentación. Te ayudaremos a hacer de tu lugar un espacio ameno para vos y tus clientes!</p>
 						</div>
 					</div>
 
-					<div class ="about-intro-description">
+					<div class ="about-intro-description bgc-brown">
 						<div>
-							<h2>Donamos lo que no necesitás</h2>
+							<h2 class ="intro-description-title">Donamos lo que no necesitás</h2>
 							<p>Una vez hecho el proceso de limpieza podrás elegir donar las cosas a distintos hogares que lo necesitan</p>
 						</div>
 					</div>
-					<!--<div class ="about-intro-image">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua</p>
-					</div>-->
 				</div>
 			</div>
-				<!-- About Work Steps -->
-				<div class ="about-work">
-					<h1 class="page-title">Cómo trabajamos</h1>
-					<div class ="work-steps">					
-						<div class ="step circle-one">
-							<h2 class ="circle-one work-step-title  title-step-one">Contactanos</h2>
-							<p class ="work-step-text">Si estas interesado en ayudarte a reacomodar tu habitación podes contactarte con nosotros.</p>
-						</div>
+			<!-- About Work Steps -->
+			<div class ="about-work">
+				<h1 class="page-title">Cómo trabajamos</h1>
+				<div class ="work-steps">					
+					<div class ="step circle-one">
+						<h2 class ="circle-one work-step-title  title-step-one">Contactanos</h2>
+						<p class ="work-step-text">Si estas interesado en ayudarte a reacomodar tu habitación podes contactarte con nosotros.</p>
+					</div>
 
-						<div class ="step circle-two">
-							<h2 class ="circle-two work-step-title title-step-two">Entrevista</h2>
-							<p class ="work-step-text">Coordinaremos una entrevista presencial o por skype para conocernos y poder saber en qué te ayudaremos.</p>
-						</div>
+					<div class ="step circle-two">
+						<h2 class ="circle-two work-step-title title-step-two">Entrevista</h2>
+						<p class ="work-step-text">Coordinaremos una entrevista presencial o por skype para conocernos y poder saber en qué te ayudaremos.</p>
+					</div>
 
-						<div class ="step circle-three">
-							<h2 class ="circle-three work-step-title title-step-three">Encuentro</h2>
-							<p class ="work-step-text">Nos encontraremos en el lugar para comenzar a limpiar y deshacerte de lo que ya no necesitás</p>
-						</div>
+					<div class ="step circle-three">
+						<h2 class ="circle-three work-step-title title-step-three">Encuentro</h2>
+						<p class ="work-step-text">Nos encontraremos en el lugar para comenzar a limpiar y deshacerte de lo que ya no necesitás</p>
+					</div>
 
-						<div class ="step circle-four">
-							<h2 class ="circle-four work-step-title title-step-four">Devolucion</h2>
-							<p class ="work-step-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-						</div>
+					<div class ="step circle-four">
+						<h2 class ="circle-four work-step-title title-step-four">Devolucion</h2>
+						<p class ="work-step-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
 					</div>
 				</div>
+			</div>
 				<div class ="about-buttonCont">
-					<a class ="standard-button button-green" href="#">Contacto</a>
+					<a class ="standard-button button-red" href="#">Contacto</a>
 					<a class ="standard-button button-red" href="#">Portfolio</a>
 				</div>
 			</div>			
