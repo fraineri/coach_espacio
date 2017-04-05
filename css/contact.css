@@ -1,6 +1,6 @@
 .form-container{
 	background-color: grey;
-	background-image: url("../images/backgrounds/bg-pattern-02.jpg");
+	background-image: url("../images/backgrounds/bg2.jpg");
 	background-repeat: repeat;
 	padding-bottom: 100px;
 	display: flex;
@@ -15,30 +15,30 @@
 }
 
 .form-title{
-	background-color: #99fe7a;
-	padding: 15px;
-	border-top-left-radius: 29px;
-	border-top-right-radius: 29px;
-	color: #fff;
-	text-shadow: 0 0 2px #000;
-	text-align: center;
-	font-size: 3vw;
-
+	border-left: 7px solid rgb(52,221,221);
+	color: rgb(52,221,221);
+	font-size: 2em;
+	height: 2em;
+	line-height: 2em;
+	padding-left: 50px; 
 	display: block;
+	text-transform: uppercase;
 }
 
 .form-contact-container{
-	background-color: #D7FFF4;
-	width:60%;
-	border: solid rgba(0,255,0,.1) 5px;
-	border-radius: 30px;
+	background-color: #FFF;
+	border: solid #ccc 1px;
+	border-radius: 10px;
+	width: 500px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	position: relative;
 }
 
 
 
 .form-contact{
 	font-size: 2vw;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -70,22 +70,21 @@
 .form-contact-lblMensaje,
 .form-contact-txtMensaje
 {
-	width: 20vw;
-	font-size: 1.3vw;
-	font-weight: normal;
-	padding: 5px;
- 	background: white;
-	border: 0;
- 	box-shadow:none;
- 	border-radius: 0px;
+	margin-top: 20px;
+	font-size: 0.5em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 
 .form-button{
+	color: rgb(52,221,221);
+	font-weight: bold;
+	padding: 15px 70px;
 	margin-top: 50px;
 	margin-bottom: 20px;
-	color: #000;
-	font-size: 25px;
+	font-size: 1em;
 } 
 
 
