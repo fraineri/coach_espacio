@@ -48,6 +48,7 @@ body{
 	background-size: cover;
 	font-family: helvetica, sans-serif;
 	margin: auto;
+	font-size: 1em;
 }
 
 a{
@@ -229,6 +230,23 @@ ol,ul{
 }
 
 @media (max-width: 700px){
+	body{
+		font-size: .8em;
+	}
+
+	.page-title::before,.page-title::after{
+		width: 10px;
+		height: 10px;
+	}
+
+	.horizontal-menu{
+		display:none;
+	}
+
+	.standard-button{
+		font-size:1em;
+	}
+
 	.main-footer-data{
 		bottom:8%;
 		flex-wrap: wrap;

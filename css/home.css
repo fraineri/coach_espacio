@@ -12,7 +12,7 @@
 .banner-title{
 	text-align: center;
 	width: 100%;
-	font-size:4vw;
+	font-size:4em;
 	padding: 15vh 0;
 	color:white;
 	background-color: rgba(52,221,221,.5);
@@ -24,7 +24,7 @@
 	position: absolute;
 	/*bottom: 20%;
 	left:50%;*/
-	bottom:20px;
+	bottom:15px;
 	left:4%;
 }
 
@@ -64,7 +64,7 @@
 	width: 90%;
 	margin: auto;
 	position: relative;
-	height: 130px;
+	height: 200px;
 	padding: 30px;
 	margin: auto;
 }
@@ -164,10 +164,17 @@
 
 
 /*Media for tablets and big devices*/
+
 @media (max-width: 800px){
+	.about-buttonCont{
+		margin:0;
+		width: 100%;
+		font-size: 1.3em;
+	}
+
 	.work-steps{
-		display:block;
-		width: 80%;
+		display: block;
+		width: 95%;
 		margin: auto;
 		position: relative;
 	}
@@ -192,14 +199,18 @@
 		margin-bottom:50px;
 	}
 
-
 	.step::before{
 		display: none;
 	}
+	
+	.work-step-text{
+		width: 60%;
+	}
 
 	.work-step-title{
-		width: 90%;
+		width: 40%;
 	}
+
 	.work-step-title::before{
 		content:"";
 		height: 13px;
@@ -207,7 +218,7 @@
 		border-radius: 50%;
 		background-color: chocolate;
 		display:inline-block;
-		margin-right: 20px;
+		margin-right: 3px;
 		position: relative;
 		z-index: 1;
 	}
