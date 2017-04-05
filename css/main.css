@@ -91,15 +91,26 @@ ol,ul{
 /*===============================
  FOOTER > footer-nav
 =================================*/
+.main-footer-wave{
+	background-image: url("../images/backgrounds/footer-wave-2-3.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 203px;
+	opacity: .7;
+	position: relative;
+	margin-top: 50px;
+	bottom:0;
+}
 
 .main-footer{
 	/*background-image: url("../images/backgrounds/footer-bg-2.png");*/
+	position: relative;
 	background-color: rgba(52,180,221,.7);
 	background-size: cover;
-	height: 200px;
+	height: 230px;
 	width: 100%;
-	margin-top:20px;
-	position: relative;
+
 }
 
 .main-footer-data{
@@ -113,6 +124,11 @@ ol,ul{
 	color:white;
 }
 
+.main-footer-data-contact{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 .main-footer-logo{
 	font-size: 1.4em;
 }
@@ -120,6 +136,12 @@ ol,ul{
 .main-footer-data-social{
 	width: 300px;
 	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.main-footer-data-direction{
+	margin-top: 20px;
 }
 
 .main-footer-copyright{
@@ -206,4 +228,20 @@ ol,ul{
 	border:2px solid #FF3B3B;
 }
 
+@media (max-width: 700px){
+	.main-footer-data{
+		bottom:8%;
+		flex-wrap: wrap;
+		align-content: center;
+	}
+
+	.main-footer-data-social{
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	.main-footer{
+		height: 300px;
+	}
+}
 /***************************************************/

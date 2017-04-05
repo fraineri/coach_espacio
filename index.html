@@ -6,6 +6,9 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
 		<title>Coaching | Home</title>
 	</head>
 	<body>
@@ -39,6 +42,29 @@
 
 	<!-- Section Container -->
 		<div class ="section-container">
+			<script type="text/javascript">
+				function slideSwitch() {
+				    var $active = $('.about-intro .about-intro-description.active');
+
+				    if ( $active.length == 0 ) $active = $('.about-intro .about-intro-description:last');
+
+				    var $next = $active.next().length ? $active.next()
+				        : $('.about-intro .about-intro-description:first');
+
+				    $active.addClass('last-active');
+				       
+				    $next.css({opacity: 0.0})
+				        .addClass('active')
+				        .animate({opacity: 1.0}, 1000, function() {
+				            $active.removeClass('active last-active');
+				        });
+				}
+
+				$(function() {
+				    setInterval( "slideSwitch()", 3800 );
+				});
+
+			</script>
 			<!-- ABOUT -->
 			<div id ="knowus" class ="mainSection about">
 				<h1 class ="page-title">Quiénes somos</h1>
@@ -46,9 +72,8 @@
 
 					<!-- La idea de los divs about intro description
 					es crear un slide de texto y que ellos vayan cambiando-->
-					<div class ="about-intro-description">
+					<div class ="about-intro-description active">
 						<div>
-							<h2>¿Quiénes somos?</h2>
 							<p>Somos una organización especializada en coaching de espacios. Nosotros te podremos guiar y enseñar cómo acomodar el lugar deseado. Te ayudaremos a descubrir las cosas que ya no utilizas para que te deshagas de ellas y poder aprovechar y disfrutar al máximo tu espacio.</p>
 						</div>
 					</div>
@@ -91,28 +116,28 @@
 						tempor incididunt ut labore et dolore magna aliqua</p>
 					</div>-->
 				</div>
-
+			</div>
 				<!-- About Work Steps -->
 				<div class ="about-work">
 					<h1 class="page-title">Cómo trabajamos</h1>
 					<div class ="work-steps">					
 						<div class ="step circle-one">
-							<h2 class ="title-step-one">Contactanos</h2>
+							<h2 class ="circle-one work-step-title  title-step-one">Contactanos</h2>
 							<p>Si estas interesado en ayudarte a reacomodar tu habitación podes contactarte con nosotros.</p>
 						</div>
 
 						<div class ="step circle-two">
-							<h2 class ="title-step-two">Entrevista</h2>
+							<h2 class ="circle-two work-step-title title-step-two">Entrevista</h2>
 							<p>Coordinaremos una entrevista presencial o por skype para conocernos y poder saber en qué te ayudaremos.</p>
 						</div>
 
 						<div class ="step circle-three">
-							<h2 class ="title-step-three">Encuentro</h2>
+							<h2 class ="circle-three work-step-title title-step-three">Encuentro</h2>
 							<p>Nos encontraremos en el lugar para comenzar a limpiar y deshacerte de lo que ya no necesitás</p>
 						</div>
 
 						<div class ="step circle-four">
-							<h2 class ="title-step-four">Devolucion</h2>
+							<h2 class ="circle-four work-step-title title-step-four">Devolucion</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
 						</div>
@@ -126,7 +151,9 @@
 		</div>
 
 		<!--FOOTER-->
+		<div class ="main-footer-wave"></div>
 		<footer class ="main-footer">
+			
 			<div class="main-footer-data">
 				<div class ="main-footer-data-contact">
 					<p class="main-footer-logo">Couching</p>

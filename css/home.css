@@ -63,13 +63,38 @@
 .about-intro{
 	width: 90%;
 	margin: auto;
-	display:flex;
-	justify-content: space-around;
+	position: relative;
+	height: 130px;
+	padding: 30px;
+	margin: auto;
 }
 
 .about-intro-description{
-	border: 1px solid green;
-	width: 75%;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 1.5em;
+	text-align: center;
+	z-index: 8;
+	background-color: pink;
+	border-radius: 20px;
+}
+
+.about-intro-description.active{
+	z-index: 10;
+}
+
+.about-intro-description.last-active{
+	z-index: 9;
+}
+
+
+.about-intro-description.hidden{
+	display: none;
 }
 
 .about-intro-image{
@@ -117,7 +142,7 @@
 }
 
 /*--title & circles (steps)--*/
-.circle-one::before{background-color: #22C6E4;}
+.circle-one::before {background-color: #22C6E4;}
 .title-step-one{color:#22C6E4;}
 
 .circle-two::before{background-color: #E81560;}
@@ -137,10 +162,61 @@
 	justify-content: space-around;
 }
 
-/*--FAQ SECTION--*/
 
-/*/////////////*/
-/*/////////////*/
-/*/////////////*/
-/*/////////////*/
+/*Media for tablets and big devices*/
+@media (max-width: 800px){
+	.work-steps{
+		display:block;
+		width: 80%;
+		margin: auto;
+		position: relative;
+	}
 
+	.work-steps::before{
+		display:block;
+		position: absolute;
+		content:"";
+		width: 1px;
+		height: 100%;
+		background-color: grey;
+		left:6px;
+	}
+
+	.step {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: row;
+		width: 100%;
+		text-align: left;
+		margin-bottom:50px;
+	}
+
+
+	.step::before{
+		display: none;
+	}
+
+	.work-step-title{
+		width: 90%;
+	}
+	.work-step-title::before{
+		content:"";
+		height: 13px;
+		width: 13px;
+		border-radius: 50%;
+		background-color: chocolate;
+		display:inline-block;
+		margin-right: 20px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.circle-one::before {background-color: #22C6E4;}
+
+	.circle-two::before{background-color: #E81560;}
+
+	.circle-three::before{background-color: #16BF0D;}
+
+	.circle-four::before{background-color: #FDB906;}
+}
