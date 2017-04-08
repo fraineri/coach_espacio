@@ -44,8 +44,8 @@
 }
 
 body{
-	background-image: url("../images/backgrounds/bg-test.png");
-	background-size: cover;
+	background-image: url("../images/backgrounds/bg-1b.png");
+	background-repeat: repeat;
 	font-family: 'Yantramanav', helvetica;
 	margin: auto;
 	font-size: 1.15em;
