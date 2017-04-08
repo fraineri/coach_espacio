@@ -186,10 +186,6 @@
 }
 
 @media (max-width: 750px){
-	.banner{
-		background-image: url("../images/backgrounds/bg-small4.jpg");
-	}
-
 	.banner-title{
 		top: 37%;
 		font-size: 3em;
@@ -275,4 +271,10 @@
 	.circle-three::before{background-color: #16BF0D;}
 
 	.circle-four::before{background-color: #FDB906;}
+}
+
+@media (max-width: 900px){
+	.banner{
+		background-image: url("../images/backgrounds/bg-small4.jpg");
+	}
 }
