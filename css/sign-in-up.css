@@ -1,3 +1,4 @@
+
 /*
 --------------------------------------------------------------------------------
  *************************
@@ -9,97 +10,85 @@
   form-container:
     Contenedor flex padre de la pagina.
   ------
-  
-  form-title:
-    Titulo del form.
-  ------
 
-  form-button:
-    Boton inicio de sesion.
-  ------
-
-  ----------
-  #########
-  ##LOGIN##
-  #########
+  ##############
+  LOGIN
+  ##############
   ----------
 
   form-login-container:
-    Contenedor del titulo y login-form.
+    Contenedor elementos login.
   ------
 
-  form-login:
-    Form contenedor flex de los elementos.
+  form-login-shadow:
+    Sombra superior del form-login-container.
   ------
 
-  form-login-usuario:
-    Contenedor de txtUsuario y lblUsuario.
+  form-login-titleCont:
+    Contenedor de titulo del form-login.
   ------
   
-  form-login-pass:
-    Contenedor de txtPass y lblPass.
+  form-login-title:
+    Titulo del form-login.
   ------
 
-  form-login-lblUsuario/form-login-lblPass:
-    Labels login form.
+  form-login-icon:
+    Icono del form-login.
   ------
 
-  form-login-txtUsuario/form-login-txtPass:
-    Input text login form.
+  form-login-inputs:
+    Contenedor de inputs del form-login.
+  ------
+  
+  form-login-txtUsuario/txtPass:
+    Inputs del form-login.
+  ------
+  
+  form-login-remember:
+    Contenedor de lblRemember y chkRemember.
   ------
 
-  form-login-logup:
-    Sugerencia para registrarte.
+  form-button-login:
+    Boton del form-login.
   ------
 
-  form-login-logup-link:
-    Link para registrarte.
+  form-login-forgot:
+    Link a recuperar contraseña.
   ------
 
+  ##############
+  LOG UP
+  ##############
   ----------
-  ###########
-  ##SIGN UP##
-  ###########
-  ----------
   
-  form-register-container:
-    Contenedor del titulo y form-register.
+  form-logup-container:
+    Contenedor elementos logup.
   ------
   
-  form-register:
-    Form contenedor flex de los elementos.
-  ------
-  
-  form-register-lblNombre,
-  form-register-txtNombre,
-  form-register-lblApellido,
-  form-register-txtApellido,
-  form-register-lblEmail,
-  form-register-txtEmail,
-  form-register-lblGenero,
-  form-register-slctGenero,
-  form-register-lblUsuario,
-  form-register-txtUsuario,
-  form-register-lblPass,
-  form-register-txtPass:
-    Labels & inputs del form.
+  form-logup-titleCont:
+    Contenedor de titulo del form-logup.
   ------
 
-  form-register-login:
-    Sugerencia para login.
+  form-logup-title:
+    Titulo del form-login.
   ------
 
-  form-register-login-link:
-    Link para el login.
+  form-logup-inputs:
+    Contenedor de inputs del form-login.
   ------
+
+  form-logup-txtUsuario/txtPass/txtRePass:
+    Inputs del form-logup.
+  ------
+
+  form-button-logup:
+    Boton del form-logup.
 
 --------------------------------------------------------------------------------
-  (header*            ---> style.css)
-  (standar-button     ---> style.css)
-  (button-green       ---> style.css)
-  (main-footer        ---> style.css)
-  (main-footer-nav    ---> style.css)
-
+  (header*            ---> main.css)
+  (standar-button     ---> main.css)
+  (button-white       ---> main.css)
+  (button-cyan        ---> main.css)
 --------------------------------------------------------------------------------
 */
 
@@ -193,7 +182,7 @@
 	border: none;
 	border-bottom: 1px solid #888;
 	width: 70%;
-	font-size: 2em;
+	font-size: 1.2em;
 	font-weight: normal;
 	padding: 5px;
 	margin-bottom: 50px;
@@ -207,7 +196,7 @@
 
 .form-login-lblRemember{
 	color: #888;
-	font-size: 1.6em;
+	font-size: 1.2em;
 	font-weight: normal;
 	padding: 5px;
 	margin-bottom: 50px;
