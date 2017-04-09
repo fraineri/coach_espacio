@@ -6,4 +6,34 @@
 	display: block;
 	width: 80%;
 	margin: auto;
+	padding-top: 60px;
+	text-align: center;
 }
+
+
+.pregunta > p{
+	display: none;
+}
+
+.pregunta:hover *{
+	padding: 30px;
+	display: block;
+}
+
+.p1,.p2,.p3,.p4,.p5,.p6{
+	background-color: rgba(255,255,255,.5);
+}
+
+.p1{color: rgb(142, 166, 4,1);font-size: 1.4em;}
+.p2{color: rgb(245, 187, 0,1);font-size: 1.4em;}
+.p3{color: rgb(236, 159, 5,1);font-size: 1.4em;}
+.p4{color: rgb(215, 106, 3,1);font-size: 1.4em;}
+.p5{color: rgb(228, 87, 46,1);font-size: 1.4em;}
+.p6{color: rgb(191, 49, 0,1);font-size: 1.4em;}
+
+.p1:hover{background-color: rgb(142, 166, 4,.5); color: #000;}
+.p2:hover{background-color: rgb(245, 187, 0,.5); color: #000;}
+.p3:hover{background-color: rgb(236, 159, 5,.5); color: #000;}
+.p4:hover{background-color: rgb(215, 106, 3,.5); color: #000;}
+.p5:hover{background-color: rgb(228, 87, 46,.5); color: #000;}
+.p6:hover{background-color: rgb(191, 49, 0,.5); color: #000;}
