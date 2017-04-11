@@ -120,6 +120,10 @@
 }
 
 @media(max-width: 634px){
+	.form-contact-container{
+		width: 100%;
+	}
+
 	.contact-ppal-text{
 		font-size: 4em;
 	}
@@ -129,6 +133,8 @@
 	.form-contact-txtEmail,
 	.form-contact-txtMensaje{
 		width: 80%;
+		text-align: center;
+
 	}
 }
 
@@ -148,6 +154,9 @@
 	    padding: 20px 20px;
 	    margin-top: 20px;
 	    font-size: 1.2em;
+	    display: block;
+	    width: 100%;
+	    border-radius: 0;
 	}
 }
 
