@@ -39,7 +39,7 @@
 .p5:hover{background-color: rgba(228, 87, 46,.5); color: #444;}
 .p6:hover{background-color: rgba(191, 49, 0,.5); color: #444;}
 
-@media(max-width: 750px){
+@media screen and (max-width: 760px){
 	.container-faq{
 		padding-top: 0px;
 	}
@@ -53,6 +53,10 @@
 		display: block;
 	}
 	
+	.pregunta{
+		margin-bottom: 40px;
+	}
+
 	.pregunta > h2{
 		background-color: rgba(255,255,255,.5);
 	}
@@ -69,7 +73,7 @@
 	.p6{background-color: rgba(191, 49, 0,.5); color: #444;}
 }
 
-@media(max-width: 480px){
+@media screen and (max-width: 480px){
 	.container-faq{
 		padding-top: 0px;
 	}
@@ -99,5 +103,5 @@
 	.p5{background-color: rgba(228, 87, 46,.5); color: #444;}
 	.p6{background-color: rgba(191, 49, 0,.5); color: #444;}
 }	
-}
+
 
