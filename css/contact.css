@@ -33,6 +33,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	text-align:center;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -104,26 +105,7 @@
 	border: 1px solid rgba(180,180,180,.7);
 	resize: vertical;
 }
-/*	margin-top: 20px;
-	text-align: center;
-	font-weight: bold;
-	display: block;
-	width: 100%;
-}
 
-.form-contact-txtNombre,
-.form-contact-txtApellido,
-.form-contact-txtEmail,
-.form-contact-txtMensaje
-{
-	margin-top: 10px;
-	font-size: 0.7em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-*/
 .form-button-contact{
 	color: #fff;
 	font-weight: bold;
@@ -137,3 +119,40 @@
 	transform: translateX(-50%);
 }
 
+@media(max-width: 634px){
+	.contact-ppal-text{
+		font-size: 4em;
+	}
+
+	.form-contact-txtNombre,
+	.form-contact-txtApellido,
+	.form-contact-txtEmail,
+	.form-contact-txtMensaje{
+		width: 80%;
+	}
+}
+
+@media(max-width: 450px){
+	.contact-ppal-text{
+		font-size: 3em;
+	}
+
+	.form-contact-txtNombre,
+	.form-contact-txtApellido,
+	.form-contact-txtEmail,
+	.form-contact-txtMensaje{
+		width: 60%;
+	}
+
+	.form-button-contact {
+	    padding: 20px 20px;
+	    margin-top: 20px;
+	    font-size: 1.2em;
+	}
+}
+
+@media(max-width: 340px){
+	.contact-ppal-text{
+		font-size: 2.5em;
+	}
+}
