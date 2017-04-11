@@ -280,7 +280,10 @@
 
 .form-logup-txtUsuario,
 .form-logup-txtPass,
-.form-logup-txtRePass{
+.form-logup-txtRePass,
+.form-logup-txtNombre,
+.form-logup-txtApellido,
+.form-logup-txtEmail{
 	background-color: rgb(52,221,221);
 	border: none;
 	border-bottom: 1px solid #fff;
@@ -292,11 +295,35 @@
 	margin-bottom: 50px;
 }
 
-.form-button-logup{
+.form-logup-txtNombre,
+.form-logup-txtApellido,
+.form-logup-txtEmail{
+	display: none;
+}
+
+.form-button-next,
+.form-button-back{
 	color: rgb(52,221,221);
 	font-weight: bold;
 	padding: 15px 70px;
 	margin-top: 50px;
 	margin-bottom: 20px;
+	font-size: 2em;
+}
+
+.form-button-back{
+	display: none;
+	margin-bottom: 0;
+	font-size: 2em;
+}
+
+.form-button-logup{
+	font-family: 'Yantramanav', helvetica;
+	display: none;
+	color: rgb(52,221,221);
+	font-weight: bold;
+	padding: 15px 70px;
+	margin-top: 20px;
+	margin-bottom: 5px;
 	font-size: 2em;
 }

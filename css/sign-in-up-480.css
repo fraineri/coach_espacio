@@ -73,12 +73,18 @@
 
 .form-logup-txtUsuario,
 .form-logup-txtPass,
-.form-logup-txtRePass{
+.form-logup-txtRePass,
+.form-logup-txtNombre,
+.form-logup-txtApellido,
+.form-logup-txtEmail{
 	font-size: 5.5vw;
 	text-align: center;
 }
 
+.form-button-next,
+.form-button-back,
 .form-button-logup{
+	text-align: center;
 	width: 100%;
 	border-radius: 0;
 }

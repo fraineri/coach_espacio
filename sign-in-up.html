@@ -10,28 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"> 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<script>
-	$(document).ready(function(){
-		$logupVisibility = false;
-	    $(".form-login-icon").click(function(){
-	    	if(!$logupVisibility){
-		        $logupVisibility = true;
-		        $(".form-logup-container").fadeIn();
-		        $(".form-login-icon").css("background-color","white");
-		        $(".form-login-icon").css("color","rgb(52,221,221)");
-		        $(".form-login-icon > i").removeClass("fa-pencil");
-		        $(".form-login-icon > i").addClass("fa-times");
-	    	}else{
-	        	$logupVisibility = false;
-	        	$(".form-logup-container").fadeOut();
-	        	$(".form-login-icon").css("background-color","rgb(52,221,221)");
-		        $(".form-login-icon").css("color","white");
-		        $(".form-login-icon > i").removeClass("fa-times");
-		        $(".form-login-icon > i").addClass("fa-pencil");		        
-	    	}
-	    });
-	});
-	</script>
+	<script src="js/sign-in-up.js"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Coaching | Iniciá sesión</title>
@@ -58,7 +37,7 @@
 		<div class="form-login-container">
 			<div class="form-login-shadow"></div>
 			<div class="form-login-titleCont">
-				<h1 class="form-login-title">Login</h1>
+				<h1 class="form-login-title">INGRESAR</h1>
 				<a class="form-login-icon" href="#"><i class="fa fa-pencil fa-4x" aria-hidden="true"></i></a>
 			</div>
 			<form class="form-login-inputs">
@@ -71,22 +50,35 @@
 					<input class="form-login-chkRemember" type="checkbox" name="">
 				</div>
 
-				<button class="form-button-login standard-button button-cyan" type="submit">GO</button>
+				<button class="form-button-login standard-button button-cyan" type="submit">IR</button>
 			</form>
 			<a class="form-login-forgot" href="">Olvidaste tu contraseña?</a>
 				<!-- LOG UP -->
 				<div class="form-logup-container">
 					<div class="form-logup-titleCont">
-						<h1 class="form-logup-title">REGISTER</h1>
+						<h1 class="form-logup-title">REGISTRATE</h1>
 					</div>
 					<form class="form-logup-inputs">
+						<!-- First Form -->
 						<input class="form-logup-txtUsuario" type="text" id="ingreso" name="Ingreso" placeholder="Usuario" required>
 					
 						<input class="form-logup-txtPass" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>							
 
-						<input class="form-logup-txtRePass" type="password" id="contraseña" name="contraseña" placeholder="Reingrese la contraseña" required>		
+						<input class="form-logup-txtRePass" type="password" id="recontraseña" name="recontraseña" placeholder="Reingrese la contraseña" required>		
+						
+						<!-- Second Form -->
+						<input class="form-logup-txtNombre" type="text" id="nombre" name="Ingreso" placeholder="Nombre" required>
+					
+						<input class="form-logup-txtApellido" type="text" id="apellido" name="apellido" placeholder="Apellido" required>							
 
-						<button class="form-button-logup standard-button button-white" type="submit">GO</button>
+						<input class="form-logup-txtEmail" type="email" id="email" name="email" placeholder="email@example" required>		
+						
+						<a class="form-button-next standard-button button-white" type="submit">SIGUIENTE</a>
+						
+						<button class="form-button-logup standard-button button-white" type="submit">CREAR</button>
+						
+						<a class="form-button-back standard-button button-white" type="submit">ATRAS</a>
+						
 					</form>
 				</div>
 				<!-- END LOG UP -->
