@@ -89,6 +89,46 @@ ol,ul{
 	display: inline-block;
 }
 
+.desplegable{
+	position: relative;
+	width: 180px;
+}
+
+.menu-log-user-image{
+	display: inline-block;
+	border-radius:50px; 
+	color: chocolate;
+}
+
+.menu-log-username{
+	display: inline-block;
+	width:60%;
+	text-align: center;
+}
+
+.options{
+	position: absolute;
+    visibility: hidden;
+}
+
+.options li{
+	display:block;
+	margin-left:0;
+	width: 180px;
+	text-align: center;
+	background-color: rgba(100,200,228,.7);
+}
+
+.options li:hover{
+	text-decoration: underline;
+}
+
+.desplegable:hover .options{
+	transition:.5s;
+	visibility: visible;
+}
+
+
 
 /*===============================
  FOOTER > footer-nav
@@ -274,14 +314,19 @@ ol,ul{
 	}
 
 	.main-footer-data{
-		bottom:12%;
+		bottom:20%;
 		flex-wrap: wrap;
 		align-content: center;
+		text-align: center;
+	}
+
+	.main-footer-data-contact{
+		display: none;
+		margin-left: 20px;
 	}
 
 	.main-footer-data-social{
-		margin-left: 40px;
-		margin-right: 40px;
+		margin-right: 20px;
 	}
 
 	.main-footer{
