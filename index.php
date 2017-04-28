@@ -16,11 +16,6 @@
 	</head>
 	<body>
 		<!-- Home Header -->
-		<?php
-			$activePage = 'index.php'; 
-			include('php/header.include.php');
-		?>
-		
 		<div class ="banner">
 			<div>
 				<h1 class ="banner-title">Coach de Espacios </h1>
@@ -30,74 +25,56 @@
 			</div>
 		</div>
 
+		<?php
+			$activePage = 'index.php'; 
+			$userLogin = null;
+				/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
+				*/
+			include('php/header.include.php');
+		?>
+
 		<!-- Section Container -->
 		<div class ="section-container">
-			<script type="text/javascript">
-				function slideSwitch() {
-				    var $active = $('.about-intro .about-intro-description.active');
-
-				    if ( $active.length == 0 ) $active = $('.about-intro .about-intro-description:last');
-
-				    var $next = $active.next().length ? $active.next()
-				        : $('.about-intro .about-intro-description:first');
-
-				    $active.addClass('last-active');
-				       
-				    $next.css({opacity: 0.0})
-				        .addClass('active')
-				        .animate({opacity: 1.0}, 1000, function() {
-				            $active.removeClass('active last-active');
-				        });
-				}
-
-				$(function() {
-				    setInterval( "slideSwitch()", 6000 );
-				});
-
-			</script>
 			<!-- ABOUT -->
+			<?php 
+				$aboutIntro = [
+					'<p>Somos una organización especializada en coaching de espacios. Nosotros te podremos guiar y enseñar cómo acomodar el lugar deseado. Te ayudaremos a descubrir las cosas que ya no utilizas para que te deshagas de ellas y poder aprovechar y disfrutar al máximo tu espacio.</p>',
+					'<h2 class="intro-description-title">¿No tenés tiempo para acomodar la habitación?</h2>
+							<p>Nosotros pensamos por vos! Te ayudaremos a notar qué cosas ya no son necesarias en tu lugar. Podrás aprender a ver en tu espacio distintas soluciones para disfrutarlo lo mejor posible.</p>',
+					'<h2 class="intro-description-title">¿Llegás todos los días a tu casa tarde?</h2>
+							<p>Podremos hacer las reuniones durante el fin de semana para que no pierdas tiempo.</p>',
+					'<h2 class ="intro-description-title">¿No sabes por dónde arrancar en tu placard?</h2>
+							<p>Nosotros te ayudamos a limpiarlo y a implementar distintos métodos para que facilmente mantengas el orden.</p>',
+					'<h2 class ="intro-description-title">¿Tenés una oficina nueva?</h2>
+							<p>Es importante tener una buena presentación. Te ayudaremos a hacer de tu lugar un espacio ameno para vos y tus clientes!</p>',
+					'<h2 class ="intro-description-title">Donamos lo que no necesitás</h2>
+							<p>Una vez terminados nuestros encuentros podrás optar por donar objetos, ropas, etc a hogares para que ellos lo disfruten. Nosotros nos encargamos de entregarlo!.</p>'
+				];
+			?>
 			<div id ="knowus" class ="mainSection about">
 				<h1 class ="page-title">Quiénes somos</h1>
 				<div class="about-intro">
-					<div class ="about-intro-description active bgc-violet">
-						<div>
-							<p>Somos una organización especializada en coaching de espacios. Nosotros te podremos guiar y enseñar cómo acomodar el lugar deseado. Te ayudaremos a descubrir las cosas que ya no utilizas para que te deshagas de ellas y poder aprovechar y disfrutar al máximo tu espacio.</p>
-						</div>
-					</div>
-					<div class ="about-intro-description bgc-blue">
-						<div>
-							<h2 class="intro-description-title">¿No tenés tiempo para acomodar la habitación?</h2>
-							<p>Nosotros pensamos por vos! Te ayudaremos a notar qué cosas ya no son necesarias en tu lugar. Podrás aprender a ver en tu espacio distintas soluciones para disfrutarlo lo mejor posible.</p>
-						</div>
-					</div>
-
-					<div class ="about-intro-description bgc-green">
-						<div>
-							<h2 class="intro-description-title">¿Llegás todos los días a tu casa tarde?</h2>
-							<p>Podremos hacer las reuniones durante el fin de semana para que no pierdas tiempo.</p>
-						</div>
-					</div>
-
-					<div class ="about-intro-description bgc-pink">
-						<div>
-							<h2 class ="intro-description-title">¿No sabes por dónde arrancar en tu placard?</h2>
-							<p>Nosotros te ayudamos a limpiarlo y a implementar distintos métodos para que facilmente mantengas el orden.</p>
-						</div>
-					</div>
-
-					<div class ="about-intro-description bgc-lightblue">
-						<div>
-							<h2 class ="intro-description-title">¿Tenés una oficina nueva?</h2>
-							<p>Es importante tener una buena presentación. Te ayudaremos a hacer de tu lugar un espacio ameno para vos y tus clientes!</p>
-						</div>
-					</div>
-
-					<div class ="about-intro-description bgc-brown">
-						<div>
-							<h2 class ="intro-description-title">Donamos lo que no necesitás</h2>
-							<p>Una vez terminados nuestros encuentros podrás optar por donar objetos, ropas, etc a hogares para que ellos lo disfruten. Nosotros nos encargamos de entregarlo!.</p>
-						</div>
-					</div>
+				<?php  
+					for ($i=0; $i < count($aboutIntro); $i++) { 
+						$var = $i>3 ? $i-3 : $i;
+						if ($var == 0) {
+							echo "<div class = 'about-intro-description align-info'>
+							<div>";
+						} else 
+						if ($var % 3 == 0){
+							echo "<div class = 'about-intro-description align-left'>
+							<div>";
+						} else if ($var % 2 == 0) {
+							echo "<div class = 'about-intro-description align-center'>
+							<div>";
+						} else if ($var % 1 == 0) {
+							echo "<div class = 'about-intro-description align-right'>
+							<div>";
+						} 
+						echo $aboutIntro[$i];
+						echo "</div> </div>";
+					}
+				?>
 				</div>
 			</div>
 			<!-- About Work Steps -->

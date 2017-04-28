@@ -1,17 +1,23 @@
 <header class ="home-header">
 	<nav class ="horizontal-menu">
 		<?php 
-			$pages = [
+			$pagesNav= [
 				'index.php' => 'Home',
-				'products.html' => 'Productos',
-				'curses.html' => 'Cursos',
-				'contact.html' => 'Contactame',
-				'faq.html' => 'FAQ'
+				'index.php#knowus' => 'Quiénes somos',
+				'productos.php' => 'Productos',
+				/*'curses.php' => 'Cursos',*/
+				'contact.php' => 'Contactame',
+				'faq.php' => 'FAQ'
+			];
+
+			$pagesLog = [
+				'sign-in-up.php' => 'Iniciar sesión',
+				'sign-up.php' => 'Registrarse',
 			];
 		?>
 		
 		<ul class ="horizontal-menu-nav">
-			<?php foreach ($pages as $url => $title): ?>
+			<?php foreach ($pagesNav as $url => $title): ?>
 				<li>
 					<a <?php if($url === $activePage){echo 'class ="page-active"';}?> href="<?php echo $url; ?>"><?php echo $title ?></a>
 				</li>
@@ -20,14 +26,12 @@
 
 		
 		<ul class ="horizontal-menu-log">
-			<?php 
-				$userLogin = null;
-				/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
-				*/
-			?>
 			<?php if($userLogin == null){ ?>
-				<li><a href="sign-in-up.html">Iniciar sesión</a></li>
-				<li><a href="sign-in-up.html">Registrarse</a></li>
+				<?php foreach ($pagesLog as $url => $title): ?>
+					<li>
+						<a <?php if($url === $activePage){echo 'class ="page-active"';}?> href="<?php echo $url; ?>"><?php echo $title ?></a>
+					</li>
+				<?php endforeach; ?>
 			<?php } else { ?>
 				<li class = "desplegable">
 					<a href="">

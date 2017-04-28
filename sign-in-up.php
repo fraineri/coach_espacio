@@ -16,22 +16,13 @@
 	<title>Coaching | Iniciá sesión</title>
 </head>
 <body>
-	<header class ="home-header">
-		<nav class ="horizontal-menu">
-			<ul class ="horizontal-menu-nav">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Productos</a></li>
-				<li><a href="#">Cursos</a></li>
-				<li><a href="contact.html">Contactame</a></li>
-				<li><a href="faq.html">FAQ</a></li>
-			</ul>
-
-			<ul class ="horizontal-menu-log">
-				<li><a class ="page-active" href="sign-in-up.html">Iniciar sesión</a></li>
-				<li><a class ="page-active" href="sign-in-up.html">Registrarse</a></li>
-			</ul>
-		</nav>
-	</header>
+	<?php
+		$activePage = 'sign-in-up.php'; 
+		$userLogin = 'd';
+			/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
+			*/
+		include('php/header.include.php');
+	?>
 	
 	<div class="form-container">
 		<div class="form-login-container">

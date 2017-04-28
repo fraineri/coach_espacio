@@ -44,11 +44,12 @@
 }
 
 body{
-	background-image: url("../images/backgrounds/bg-test3b.png");
+	background-image: url("../images/backgrounds/bg1-one.png");
 	background-repeat: repeat;
 	font-family: 'Yantramanav', helvetica;
 	margin: auto;
 	font-size: 1.15em;
+	color:#333;
 }
 
 a{
@@ -64,12 +65,12 @@ ol,ul{
 /*===============================
  HORIZONTAL MENU BAR > nav & log
 =================================*/
-
 .horizontal-menu{
-	z-index:999;
+	z-index: 99;
 	width: 100%;
-	background-color: rgba(255,255,255,.3);
+	background-color: rgba(250,250,250,1);
 	position: fixed;
+	top: 0;
 	display: flex;
 	justify-content: space-between;
 }
@@ -78,7 +79,6 @@ ol,ul{
 	transition: background-color 0.5s;
 	padding: 25px 10px;
 	text-transform: uppercase;
-
 }
 
 .horizontal-menu a:hover{
@@ -103,7 +103,7 @@ ol,ul{
 .menu-log-username{
 	display: inline-block;
 	width:60%;
-	text-align: center;
+	margin-left: 20px;
 }
 
 .options{
@@ -234,7 +234,7 @@ ol,ul{
 .page-title{
 	text-transform: uppercase;
 	text-align: center;
-	padding-top: 70px;
+	padding-top: 90px;
 	padding-bottom: 50px;
 	color:#444;
 }
@@ -297,16 +297,43 @@ ol,ul{
 	}
 }*/
 
+/*********************MENU************************/
+@media (max-width: 900px){
+	.horizontal-menu{
+		position: static;
+		display: inline-block;
+	}
+
+	.horizontal-menu li{
+		display: inline;
+	}
+
+
+	.horizontal-menu a{
+		transition: background-color 0.5s;
+		padding: 10px 10px;
+		text-transform: uppercase;
+	}
+
+	.desplegable{
+		width: 100%;
+	}
+
+	.options li{
+		background-color: transparent;
+		display: none;
+	}
+
+	.horizontal-menu-log{
+		margin-top: 30px;
+	}
+}
+/**********************FIN MENU***********************/
+
 @media (max-width: 750px){
-
-
 	.page-title::before,.page-title::after{
 		width: 10px;
 		height: 10px;
-	}
-
-	.horizontal-menu{
-		display:none;
 	}
 
 	.standard-button{

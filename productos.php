@@ -9,25 +9,13 @@
 	<title>Coaching | productos</title>
 </head>
 <body>
-		<!--menu horizontal-->
-		<header class ="home-header">
-			<nav class ="horizontal-menu">
-				<ul class ="horizontal-menu-nav">
-					<li><a href="index.html">Home</a></li>
-					<li><a class ="page-active" href="productos.html">Productos</a></li>
-					<li><a href="#">Cursos</a></li>
-					<li><a href="#">Contactame</a></li>
-					<li><a href="faq.html">FAQ</a></li>
-				</ul>
-
-				<ul class ="horizontal-menu-log">
-					<li><a href="iniciosesion.html">Iniciar sesión</a></li>
-					<li><a href="registro.html">Registrarse</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<!--titulo-->
+	<?php
+		$activePage = 'productos.php'; 
+		$userLogin = 'd';
+			/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
+			*/
+		include('php/header.include.php');
+	?>
 		
 	<!-- 8 productos en un container-->
 	<div class="containerProductos">
@@ -60,6 +48,8 @@
 			<img src="../imagenes/bolsaVacio.jpg" alt="bolsa al vacio">
 		</div>
 	</div>
+
+	<?php include('php/footer.include.php') ?>
 
 </body>
 </html>
