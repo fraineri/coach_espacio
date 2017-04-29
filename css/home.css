@@ -226,7 +226,6 @@
 		position: relative;
 	}
 
-
 	.step-numbers{
 		display: none;
 	}
@@ -242,10 +241,7 @@
 	}
 
 	.step {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		flex-direction: row;
+		position: relative;
 		width: 100%;
 		text-align: left;
 		margin-bottom:50px;
@@ -256,11 +252,9 @@
 	}
 	
 	.work-step-text{
-		width: 45%;
-	}
-
-	.work-step-title{
-		width: 55%;
+		width: 80%;
+		position: relative;
+		left: 30px;
 	}
 
 	.work-step-title::before{
@@ -299,8 +293,4 @@
 	.about-intro-description{
 		max-width: 200px;
 	}
-}
-
-@media (max-width: 900px){
-	
 }

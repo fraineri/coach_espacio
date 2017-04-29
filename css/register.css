@@ -12,7 +12,7 @@
 }
 
 .form-register-container{
-	background-color: rgb(52,221,221);
+	background-color: rgb(85,221,221);
 	border: solid #ccc 1px;
 	border-radius: 10px;
 	width: 500px;
@@ -54,12 +54,12 @@
 
 .form-register-icon{
 	background-color: #fff;
-	border: 3px solid rgb(52,221,221);
+	border: 3px solid rgb(85,221,221);
 	width: 140px;
 	height: 140px;
 	border-radius: 50%;
 	text-align: center;
-	color: rgb(52,221,221);
+	color: rgb(85,221,221);
 	line-height: 170px;
 	display: block;
 
@@ -85,8 +85,8 @@
 .form-register-txtUsuario,
 .form-register-txtPass,
 .form-register-txtRePass{
-	background-color: rgb(52,221,221);
-	color: #fff;
+	background-color: rgb(85,221,221);
+	color: #333;
 	border: none;
 	border-bottom: 1px solid #888;
 	width: 70%;
@@ -117,7 +117,7 @@
 }
 
 .form-button-register{
-	color: rgb(52,221,221);
+	color: rgb(85,221,221);
 	font-weight: bold;
 	padding: 15px 70px;
 	margin-top: 50px;

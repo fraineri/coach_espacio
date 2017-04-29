@@ -28,7 +28,7 @@
 			<div class="form-login-shadow"></div>
 			<div class="form-login-titleCont">
 				<h1 class="form-login-title">INGRESAR</h1>
-				<a class="form-login-icon" href="#"><i class="fa fa-user-o fa-5x" aria-hidden="true"></i></a>
+				<a class="form-login-icon" href="register.php"><i class="fa fa-user-o fa-5x" aria-hidden="true"></i></a>
 			</div>
 			<form class="form-login-inputs">
 				<input class="form-login-txtUsuario" type="text" id="ingreso" name="Ingreso" placeholder="Usuario" required>

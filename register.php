@@ -18,7 +18,7 @@
 <body>
 	<?php
 		$activePage = 'sign-in-up.php'; 
-		$userLogin = 'd';
+		$userLogin = null;
 			/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
 			*/
 		include('php/header.include.php');
@@ -27,8 +27,8 @@
 		<div class="form-register-container">
 			<div class="form-register-shadow"></div>
 				<div class="form-register-titleCont">
-					<h1 class="form-register-title">REGISTRO</h1>
-					<a class="form-register-icon" href="#"><i class="fa fa-pencil fa-5x" aria-hidden="true"></i></a>
+					<h1 class="form-register-title">REGISTRATE</h1>
+					<div class="form-register-icon" ><i class="fa fa-pencil fa-5x" aria-hidden="true"></i></div>
 				</div>
 				<form class="form-register-inputs">
 					<input class="form-register-txtNombre" type="text" name="nombre" placeholder="Nombre" required>
@@ -41,7 +41,7 @@
 					
 					<input class="form-register-txtPass" type="password" name="contrasenia" placeholder="Contraseña" required>
 
-					<input class="form-register-txtRePass" type="password" name="recontrasenia" placeholder="Repita Contraseña" required>
+					<input class="form-register-txtRePass" type="password" name="recontrasenia" placeholder="Repita su contraseña" required>
 
 					<button class="form-button-register standard-button button-white" type="submit">REGISTRAR</button>
 				</form>
