@@ -21,6 +21,7 @@ function firstForm(){
     	$(".form-logup-txtEmail").css("display","block");
 	}
 	$(document).ready(function(){
+		/*
 		$logupVisibility = false;
 	    $(".form-login-icon").click(function(){
 	    	if(!$logupVisibility){
@@ -40,6 +41,7 @@ function firstForm(){
 		        $(".form-login-icon > i").addClass("fa-pencil");		        
 	    	}
 	    });
+	    */
 	    $(".form-button-next").click(function(){
 	    	secondForm();
 	    });

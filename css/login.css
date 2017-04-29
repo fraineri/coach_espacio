@@ -1,0 +1,130 @@
+.form-container{
+	padding-bottom: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.form-container > .form-login-container,
+.form-container > .form-register-container{
+	margin-top: 100px;
+}
+
+.form-login-container{
+	background-color: #FFF;
+	border: solid #ccc 1px;
+	border-radius: 10px;
+	width: 500px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	position: relative;
+}
+
+.form-login-shadow{
+	width: 90%;
+	height: 10px;
+	background-color: rgb(245,245,245);
+	border: 1px solid #ccc;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	display: block;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	transform: translateX(5%);
+}
+
+.form-login-titleCont{
+	padding-top: 20px;
+	display: block;
+	position: relative;
+}
+
+.form-login-title{
+	border-left: 7px solid rgb(52,221,221);
+	color: rgb(52,221,221);
+	font-size: 2em;
+	height: 2em;
+	line-height: 2em;
+	padding-left: 50px; 
+	display: block;
+	text-transform: uppercase;
+}
+
+.form-login-icon{
+	background-color: rgb(52,221,221);
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	text-align: center;
+	color: #fff;
+	line-height: 170px;
+	display: block;
+
+	position: absolute;
+	top: -20px;
+	left: 100%;
+	transform: translateX(-50%);
+}
+
+
+
+.form-login-inputs{
+	margin-top: 20px;
+	font-size: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-login-txtUsuario,
+.form-login-txtPass{
+	border: none;
+	border-bottom: 1px solid #888;
+	width: 70%;
+	font-size: 1.2em;
+	font-weight: normal;
+	padding: 5px;
+	margin-bottom: 50px;
+}
+
+.form-login-remember{
+	text-align: left;
+	width: 70%;
+	display: block;
+}
+
+.form-login-lblRemember{
+	color: #888;
+	font-size: 1.2em;
+	font-weight: normal;
+	padding: 5px;
+	margin-bottom: 50px;
+	display: inline-block;
+}
+
+.form-login-chkRemember{
+	display: inline-block;
+	transform: scale(1.3);
+}
+
+.form-button-login{
+	color: #fff;
+	font-weight: bold;
+	padding: 15px 70px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	font-size: 2em;
+}
+
+.form-login-forgot{
+	width: 100%;
+	padding: 15px;
+	
+	color: #888;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.form-login-forgot:hover{color: rgb(52,221,221);}

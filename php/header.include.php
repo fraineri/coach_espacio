@@ -11,8 +11,8 @@
 			];
 
 			$pagesLog = [
-				'sign-in-up.php' => 'Iniciar sesión',
-				'sign-up.php' => 'Registrarse',
+				'login.php' => 'Iniciar sesión',
+				'register.php' => 'Registrarse',
 			];
 		?>
 		
