@@ -27,7 +27,7 @@
 
 		<?php
 			$activePage = 'index.php'; 
-			$userLogin = null;
+			$userLogin = 'Lucia';
 				/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
 				*/
 			include('php/header.include.php');
