@@ -43,7 +43,7 @@
 						</div>
 					</a>
 					<ul class ="options">
-						<li><a href="#">Editar perfil</a></li>
+						<li><a href="user-profile.php">Editar perfil</a></li>
 						<li><a href="#">Cerrar sesión</a></li>
 					</ul>
 				</li>
