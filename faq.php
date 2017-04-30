@@ -13,9 +13,25 @@
 </head>
 <body>
 	<!--menu horizontal-->
+	<div class ="banner-main">
+		<div class ="faq-banner">	
+			<div class = "banner-title">
+				<h2 class ="faq-title"> Preguntas </h2>
+				<br><h2 class ="faq-title title-right"> Frecuentes </h2>
+			</div>
+
+			<div class ="banner-info">
+				<p class ="banner-text">¿Te quedaron dudas sin responder? <a class ="banner-text-ref"href="contact.php">Envianos un mail!</a></p>
+			</div>
+		</div>
+	</div>
+	<div class ="banner-1-div">
+		
+	</div>
+
 	<?php
 		$activePage = 'faq.php'; 
-		$userLogin = 'd';
+		$userLogin = null;
 			/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
 			*/
 		include('php/header.include.php');
@@ -23,9 +39,6 @@
 
 	<!--6 preguntas en un container-->		
 	<div class="container-faq">
-			<div class ="page-title">
-				<h1>Preguntas Frecuentes</h1>
-			</div>
 			<div class="cont-preguntas">
 			<div class="cont-preguntas-left">
 				<div class="pregunta p1">

@@ -2,16 +2,78 @@
 
 /*----PREGUNTAS----*/
 
-.title{
-	margin-bottom: 30px;
+.banner-main{
+	height: 50vh;
+	width: 100%;
 }
 
+.faq-banner{
+	height: 100%;
+	padding-top:90px;
+	background-color: rgba(112,202,228,1);
+	/*background-image: url("../images/backgrounds/faq-banner-2.png")*/
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.banner-title{
+	width: 100%;
+	position: absolute;
+	display: inline-block;
+	top:50%;
+	left:10%;
+	font-size: 2.2em;
+	color:white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.faq-title{
+	display: inline;
+	background-color: #333;
+	padding: 0 15px;
+}
+
+.title-right{
+	position: relative;
+	left:5%;
+}
+
+.banner-info{
+	display: inline-block;
+	position: absolute;
+	top:55%;
+	right: 10%;
+}
+
+.banner-text{
+	text-align: center;
+	font-size: 1.25em;
+}
+
+.banner-text-ref{
+	font-weight: bold;
+	color:#333;
+}
+
+.banner-text-ref:hover{
+	text-decoration: underline;
+}
+
+.banner-1-div{
+	background-image: url("../images/backgrounds/faq-banner-1.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 200px;
+}
 
 .container-faq{
 	display: block;
 	width: 100%;
 	margin: auto;
-	padding-top: 60px;
 	text-align: center;
 }
 
