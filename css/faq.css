@@ -2,6 +2,11 @@
 
 /*----PREGUNTAS----*/
 
+.title{
+	margin-bottom: 30px;
+}
+
+
 .container-faq{
 	display: block;
 	width: 100%;
@@ -10,34 +15,82 @@
 	text-align: center;
 }
 
+.cont-preguntas{
+	position: relative;
+	width: 90%;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.cont-preguntas-left{
+	width: 50%;	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+.cont-preguntas-right{
+	width: 50%;	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.pregunta{
+	background-color: #f9f9f9;
+	border: 2px solid #aaa;
+	border-radius: 15px;
+	width: 90%;
+	display: inline-block;
+	margin-top: 30px;
+	max-height: 95px;
+	overflow: hidden;
+}
+
+.pregunta > h2{
+	height: 80px;
+	vertical-align: 80px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	padding-top: 10px;
+	margin-bottom: 15px;
+	font-size: 1.4em;
+}
+
 .pregunta > p{
 	display: none;
 	width: 60%;
 	margin: auto;
+	font-size: 1.1em;
+	padding: 5px;
 }
 
-.pregunta:hover *{
-	padding: 15px;
+.pregunta:hover{
+	position: relative;
+	max-height: 800px;
+	transition: max-height 2s;
+}
+
+.pregunta:hover p{
 	display: block;
+
 }
 
-.p1,.p2,.p3,.p4,.p5,.p6{
-	background-color: rgba(255,255,255,.5);
+
+.p1 > h2{background-color: rgb(34,198,228,.5);}
+.p2 > h2{background-color: rgb(232,21,96,.5);}
+.p3 > h2{background-color: rgb(22,191,13,.5);}
+.p4 > h2{background-color: rgb(253,185,6,.5);}
+.p5 > h2{background-color: rgb(245,143,41,.5);}
+.p6 > h2{background-color: rgba(144, 120, 255, 0.5);}
+
+.fixer{
+	display: block;
+	visibility: hidden;
+	height: 10px;
 }
-
-.p1{color: rgb(142, 166, 4,1);/*font-size: 1.4em;*/}
-.p2{color: rgb(245, 187, 0,1);/*font-size: 1.4em;*/}
-.p3{color: rgb(236, 159, 5,1);/*font-size: 1.4em;*/}
-.p4{color: rgb(215, 106, 3,1);/*font-size: 1.4em;*/}
-.p5{color: rgb(228, 87, 46,1);/*font-size: 1.4em;*/}
-.p6{color: rgb(191, 49, 0,1);/*font-size: 1.4em;*/}
-
-.p1:hover{background-color: rgba(142, 166, 4,.5); color: #444;}
-.p2:hover{background-color: rgba(245, 187, 0,.5); color: #444;}
-.p3:hover{background-color: rgba(236, 159, 5,.5); color: #444;}
-.p4:hover{background-color: rgba(215, 106, 3,.5); color: #444;}
-.p5:hover{background-color: rgba(228, 87, 46,.5); color: #444;}
-.p6:hover{background-color: rgba(191, 49, 0,.5); color: #444;}
 
 @media screen and (max-width: 760px){
 	.container-faq{
