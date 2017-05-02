@@ -11,8 +11,10 @@ if(count($errores)){
 	exit();
 }
 
-saveUser($path);
 $path= dirname(__FILE__).'/../images/';
-saveImage($avatar,$path);/*$_POST['avatar']*/
-
+saveUser($path);
+if(isset($_POST['avatar'])){
+	saveImage($_POST['avatar'],$path);	
+}
+echo '<h1>'.'Bienvenido'.'</h1>';
 ?>

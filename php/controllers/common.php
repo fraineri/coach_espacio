@@ -39,7 +39,7 @@
      function saveUser($path){
         $usuarios= getUsers();
         $new = [
-            'nombre' => $_POST['name'],
+            'nombre' => $_POST['nombre'],
             'apellido' => $_POST['apellido'],
             'email' => $_POST ['email'],
             'usuario'=> $_POST['usuario'],
@@ -53,7 +53,7 @@
 devuelve un array de errores pero despues no lo usamos, no creo q sea un campo obligatorio*/
     function saveImage($upload,$path){
         $errores = [];
-        if ($_FILES[$upload]["error"] == UPLOAD_ERR_OK) {
+        if ($_FILES[$upload]['error'] == UPLOAD_ERR_OK) {
             $nombre = $_FILES[$upload]['name'];
             $archivo = $_FILES[$upload]['tmp_name'];
             $ext = pathinfo($nombre,PATHINFO_EXTENSION);
