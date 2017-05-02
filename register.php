@@ -30,7 +30,7 @@
 					<h1 class="form-register-title">REGISTRATE</h1>
 					<div class="form-register-icon" ><i class="fa fa-pencil fa-5x" aria-hidden="true"></i></div>
 				</div>
-				<form class="form-register-inputs">
+				<form class="form-register-inputs" action="php/register.controller.php" method="post" enctype="multipart/form-data">
 					<input class="form-register-txtNombre" type="text" name="nombre" placeholder="Nombre" required>
 				
 					<input class="form-register-txtApellido" type="text" name="apellido" placeholder="Apellido" required>		
@@ -39,9 +39,12 @@
 
 					<input class="form-register-txtUsuario" type="text" name="usuario" placeholder="Usuario" required>
 					
-					<input class="form-register-txtPass" type="password" name="contrasenia" placeholder="Contraseña" required>
+					<input class="form-register-txtPass" type="password" name="password" placeholder="Contraseña" required>
 
-					<input class="form-register-txtRePass" type="password" name="recontrasenia" placeholder="Repita su contraseña" required>
+					<input class="form-register-txtRePass" type="password" name="password2" placeholder="Repita su contraseña" required>
+
+					<label for="avatar" class="form-register-label-foto">Foto de perfil</label>
+					<input class="form-register-foto" type="file" name="avatar">
 
 					<button class="form-button-register standard-button button-white" type="submit">REGISTRAR</button>
 				</form>
