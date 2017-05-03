@@ -17,10 +17,12 @@
 </head>
 <body>
 	<?php
-		$activePage = 'sign-in-up.php'; 
-		$userLogin = 'd';
-			/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
-			*/
+		session_start();
+		$activePage = 'login.php'; 
+		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
+		if ($userLogin) {
+			header('location: index.php');
+		}
 		include('php/header.include.php');
 	?>
 	<div class="form-container">

@@ -10,10 +10,9 @@
 </head>
 <body>
 	<?php
+		session_start();
 		$activePage = 'productos.php'; 
-		$userLogin = 'd';
-			/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
-			*/
+		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
 		include('php/header.include.php');
 	?>
 		

@@ -19,28 +19,48 @@
 	</head>
 	<body>
 		<?php
-			$activePage = 'index.php'; 
-			$userLogin = 'Lucia';
-				/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
-				*/
+			session_start();
+			$activePage = 'user-profile.php'; 
+			$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
+			if (!$userLogin) {
+				header('location: index.php');
+			}
 			include('php/header.include.php');
 		?>
+
+		<?php  
+			$usuario = isset($_SESSION['usuario']) ? $_SESSION['usuario']:"";
+			$email = isset($_SESSION['email']) ? $_SESSION['email']:"";
+			$nombre = isset($_SESSION['nombre']) ? $_SESSION['nombre']:"";
+			$apellido = isset($_SESSION['apellido']) ? $_SESSION['apellido']:"";
+		?>
+
 		<h2 class ="page-title">Información de perfil</h2>
 
 		<div class = "form-profile-container">
-			<h1 class="form-profile-title">USERNAME</h1>
-			<form class="form-profile-inputs">
-				<label for ="usuario">Usuario</label>
-				<input class="form-profile-txtUsuario" type="text" name="usuario">
+			<h1 class="form-profile-title"><?php echo $nombre.' '.$apellido ?></h1>
+			<form class="form-profile-inputs" method="POST" action="php/controllers/user-profile.controllers.php" enctype="multipart/form-data">
+				<label>Usuario</label>
+				<p class="form-profile-txtUsuario"> <?php echo $usuario ?> </p>
 
 				<label for ="email">Mail</label>
-				<input class="form-profile-txtEmail" type="email" name="email">
+				<input class="form-profile-txtEmail" type="email" name="email" value ="<?php echo $email ?>">
 
 				<label for ="nombre">Nombre</label>
-				<input class="form-profile-txtNombre" type="text" name="nombre">
+				<input class="form-profile-txtNombre" type="text" name="nombre" value ="<?php echo $nombre ?>">
 			
 				<label for ="apellido">Apellido</label>
-				<input class="form-profile-txtApellido" type="text" name="apellido">		
+				<input class="form-profile-txtApellido" type="text" name="apellido" value="<?php echo $apellido ?>">		
+
+				<label for ="profile-picture">Foto de perfil</label>
+				<?php 
+					if ($_SESSION['picture'] != 'default.png') {
+						$name = $_SESSION['picture'];
+						echo "<img class = 'form-profile-picture' src='php/users/pictures/$name'>";
+					}
+				?>
+
+				<input type="file" name="avatar">
 
 				<a class ="standard-button button-red" href="#">Cambiar contraseña</a>
 

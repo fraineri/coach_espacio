@@ -15,6 +15,9 @@
 		<title>Coaching | Home</title>
 	</head>
 	<body>
+		<?php  
+			session_start();
+		?>
 		<!-- Home Header -->
 		<div class ="banner">
 			<div>
@@ -26,10 +29,8 @@
 		</div>
 
 		<?php
+			$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
 			$activePage = 'index.php'; 
-			$userLogin = 'Lucia';
-				/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
-				*/
 			include('php/header.include.php');
 		?>
 

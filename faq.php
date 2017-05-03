@@ -12,6 +12,9 @@
 
 </head>
 <body>
+	<?php  
+		session_start();
+	?>
 	<!--menu horizontal-->
 	<div class ="banner-main">
 		<div class ="faq-banner">	
@@ -31,9 +34,7 @@
 
 	<?php
 		$activePage = 'faq.php'; 
-		$userLogin = null;
-			/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
-			*/
+		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
 		include('php/header.include.php');
 	?>
 

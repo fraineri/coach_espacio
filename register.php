@@ -17,10 +17,12 @@
 </head>
 <body>
 	<?php
-		$activePage = 'sign-in-up.php'; 
-		$userLogin = null;
-			/*$userLogin = isset($_SESSION['username'])?$_SESSION['username']:null
-			*/
+		session_start();
+		$activePage = 'register.php'; 
+		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
+		if ($userLogin) {
+			header('location: index.php');
+		}
 		include('php/header.include.php');
 	?>
 	<div class="form-container">
@@ -30,7 +32,7 @@
 					<h1 class="form-register-title">REGISTRATE</h1>
 					<div class="form-register-icon" ><i class="fa fa-pencil fa-5x" aria-hidden="true"></i></div>
 				</div>
-				<form class="form-register-inputs" action="php/register.controller.php" method="post" enctype="multipart/form-data">
+				<form class="form-register-inputs" action="php/controllers/register.controller.php" method="post" enctype="multipart/form-data">
 					<input class="form-register-txtNombre" type="text" name="nombre" placeholder="Nombre" required>
 				
 					<input class="form-register-txtApellido" type="text" name="apellido" placeholder="Apellido" required>		

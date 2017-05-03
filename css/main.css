@@ -94,16 +94,32 @@ ol,ul{
 	width: 180px;
 }
 
-.menu-log-user-image{
+.menu-log-user{
 	display: inline-block;
+}
+
+.menu-log-user-image{
+	height: 40px;
+	width: 40px;
+	display: block;
 	border-radius:50px; 
 	color: chocolate;
 }
 
-.menu-log-username{
-	display: inline-block;
-	width:60%;
-	margin-left: 20px;
+.menu-log-name{
+	display: block;
+	margin-left: 5px;
+	text-align: left;
+	width: 100px;
+}
+
+.desplegable-user.desplegable-user{
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 74.8px;
+	width: 100%;
 }
 
 .options{
