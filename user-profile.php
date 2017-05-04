@@ -59,10 +59,22 @@
 						echo "<img class = 'form-profile-picture' src='php/users/pictures/$name'>";
 					}
 				?>
-
 				<input type="file" name="avatar">
 
-				<a class ="standard-button button-red" href="#">Cambiar contraseña</a>
+				<div class ="change-psw">
+					<label for ="change-psw">Contraseña</label>	
+					<button class="standard-button button-red" type="button" name="but-change-psw">Cambiar contraseña</button>
+				</div>
+
+				<label for ="actPsw">Ingrese su contraseña actual</label>
+				<input class="form-profile-txtPass" type="password" name="actPsw">	
+
+				<label for ="actPsw">Ingrese su nueva contraseña</label>
+				<input class="form-profile-txtPass" type="password" name="newPsw">	
+
+				<label for ="actPsw">Reingrese la contraseña nueva</label>
+				<input class="form-profile-txtPass" type="password" name="reNewPsw">	
+				
 
 				<button class="form-profile-send standard-button button-cyan" type="submit">ACTUALIZAR DATOS</button>
 

@@ -84,9 +84,9 @@
 .form-register-txtEmail,
 .form-register-txtUsuario,
 .form-register-txtPass,
-.form-register-txtRePass{
+.form-register-txtRePass,
+.form-register-label-foto{
 	background-color: rgb(85,221,221);
-	color: #333;
 	border: none;
 	border-bottom: 1px solid #888;
 	width: 70%;
@@ -94,6 +94,17 @@
 	font-weight: normal;
 	padding: 5px;
 	margin-bottom: 50px;
+}
+
+.form-register-label-foto{
+	opacity: .85;
+	border:none;
+	margin-bottom: 0px;
+}
+
+.form-register-foto{
+	width: 70%;
+	padding: 5px;
 }
 
 .form-register-remember{
@@ -135,6 +146,6 @@
 }
 
 .form-register-forgot:hover{color: #fff;}
-}
+
 
 

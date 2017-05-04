@@ -91,7 +91,8 @@
         $currUser = false;
         $i = 0;
         echo "<pre>";
-        
+        var_dump($_POST);
+
         foreach ($users as $user => $values) {
             if ($values['usuario'] === $_SESSION['usuario']) {
                 if ($_POST['nombre']) {
@@ -109,15 +110,26 @@
                     $_SESSION['email'] = $users[$user]['email'];
                 }
 
+                var_dump($values);
+                if ($_POST['actPsw']) {
+                    if(password_verify($_POST['actPsw'], $values['password']) ){
+                        if (($_POST['newPsw'] && $_POST['reNewPsw']) && ($_POST['newPsw'] === $_POST['reNewPsw'])) {
+                            $users[$user]['password'] = password_hash($_POST['newPsw'], PASSWORD_DEFAULT);
+                        }
+                    } else{
+                        echo "Las contraseñas no coinciden";
+                    }
+                }
+
                 if ($_FILES['avatar']['name']) {
                     $pictureName= $_SESSION['usuario'].'.'.pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
                     
                     if(!saveImage('avatar', $path."\pictures/", $_SESSION['usuario'])){
-                        echo"aca";
                         $users[$user]['picture'] = $pictureName;
                         $_SESSION['picture'] = $pictureName;
                     }
                 }
+
             }      
         }
         file_put_contents($path.'\usuarios.json', json_encode($users));
