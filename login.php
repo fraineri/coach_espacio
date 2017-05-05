@@ -18,6 +18,9 @@
 <body>
 	<?php
 		session_start();
+		if(!isset($_SESSION['errores'])){ 
+			$_SESSION['errores'] = '';
+		}
 		$activePage = 'login.php'; 
 		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
 		if ($userLogin) {
@@ -32,10 +35,13 @@
 				<h1 class="form-login-title">INGRESAR</h1>
 				<a class="form-login-icon" href="register.php"><i class="fa fa-user-o fa-5x" aria-hidden="true"></i></a>
 			</div>
-			<form class="form-login-inputs">
-				<input class="form-login-txtUsuario" type="text" id="ingreso" name="Ingreso" placeholder="Usuario" required>
-			
-				<input class="form-login-txtPass" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>		
+			<form action="php/controllers/login.controller.php" method="post" class="form-login-inputs">
+				<input class="form-login-txtUsuario" type="text" id="ingreso" name="Ingreso"  placeholder="Usuario"	value="" required>
+				<span> <?php echo $_SESSION['errores'];?>
+				</span>
+		
+				<input class="form-login-txtPass" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+
 				
 				<div class="form-login-remember">
 					<label class="form-login-lblRemember">Recordame!</label>
