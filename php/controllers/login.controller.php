@@ -26,7 +26,7 @@ include 'common.php';
 
 	$path= dirname(__FILE__).'\..\users';
 	if(!usernameExists($path)){
-		$_SESSION['errores'] = "El usuario y/o contraseña son incorrectos";
+		$_SESSION['errores'] = "El usuario es inexistente";
 		header('location: ../../login.php');
 	} else {
 		header('location: ../../index.php');
