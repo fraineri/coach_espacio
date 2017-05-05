@@ -137,7 +137,6 @@
 
 .pregunta:hover p{
 	display: block;
-
 }
 
 
@@ -154,7 +153,7 @@
 	height: 10px;
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 900px){
 	.container-faq{
 		padding-top: 0px;
 	}
@@ -163,60 +162,50 @@
 		font-size: 3.4vw;
 	}
 
-	.pregunta *{
-		padding: 15px;
-		display: block;
-	}
-	
-	.pregunta{
-		margin-bottom: 40px;
-	}
-
-	.pregunta > h2{
-		background-color: rgba(255,255,255,.5);
+	.cont-preguntas-left,
+	.cont-preguntas-right{
+		width: 100%;	
 	}
 
 	.pregunta > p{
 		display: block;
 	}
 
-	.p1{background-color: rgba(142, 166, 4,.5); color: #444;}
-	.p2{background-color: rgba(245, 187, 0,.5); color: #444;}
-	.p3{background-color: rgba(236, 159, 5,.5); color: #444;}
-	.p4{background-color: rgba(215, 106, 3,.5); color: #444;}
-	.p5{background-color: rgba(228, 87, 46,.5); color: #444;}
-	.p6{background-color: rgba(191, 49, 0,.5); color: #444;}
+	.p1 > h2{background-color: rgb(34,198,228,.5);}
+	.p2 > h2{background-color: rgb(232,21,96,.5);}
+	.p3 > h2{background-color: rgb(22,191,13,.5);}
+	.p4 > h2{background-color: rgb(253,185,6,.5);}
+	.p5 > h2{background-color: rgb(245,143,41,.5);}
+	.p6 > h2{background-color: rgba(144, 120, 255, 0.5);}
 }
 
-@media screen and (max-width: 480px){
-	.container-faq{
-		padding-top: 0px;
-	}
-	
-	.page-title{
-		font-size: 4vw;
-	}
-	
-	.pregunta *{
-		padding: 15px;
-		display: block;
-	}
+@media screen and (max-width: 580px){
 
+	.cont-preguntas{
+		width: 100%;
+	}
+	.cont-preguntas-left,
+	.cont-preguntas-right{
+		width: 100%;	
+	}
+	.pregunta{
+		border: none;
+		border-radius: 0;
+		width: 100%;
+		max-height: none;
+		margin-top: 0;
+	}
+	
 	.pregunta > h2{
-		background-color: rgba(255,255,255,.5);
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 	}
-
+	
 	.pregunta > p{
 		display: block;
-		width: 90%;
 	}
-
-	.p1{background-color: rgba(142, 166, 4,.5); color: #444;}
-	.p2{background-color: rgba(245, 187, 0,.5); color: #444;}
-	.p3{background-color: rgba(236, 159, 5,.5); color: #444;}
-	.p4{background-color: rgba(215, 106, 3,.5); color: #444;}
-	.p5{background-color: rgba(228, 87, 46,.5); color: #444;}
-	.p6{background-color: rgba(191, 49, 0,.5); color: #444;}
+	
+	
 }	
 
 
