@@ -11,15 +11,25 @@
 					
 					<div class="main-footer-data-social">
 						<ul class ="display-flex">
-							<li><a class ="social instagram" href="#"><i class = "fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+						<div>
+							<li class ="social"><a class ="social-cont instagram" href="#"><i class = "social-icon fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+						</div>
 
-							<li><a class ="social facebook" href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+						<div>
+							<li class ="social"><a class ="social-cont facebook" href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+						</div>
 
-							<li><a class ="social skype" href="#"><i class="fa fa-skype fa-2x" aria-hidden="true"></i></a></li>
+						<div>
+							<li class ="social"><a class ="social-cont skype" href="#"><i class="fa fa-skype fa-2x" aria-hidden="true"></i></a></li>
+						</div>
 
-							<li><a class ="social twitter" href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+						<div>
+							<li class ="social"><a class ="social-cont twitter" href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+						</div>
 
-							<li><a class ="social linkedin" href="#"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
+						<div>
+							<li class ="social"><a class ="social-cont linkedin" href="#"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
+						</div>
 						</ul>	
 					</div>
 					
