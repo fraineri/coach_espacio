@@ -25,14 +25,33 @@
 			if (!$userLogin) {
 				header('location: index.php');
 			}
-			include('php/header.include.php');
-		?>
-
-		<?php  
+//			include('php/header.include.php');
+		
 			$usuario = isset($_SESSION['usuario']) ? $_SESSION['usuario']:"";
 			$email = isset($_SESSION['email']) ? $_SESSION['email']:"";
 			$nombre = isset($_SESSION['nombre']) ? $_SESSION['nombre']:"";
 			$apellido = isset($_SESSION['apellido']) ? $_SESSION['apellido']:"";
+
+			if(isset($_SESSION['errores'])){
+			$errores['nombre'] 	  = isset($_SESSION['errores']['nombre'])?$_SESSION['errores']['nombre']:"";
+			$errores['apellido']  = isset($_SESSION['errores']['apellido'])?$_SESSION['errores']['apellido']:"";
+			$errores['email'] 	  = isset($_SESSION['errores']['email'])?$_SESSION['errores']['email']:"";
+			$errores['usuario']	  = isset($_SESSION['errores']['usuario'])?$_SESSION['errores']['usuario']:"";
+
+			$_SESSION['errores'] = [];
+
+
+		}else{
+			$errores = [];
+			$errores['nombre'] 		= "";
+			$errores['apellido'] 	= "";
+			$errores['email'] 		= "";
+			$errores['usuario'] 	= "";
+			$errores['password'] 	= "";
+			$errores['password2'] 	= "";
+
+		}
+
 		?>
 
 		<h2 class ="page-title">Información de perfil</h2>
@@ -44,12 +63,15 @@
 				<p class="form-profile-txtUsuario"> <?php echo $usuario ?> </p>
 
 				<label for ="email">Mail</label>
+				<label class="lbl-error"> <?php echo $errores['email'];?> </label>
 				<input class="form-profile-txtEmail" type="email" name="email" value ="<?php echo $email ?>">
 
 				<label for ="nombre">Nombre</label>
+				<label class="lbl-error"> <?php echo $errores['nombre'];?> </label>
 				<input class="form-profile-txtNombre" type="text" name="nombre" value ="<?php echo $nombre ?>">
 			
 				<label for ="apellido">Apellido</label>
+				<label class="lbl-error"> <?php echo $errores['apellido'];?> </label>
 				<input class="form-profile-txtApellido" type="text" name="apellido" value="<?php echo $apellido ?>">		
 
 				<label for ="profile-picture">Foto de perfil</label>
