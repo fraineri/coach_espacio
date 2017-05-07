@@ -1,34 +1,61 @@
 <?php 
     /*validar datos del registro de usuario*/
+    
     function validarDatos(){
         $errores=[];
-        $nombre= trim($_POST['nombre']);
-        if ($nombre=="") {
-            $errores[]="Faltó ingresa tu nombre";
+        if(isset($_POST['nombre'])){
+            $nombre = limpiarDato($_POST['nombre']);
+            if($nombre == ""){ $errores['nombre'] = "Falta nombre.";}
+            if(strlen($nombre) > 30){ $errores['nombre'] = "Nombre mayor a 30 caracteres.";}    
+            if(!ctype_alpha($nombre)){ $errores['nombre'] = "Nombre invalido.";}
         }
-        $apellido= trim($_POST['apellido']);
-        if ($apellido=="") {
-            $errores[]="Faltó ingresa tu apellido";
+        if(isset($_POST['apellido'])){
+            $apellido = limpiarDato($_POST['apellido']);
+            if($apellido == ""){ $errores['apellido'] = "Falta apellido.";}
+            if(strlen($apellido) > 40){ $errores['apellido'] = "Apellido mayor a 30 caracteres.";}
+            if(!ctype_alpha($apellido)){ $errores['apellido'] = "Apellido invalido.";}
         }
-        $email= trim($_POST['email']);
-        if ($email=="") {
-            $errores[]="Faltó ingresa tu direccion de email";
-        } elseif (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
-            $errores="El email no es válido";
+        if(isset($_POST['email'])){
+            $email = limpiarDato($_POST['email']);
+            if($email == ""){ $errores['email'] = "Falta email.";}
+            if(strlen($email) > 30){ $errores['email'] = "Email mayor a 30 caracteres.";}
+            if(!filter_var($email,FILTER_VALIDATE_EMAIL)){ $errores['email'] = "Email invalido";}
         }
-        $usuario= trim($_POST['usuario']);
-        if ($usuario=="") {
-            $errores[]="Faltó ingresa un Usuario";
+        if(isset($_POST['usuario'])){
+            $usuario = limpiarDato($_POST['usuario']);
+            if($usuario == ""){ $errores['usuario'] = "Falta usuario.";}
+            if(strlen($usuario) > 20){ $errores['usuario'] = "Usuario mayor a 20 caracteres.";}
         }
-        if($_POST['password']!=$_POST['password2']) {
-            $errores[]= "Las contraseñas no coinciden";
+        if(isset($_POST['password'])){
+            $password = $_POST['password'];
+            if($password == ""){ $errores['password'] = "Falta contraseña.";}
+            if(strlen($password) > 30){ $errores['password'] = "contraseña mayor a 30 caracteres.";}
+        }
+        if(isset($_POST['password2'])){
+            $password2 = $_POST['password2'];
+            if($password2 == ""){ $errores['password2'] = "Falta repetir contraseña.";}
+            if($password2 != $_POST['password']){ $errores['password2'] = "Contraseñas distntas.";}
         }
         return $errores;
     }
-    
+
+    /* Limpio el dato para la validacion */
+    function limpiarDato($dato){
+        //Quito espacios.
+        $dato = trim($dato);
+        //Quito contrabarra.
+        $dato = stripslashes($dato);
+        //Caracteres especiales a codigo html.
+        $dato = htmlspecialchars($dato);
+
+        //Retorno el dato limpio.
+        return $dato;
+    }
+
+
     /*pasar el json a formato array*/
 	function getUsers($path){
-        $usuarios = @file_get_contents($path.'\usuarios.json');
+        $usuarios = @file_get_contents($path.'/usuarios.json');
         if (!$usuarios) {
             $usuarios = [];
         }else{
@@ -51,7 +78,7 @@
         ];
         $usuarios[] = $new;
 
-        file_put_contents($path.'\usuarios.json', json_encode($usuarios));
+        file_put_contents($path.'/usuarios.json', json_encode($usuarios));
     }
 
     /*guarda la foto del avatar, 
@@ -124,7 +151,7 @@
                 if ($_FILES['avatar']['name']) {
                     $pictureName= $_SESSION['usuario'].'.'.pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
                     
-                    if(!saveImage('avatar', $path."\pictures/", $_SESSION['usuario'])){
+                    if(!saveImage('avatar', $path."/pictures/", $_SESSION['usuario'])){
                         $users[$user]['picture'] = $pictureName;
                         $_SESSION['picture'] = $pictureName;
                     }
@@ -132,8 +159,7 @@
 
             }      
         }
-        file_put_contents($path.'\usuarios.json', json_encode($users));
-        header('location: ../../user-profile.php');
-        exit;
+        file_put_contents($path.'/usuarios.json', json_encode($users));
+        
     }
 ?>
