@@ -4,7 +4,7 @@
 			$pagesNav= [
 				'index.php' => 'Home',
 				'index.php#knowus' => 'Quiénes somos',
-				'productos.php' => 'Productos',
+				/*'productos.php' => 'Productos',*/
 				/*'curses.php' => 'Cursos',*/
 				'contact.php' => 'Contactame',
 				'faq.php' => 'FAQ'
