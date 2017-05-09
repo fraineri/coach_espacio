@@ -37,7 +37,7 @@
 			</div>
 			<form action="php/controllers/login.controller.php" method="post" class="form-login-inputs">
 				<input class="form-login-txtUsuario" type="text" id="ingreso" name="Ingreso"  placeholder="Usuario"	value="" required>
-				<span> <?php echo $_SESSION['errores'];?>
+				<span> <?php echo $_SESSION['errores']['usuario'];?>
 				</span>
 		
 				<input class="form-login-txtPass" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
@@ -50,7 +50,7 @@
 
 				<button class="form-button-login standard-button button-cyan" type="submit">ENTRAR</button>
 			</form>
-			<a class="form-login-forgot" href="">Olvidaste tu contraseña?</a>
+			<a class="form-login-forgot" href="recuperar-contrasenia.php">Olvidaste tu contraseña?</a>
 						
 			</div>
 		</div>
