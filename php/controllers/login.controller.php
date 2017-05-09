@@ -25,12 +25,16 @@ include 'common.php';
 
 
 	$path= dirname(__FILE__).'\..\users';
-	if(!usernameExists($path)){
+	$user= usernameExists($path);
+	var_dump($user);
+	exit();
+	if($user== false){
 		$_SESSION['errores'] = "El usuario es inexistente";
 		header('location: ../../login.php');
-	} else {
-		header('location: ../../index.php');
-	}
+	} 
+	exit();
+	//var_dump($user);
+	//if(password_verify($_POST['password'],$user))
 
 
 	/*var_dump($errores);*/
