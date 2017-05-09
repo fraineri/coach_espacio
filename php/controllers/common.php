@@ -143,16 +143,18 @@
                         if (($_POST['newPsw'] && $_POST['reNewPsw']) && ($_POST['newPsw'] === $_POST['reNewPsw'])) {
                             $users[$user]['password'] = password_hash($_POST['newPsw'], PASSWORD_DEFAULT);
                         }else{
-                            $errores['newPsw'] = "Pass no coinciden";
+                            $errores['newPsw'] = "Las contraseñas no coinciden";
                             $_SESSION['errores']  = $errores;
-                             
+                            header('Location: ../../user-profile.php');
+                    		exit();   
                         }
                     } else{
-                        $errores['actPsw'] = "Pass actual error";
+                        $errores['actPsw'] = "La contraseña es incorrecta";
+                        echo"Actual incorrecta <br>";
                         $_SESSION['errores']  = $errores;
+                        header('Location: ../../user-profile.php');
+                    	exit();   
                     }
-                    header('Location: ../../user-profile.php');
-                    exit();   
                 }
 
                 if ($_FILES['avatar']['name']) {
@@ -167,5 +169,6 @@
             }      
         }
         file_put_contents($path.'/usuarios.json', json_encode($users));
+
     }
 ?>
