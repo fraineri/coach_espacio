@@ -37,10 +37,10 @@
 			$regDatos['email'] 	   = isset($_SESSION['regDatos']['email'])?$_SESSION['regDatos']['email']:"";
 			$regDatos['usuario']   = isset($_SESSION['regDatos']['usuario'])?$_SESSION['regDatos']['usuario']:"";
 
-
 			session_destroy();
 
 		}else{
+
 			$errores = [];
 			$errores['nombre'] 		= "";
 			$errores['apellido'] 	= "";
@@ -84,8 +84,8 @@
 					<input class="form-register-txtRePass" type="password" name="password2" placeholder="Repita su contraseña" required>
 					<span class="lbl-error"> <?php echo $errores['password2'];?> </span>
 
-					<input class="form-register-foto" type="file" name="avatar">
 					<label for="avatar" class="form-register-label-foto">Foto de perfil</label>
+					<input class="form-register-foto" type="file" name="avatar">
 
 					<button class="form-button-register standard-button button-white" type="submit">REGISTRAR</button>
 				</form>

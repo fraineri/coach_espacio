@@ -13,17 +13,18 @@
 }
 
 .contact-ppal-text{
-	font-family: monospace;
+	/*font-family: monospace;*/
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+
 	text-align: center;
+	letter-spacing: 7px;
+	font-size: 4.5em;
 	
 	background-color: rgba(255,255,255,.6);
 	color: black;
-
-	font-size: 5em;
 }
 
 .contact-ppal-description{

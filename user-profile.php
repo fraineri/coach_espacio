@@ -20,6 +20,12 @@
 	<body>
 		<?php
 			session_start();
+			if (isset($_SESSION['lastActivity']) && (time() - $_SESSION['lastActivity'] > 1800)) {
+			    session_unset();
+			    session_destroy();
+			}
+			$_SESSION['lastActivity'] = time();
+
 			$activePage = 'user-profile.php'; 
 			$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
 			if (!$userLogin) {
@@ -33,7 +39,6 @@
 			$apellido = isset($_SESSION['apellido']) ? $_SESSION['apellido']:"";
 
 			if(isset($_SESSION['errores'])){
-				var_dump($_SESSION['errores']);
 				$errores['nombre'] 	  = isset($_SESSION['errores']['nombre'])?$_SESSION['errores']['nombre']:"";
 				$errores['apellido']  = isset($_SESSION['errores']['apellido'])?$_SESSION['errores']['apellido']:"";
 				$errores['email'] 	  = isset($_SESSION['errores']['email'])?$_SESSION['errores']['email']:"";
@@ -41,8 +46,7 @@
 
 				$errores['actPsw']	  = isset($_SESSION['errores']['actPsw'])?$_SESSION['errores']['actPsw']:"";
 				$errores['newPsw']	  = isset($_SESSION['errores']['newPsw'])?$_SESSION['errores']['newPsw']:"";
-				var_dump($_SESSION['errores']);
-				
+			
 				$_SESSION['errores'] = [];
 			}else{
 				$errores = [];
@@ -52,7 +56,6 @@
 				$errores['usuario'] 	= "";
 				$errores['actPsw'] 		= "";
 				$errores['newPsw'] 		= "";
-				echo "<h1>EKJAHDKJSAHDK</h1>";
 			}
 
 		?>

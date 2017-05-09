@@ -12,9 +12,13 @@
 <body>
 		<?php
 			session_start();
-			$activePage = 'contact.php'; 
-			$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
-			include('php/header.include.php');
+			if (isset($_SESSION['lastActivity']) && (time() - $_SESSION['lastActivity'] > 1800)) {
+			    session_unset();
+			    session_destroy();
+			}
+			$_SESSION['lastActivity'] = time();
+
+			
 		?>
 
 		<div class ="contact-ppal">
@@ -27,6 +31,12 @@
 				<p>Completá el siguiente formulario para enviarnos un mail!</p>
 			</div>
 		</div>
+		
+		<?php 
+			$activePage = 'contact.php'; 
+			$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
+			include('php/header.include.php');
+		?>
 
 		<div class ="form-container">
 			<div class="form-contact-container">

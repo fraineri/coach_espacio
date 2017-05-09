@@ -169,6 +169,5 @@
             }      
         }
         file_put_contents($path.'/usuarios.json', json_encode($users));
-
     }
 ?>

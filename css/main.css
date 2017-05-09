@@ -110,6 +110,7 @@ ol,ul{
 	display: block;
 	margin-left: 5px;
 	text-align: left;
+	text-transform: uppercase;
 	width: 100px;
 }
 

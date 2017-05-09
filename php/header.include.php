@@ -34,14 +34,14 @@
 				<?php endforeach; ?>
 			<?php } else { ?>
 				<li class = "desplegable">
-					<a class ="desplegable-user" href="">
+					<div class ="desplegable-user" >
 						<div class ="menu-log-user">
 							<img class = 'menu-log-user-image' src="php/users/pictures/<?php echo$_SESSION['picture'] ?>">
 						</div>
 						<div class = 'menu-log-name'>
 							<p><?php echo $userLogin; ?></p>
 						</div>
-					</a>
+					</div>
 					<ul class ="options">
 						<li><a href="user-profile.php">Editar perfil</a></li>
 						<li><a href="php/logOut.php">Cerrar sesión</a></li>

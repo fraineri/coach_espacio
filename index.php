@@ -17,6 +17,13 @@
 	<body>
 		<?php  
 			session_start();
+
+			if (isset($_SESSION['lastActivity']) && (time() - $_SESSION['lastActivity'] > 1800)) {
+			    session_unset();
+			    session_destroy();
+			}
+			$_SESSION['lastActivity'] = time();
+			
 		?>
 		<!-- Home Header -->
 		<div class ="banner">
