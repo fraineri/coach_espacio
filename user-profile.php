@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/user-profile.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<link rel="stylesheet" type="text/css" href="css/register.css">
+
 
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:481px) and (max-width:750px)" href="css/sign-in-up-750.css">
 		<link rel="stylesheet" type="text/css" media="only screen and (max-width:480px)" href="css/sign-in-up-480.css">
@@ -33,24 +33,27 @@
 			$apellido = isset($_SESSION['apellido']) ? $_SESSION['apellido']:"";
 
 			if(isset($_SESSION['errores'])){
-			$errores['nombre'] 	  = isset($_SESSION['errores']['nombre'])?$_SESSION['errores']['nombre']:"";
-			$errores['apellido']  = isset($_SESSION['errores']['apellido'])?$_SESSION['errores']['apellido']:"";
-			$errores['email'] 	  = isset($_SESSION['errores']['email'])?$_SESSION['errores']['email']:"";
-			$errores['usuario']	  = isset($_SESSION['errores']['usuario'])?$_SESSION['errores']['usuario']:"";
+				var_dump($_SESSION['errores']);
+				$errores['nombre'] 	  = isset($_SESSION['errores']['nombre'])?$_SESSION['errores']['nombre']:"";
+				$errores['apellido']  = isset($_SESSION['errores']['apellido'])?$_SESSION['errores']['apellido']:"";
+				$errores['email'] 	  = isset($_SESSION['errores']['email'])?$_SESSION['errores']['email']:"";
+				$errores['usuario']	  = isset($_SESSION['errores']['usuario'])?$_SESSION['errores']['usuario']:"";
 
-			$_SESSION['errores'] = [];
-
-
-		}else{
-			$errores = [];
-			$errores['nombre'] 		= "";
-			$errores['apellido'] 	= "";
-			$errores['email'] 		= "";
-			$errores['usuario'] 	= "";
-			$errores['password'] 	= "";
-			$errores['password2'] 	= "";
-
-		}
+				$errores['actPsw']	  = isset($_SESSION['errores']['actPsw'])?$_SESSION['errores']['actPsw']:"";
+				$errores['newPsw']	  = isset($_SESSION['errores']['newPsw'])?$_SESSION['errores']['newPsw']:"";
+				var_dump($_SESSION['errores']);
+				
+				$_SESSION['errores'] = [];
+			}else{
+				$errores = [];
+				$errores['nombre'] 		= "";
+				$errores['apellido'] 	= "";
+				$errores['email'] 		= "";
+				$errores['usuario'] 	= "";
+				$errores['actPsw'] 		= "";
+				$errores['newPsw'] 		= "";
+				echo "<h1>EKJAHDKJSAHDK</h1>";
+			}
 
 		?>
 
@@ -63,16 +66,16 @@
 				<p class="form-profile-txtUsuario"> <?php echo $usuario ?> </p>
 
 				<label for ="email">Mail</label>
-				<label class="lbl-error"> <?php echo $errores['email'];?> </label>
 				<input class="form-profile-txtEmail" type="email" name="email" value ="<?php echo $email ?>">
+				<span class="lbl-error"> <?php echo $errores['email'];?> </span>
 
 				<label for ="nombre">Nombre</label>
-				<label class="lbl-error"> <?php echo $errores['nombre'];?> </label>
 				<input class="form-profile-txtNombre" type="text" name="nombre" value ="<?php echo $nombre ?>">
+				<span class="lbl-error"> <?php echo $errores['nombre'];?> </span>
 			
 				<label for ="apellido">Apellido</label>
-				<label class="lbl-error"> <?php echo $errores['apellido'];?> </label>
 				<input class="form-profile-txtApellido" type="text" name="apellido" value="<?php echo $apellido ?>">		
+				<span class="lbl-error"> <?php echo $errores['apellido'];?> </span>
 
 				<label for ="profile-picture">Foto de perfil</label>
 				<?php 
@@ -89,13 +92,15 @@
 				</div>
 
 				<label for ="actPsw">Ingrese su contraseña actual</label>
-				<input class="form-profile-txtPass" type="password" name="actPsw">	
+				<input class="form-profile-txtPass" type="password" name="actPsw">
+				<span class="lbl-error"> <?php echo $errores['actPsw'];?> </span>	
 
 				<label for ="actPsw">Ingrese su nueva contraseña</label>
-				<input class="form-profile-txtPass" type="password" name="newPsw">	
+				<input class="form-profile-txtPass" type="password" name="newPsw">
 
 				<label for ="actPsw">Reingrese la contraseña nueva</label>
-				<input class="form-profile-txtPass" type="password" name="reNewPsw">	
+				<input class="form-profile-txtPass" type="password" name="reNewPsw">
+				<span class="lbl-error"> <?php echo $errores['newPsw'];?> </span>	
 				
 
 				<button class="form-profile-send standard-button button-cyan" type="submit">ACTUALIZAR DATOS</button>

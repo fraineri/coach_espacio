@@ -36,6 +36,7 @@
             if($password2 == ""){ $errores['password2'] = "Falta repetir contraseña.";}
             if($password2 != $_POST['password']){ $errores['password2'] = "Contraseñas distntas.";}
         }
+
         return $errores;
     }
 
@@ -141,10 +142,17 @@
                     if(password_verify($_POST['actPsw'], $values['password']) ){
                         if (($_POST['newPsw'] && $_POST['reNewPsw']) && ($_POST['newPsw'] === $_POST['reNewPsw'])) {
                             $users[$user]['password'] = password_hash($_POST['newPsw'], PASSWORD_DEFAULT);
+                        }else{
+                            $errores['newPsw'] = "Pass no coinciden";
+                            $_SESSION['errores']  = $errores;
+                             
                         }
                     } else{
-                        echo "Las contraseñas no coinciden";
+                        $errores['actPsw'] = "Pass actual error";
+                        $_SESSION['errores']  = $errores;
                     }
+                    header('Location: ../../user-profile.php');
+                    exit();   
                 }
 
                 if ($_FILES['avatar']['name']) {
