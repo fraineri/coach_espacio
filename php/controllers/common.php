@@ -119,7 +119,6 @@
         $i = 0;
         echo "<pre>";
         var_dump($_POST);
-
         foreach ($users as $user => $values) {
             if ($values['usuario'] === $_SESSION['usuario']) {
                 if ($_POST['nombre']) {
@@ -160,6 +159,5 @@
             }      
         }
         file_put_contents($path.'/usuarios.json', json_encode($users));
-        
     }
 ?>

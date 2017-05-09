@@ -23,6 +23,39 @@
 		if ($userLogin) {
 			header('location: index.php');
 		}
+
+		if(isset($_SESSION['errores'])){
+			$errores['nombre'] 	  = isset($_SESSION['errores']['nombre'])?$_SESSION['errores']['nombre']:"";
+			$errores['apellido']  = isset($_SESSION['errores']['apellido'])?$_SESSION['errores']['apellido']:"";
+			$errores['email'] 	  = isset($_SESSION['errores']['email'])?$_SESSION['errores']['email']:"";
+			$errores['usuario']	  = isset($_SESSION['errores']['usuario'])?$_SESSION['errores']['usuario']:"";
+			$errores['password']  = isset($_SESSION['errores']['password'])?$_SESSION['errores']['password']:"";
+			$errores['password2'] = isset($_SESSION['errores']['password2'])?$_SESSION['errores']['password2']:"";
+
+			$regDatos['nombre']    = isset($_SESSION['regDatos']['nombre'])?$_SESSION['regDatos']['nombre']:"";
+			$regDatos['apellido']  = isset($_SESSION['regDatos']['apellido'])?$_SESSION['regDatos']['apellido']:"";
+			$regDatos['email'] 	   = isset($_SESSION['regDatos']['email'])?$_SESSION['regDatos']['email']:"";
+			$regDatos['usuario']   = isset($_SESSION['regDatos']['usuario'])?$_SESSION['regDatos']['usuario']:"";
+
+
+			session_destroy();
+
+		}else{
+			$errores = [];
+			$errores['nombre'] 		= "";
+			$errores['apellido'] 	= "";
+			$errores['email'] 		= "";
+			$errores['usuario'] 	= "";
+			$errores['password'] 	= "";
+			$errores['password2'] 	= "";
+
+			$regDatos['nombre'] 	= "";
+			$regDatos['apellido'] 	= "";
+			$regDatos['email'] 		= "";
+			$regDatos['usuario'] 	= "";
+
+
+		}
 		include('php/header.include.php');
 	?>
 	<div class="form-container">
@@ -33,20 +66,26 @@
 					<div class="form-register-icon" ><i class="fa fa-pencil fa-5x" aria-hidden="true"></i></div>
 				</div>
 				<form class="form-register-inputs" action="php/controllers/register.controller.php" method="post" enctype="multipart/form-data">
-					<input class="form-register-txtNombre" type="text" name="nombre" placeholder="Nombre" required>
-				
-					<input class="form-register-txtApellido" type="text" name="apellido" placeholder="Apellido" required>		
+					<input class="form-register-txtNombre" type="text" name="nombre" placeholder="Nombre" required value=<?php echo $regDatos['nombre'];?>>
+					<label class="lbl-error"> <?php echo $errores['nombre'];?> </label>
 
-					<input class="form-register-txtEmail" type="email" name="email" placeholder="tu@email" required>
+					<input required class="form-register-txtApellido" type="text" name="apellido" placeholder="Apellido" required value=<?php echo $regDatos['apellido'];?>>		
+					<label class="lbl-error"> <?php echo $errores['apellido'];?> </label>
 
-					<input class="form-register-txtUsuario" type="text" name="usuario" placeholder="Usuario" required>
+					<input class="form-register-txtEmail" type="email" name="email" placeholder="tu@email" required value=<?php echo $regDatos['email'];?>>
+					<label class="lbl-error"> <?php echo $errores['email'];?> </label>
+
+					<input class="form-register-txtUsuario" type="text" name="usuario" placeholder="Usuario" required value=<?php echo $regDatos['usuario']; ?>>
+					<label class="lbl-error"> <?php echo $errores['usuario'];?> </label>
 					
 					<input class="form-register-txtPass" type="password" name="password" placeholder="Contraseña" required>
+					<label class="lbl-error"> <?php echo $errores['password'];?> </label>
 
 					<input class="form-register-txtRePass" type="password" name="password2" placeholder="Repita su contraseña" required>
+					<label class="lbl-error"> <?php echo $errores['password2'];?> </label>
 
-					<label for="avatar" class="form-register-label-foto">Foto de perfil</label>
 					<input class="form-register-foto" type="file" name="avatar">
+					<label for="avatar" class="form-register-label-foto">Foto de perfil</label>
 
 					<button class="form-button-register standard-button button-white" type="submit">REGISTRAR</button>
 				</form>

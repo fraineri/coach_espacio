@@ -11,7 +11,6 @@
 	$errores = [];
 	$errores = validarDatos();
 
-	/*si hay errores de validacion, se redirige al register.php para pedirlos*/
 	if(count($errores)){
 		$_SESSION['errores']  = $errores;
 		
