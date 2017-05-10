@@ -18,8 +18,9 @@
 <body>
 	<?php
 		session_start();
-		if(!isset($_SESSION['errores'])){ 
-			$_SESSION['errores'] = '';
+		if(!isset($_SESSION['erroresUsuario']) || !isset($_SESSION['erroresPass'])){ 
+			$_SESSION['erroresUsuario'] = '';
+			$_SESSION['erroresPass'] = '';
 		}
 		$activePage = 'login.php'; 
 		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
@@ -36,12 +37,13 @@
 				<a class="form-login-icon" href="register.php"><i class="fa fa-user-o fa-5x" aria-hidden="true"></i></a>
 			</div>
 			<form action="php/controllers/login.controller.php" method="post" class="form-login-inputs">
-				<input class="form-login-txtUsuario" type="text" id="ingreso" name="Ingreso"  placeholder="Usuario"	value="" required>
-				<span> <?php echo $_SESSION['errores']['usuario'];?>
+				<input class="form-login-txtUsuario" type="text" id="ingreso" name="usuario"  placeholder="Usuario"	value="" required>
+				<span> <?php echo $_SESSION['erroresUsuario'];?>
 				</span>
 		
 				<input class="form-login-txtPass" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
-
+				<span> <?php echo $_SESSION['erroresPass'];?>
+				</span>
 				
 				<div class="form-login-remember">
 					<label class="form-login-lblRemember">Recordame!</label>
