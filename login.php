@@ -18,9 +18,12 @@
 <body>
 	<?php
 		session_start();
-		if(!isset($_SESSION['erroresUsuario']) || !isset($_SESSION['erroresPass'])){ 
+		if(!isset($_SESSION['erroresUsuario']) ){ 
 			$_SESSION['erroresUsuario'] = '';
+		}
+		if(!isset($_SESSION['erroresPass']) ){ 
 			$_SESSION['erroresPass'] = '';
+			
 		}
 		$activePage = 'login.php'; 
 		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
@@ -37,7 +40,7 @@
 				<a class="form-login-icon" href="register.php"><i class="fa fa-user-o fa-5x" aria-hidden="true"></i></a>
 			</div>
 			<form action="php/controllers/login.controller.php" method="post" class="form-login-inputs">
-				<input class="form-login-txtUsuario" type="text" id="ingreso" name="usuario"  placeholder="Usuario"	value="" required>
+				<input class="form-login-txtUsuario" type="text" id="ingreso" name="usuario"  placeholder="Usuario"	value="<?php if(isset($_SESSION['usuario'])){echo $_SESSION['usuario'];}?>" required>
 				<span> <?php echo $_SESSION['erroresUsuario'];?>
 				</span>
 		

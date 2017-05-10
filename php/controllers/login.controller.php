@@ -7,7 +7,7 @@ include 'common.php';
         $errores= '';
 
       
-        $usuario= trim($_POST['Ingreso']);
+        $usuario= trim($_POST['usuario']);
         if ($usuario=="") {
             $errores="Faltó ingresar un Usuario";
         }
@@ -17,7 +17,7 @@ include 'common.php';
 
 
     $errores= validarDatosLogin();
-    if(count($errores)){
+    if($errores){
 		$_SESSION['erroresUsuario']= $errores;
 		header('Location: ../../login.php');
 		exit();
@@ -31,9 +31,11 @@ include 'common.php';
 		$_SESSION['erroresUsuario'] = "El usuario es inexistente";
 		header('location: ../../login.php');
 	} 
-	exit();
+	//exit();
+
 	
 	if(password_verify($_POST['password'],$user)) {
+
 		
 		$_SESSION['usuario'] = $_POST['usuario'];
 		$_SESSION['nombre'] = $_POST['nombre'];
@@ -48,7 +50,13 @@ include 'common.php';
 		$_SESSION['usuario'] = $_POST['usuario'];
 		$_SESSION['erroresPass'] = "Contraseña incorrecta";
 		header('location: ../../login.php');
+	}
 	
-	/*var_dump($errores);*/
 
-	?>
+	
+
+
+
+
+
+?>
