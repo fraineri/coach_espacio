@@ -4,12 +4,12 @@ session_start();
 include 'common.php';
 
  	function validarDatosLogin(){
-        $errores=[];
+        $errores= '';
 
       
         $usuario= trim($_POST['Ingreso']);
         if ($usuario=="") {
-            $errores[]="Faltó ingresar un Usuario";
+            $errores="Faltó ingresar un Usuario";
         }
         
         return $errores;
@@ -18,25 +18,37 @@ include 'common.php';
 
     $errores= validarDatosLogin();
     if(count($errores)){
-		$_SESSION['errores']= $errores;
-		header('Location: ../login.php');
+		$_SESSION['erroresUsuario']= $errores;
+		header('Location: ../../login.php');
 		exit();
 	}
 
 
 	$path= dirname(__FILE__).'\..\users';
 	$user= usernameExists($path);
-	var_dump($user);
-	exit();
+	
 	if($user== false){
-		$_SESSION['errores'] = "El usuario es inexistente";
+		$_SESSION['erroresUsuario'] = "El usuario es inexistente";
 		header('location: ../../login.php');
 	} 
 	exit();
-	//var_dump($user);
-	//if(password_verify($_POST['password'],$user))
+	
+	if(password_verify($_POST['password'],$user)) {
+		
+		$_SESSION['usuario'] = $_POST['usuario'];
+		$_SESSION['nombre'] = $_POST['nombre'];
+		$_SESSION['apellido'] = $_POST['apellido'];
+		$_SESSION['email'] = $_POST['email'];
+		$_SESSION['picture'] = $pictureName;
+		
+		header('location: ../../index.php');
 
-
+	} else{
+		$usuario= $_POST['usuario'];
+		$_SESSION['usuario'] = $_POST['usuario'];
+		$_SESSION['erroresPass'] = "Contraseña incorrecta";
+		header('location: ../../login.php');
+	
 	/*var_dump($errores);*/
 
 	?>
