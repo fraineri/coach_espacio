@@ -26,6 +26,9 @@ include 'common.php';
 
 	$path= dirname(__FILE__).'\..\users';
 	$user= usernameExists($path);
+	/*var_dump($user['password']); echo "<br>";
+	var_dump($_POST['password']);
+	exit();*/
 	
 	if($user== false){
 		$_SESSION['erroresUsuario'] = "El usuario es inexistente";
@@ -34,7 +37,7 @@ include 'common.php';
 	//exit();
 
 	
-	if(password_verify($_POST['password'],$user)) {
+	if(password_verify($_POST['password'],$user['password'])) {
 
 		
 		$_SESSION['usuario'] = $_POST['usuario'];

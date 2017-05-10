@@ -25,6 +25,7 @@
 			$_SESSION['erroresPass'] = '';
 			
 		}
+		session_destroy();
 		$activePage = 'login.php'; 
 		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
 		if ($userLogin) {
@@ -44,7 +45,7 @@
 				<span> <?php echo $_SESSION['erroresUsuario'];?>
 				</span>
 		
-				<input class="form-login-txtPass" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+				<input class="form-login-txtPass" type="password" id="contraseña" name="password" placeholder="Contraseña" required>
 				<span> <?php echo $_SESSION['erroresPass'];?>
 				</span>
 				
