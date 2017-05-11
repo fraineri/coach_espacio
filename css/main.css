@@ -255,6 +255,16 @@ ol,ul{
 /********************************
 *			General uses    	*
 ********************************/
+.lbl-error{
+	width: 70%;
+	color: #ff2e2e;
+	opacity: .7;
+	text-align: left;
+	font-size: 1em;
+	margin-bottom: 40px;
+	margin-top: 10px;
+}
+
 .page-active{background-color: rgba(100,200,228,.8);}
 
 .mail-to{color:grey;}

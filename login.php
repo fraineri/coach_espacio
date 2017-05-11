@@ -42,11 +42,11 @@
 			</div>
 			<form action="php/controllers/login.controller.php" method="post" class="form-login-inputs">
 				<input class="form-login-txtUsuario" type="text" id="ingreso" name="usuario"  placeholder="Usuario"	value="<?php if(isset($_SESSION['usuario'])){echo $_SESSION['usuario'];}?>" required>
-				<span> <?php echo $_SESSION['erroresUsuario'];?>
+				<span class="lbl-error"> <?php echo $_SESSION['erroresUsuario'];?>
 				</span>
 		
 				<input class="form-login-txtPass" type="password" id="contraseña" name="password" placeholder="Contraseña" required>
-				<span> <?php echo $_SESSION['erroresPass'];?>
+				<span class="lbl-error"> <?php echo $_SESSION['erroresPass'];?>
 				</span>
 				
 				<div class="form-login-remember">
