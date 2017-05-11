@@ -40,11 +40,11 @@ include 'common.php';
 	if(password_verify($_POST['password'],$user['password'])) {
 
 		
-		$_SESSION['usuario'] = $_POST['usuario'];
-		$_SESSION['nombre'] = $_POST['nombre'];
-		$_SESSION['apellido'] = $_POST['apellido'];
-		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['picture'] = $pictureName;
+		$_SESSION['usuario'] = $user['usuario'];
+		$_SESSION['nombre'] = $user['nombre'];
+		$_SESSION['apellido'] = $user['apellido'];
+		$_SESSION['email'] = $user['email'];
+		$_SESSION['picture'] = $user['picture'];
 		
 		header('location: ../../index.php');
 
