@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,14 +19,35 @@
 <body>
 	<?php
 		session_start();
-		if(!isset($_SESSION['erroresUsuario']) ){ 
-			$_SESSION['erroresUsuario'] = '';
+		include 'php/controllers/common.php';
+		
+		$usuario= "";
+		$errorUsuario= "";
+		$errorPass="";
+		$valorPass= "";
+
+		//verificar si existe cookie RECORDAME 
+		if (isset($_COOKIE["usuario"]) && isset($_COOKIE["recordame"])) {
+			$usuario= $_SESSION['usuario'];
+			//armo un string de asteriscos q tenga el largo de la contraseña
+			$i= 1;
+			while ( $i<= $_COOKIE["recordame"]) {
+				$valorPass='valorPass'.'*';
+				$i++;
+			}
 		}
-		if(!isset($_SESSION['erroresPass']) ){ 
-			$_SESSION['erroresPass'] = '';
-			
+
+		//verificar usuario y contraseña 
+		if(isset($_SESSION['erroresUsuario'])){
+			$errorUsuario= $_SESSION['erroresUsuario'];
+			$usuario= "";
+		}
+		if(isset($_SESSION['erroresPass'])){
+			$errorPass= $_SESSION['erroresPass'];
+			$usuario= $_SESSION['usuario'];
 		}
 		session_destroy();
+
 		$activePage = 'login.php'; 
 		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
 		if ($userLogin) {
@@ -33,6 +55,7 @@
 		}
 		include('php/header.include.php');
 	?>
+
 	<div class="form-container">
 		<div class="form-login-container">
 			<div class="form-login-shadow"></div>
@@ -41,17 +64,17 @@
 				<a class="form-login-icon" href="register.php"><i class="fa fa-user-o fa-5x" aria-hidden="true"></i></a>
 			</div>
 			<form action="php/controllers/login.controller.php" method="post" class="form-login-inputs">
-				<input class="form-login-txtUsuario" type="text" id="ingreso" name="usuario"  placeholder="Usuario"	value="<?php if(isset($_SESSION['usuario'])){echo $_SESSION['usuario'];}?>" required>
-				<span class="lbl-error"> <?php echo $_SESSION['erroresUsuario'];?>
+				<input required class="form-login-txtUsuario" type="text" id="ingreso" name="usuario"  placeholder="Usuario"	value=<?php echo $usuario;?> >
+				<span class="lbl-error"> <?php echo $errorUsuario;?>
 				</span>
 		
-				<input class="form-login-txtPass" type="password" id="contraseña" name="password" placeholder="Contraseña" required>
-				<span class="lbl-error"> <?php echo $_SESSION['erroresPass'];?>
+				<input required class="form-login-txtPass" type="password" id="contraseña" name="password" placeholder="Contraseña" value=<?php echo $valorPass; ?>>
+				<span class="lbl-error"> <?php echo $errorPass;?>
 				</span>
 				
 				<div class="form-login-remember">
 					<label class="form-login-lblRemember">Recordame!</label>
-					<input class="form-login-chkRemember" type="checkbox" name="">
+					<input class="form-login-chkRemember" type="checkbox" name="recordame" value="si">
 				</div>
 
 				<button class="form-button-login standard-button button-cyan" type="submit">ENTRAR</button>
