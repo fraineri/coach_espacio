@@ -28,11 +28,11 @@
 
 		//verificar si existe cookie RECORDAME 
 		if (isset($_COOKIE["usuario"]) && isset($_COOKIE["recordame"])) {
-			$usuario= $_SESSION['usuario'];
+			$usuario= $_COOKIE["usuario"];
 			//armo un string de asteriscos q tenga el largo de la contraseña
 			$i= 1;
 			while ( $i<= $_COOKIE["recordame"]) {
-				$valorPass='valorPass'.'*';
+				$valorPass= $valorPass.'*';
 				$i++;
 			}
 		}

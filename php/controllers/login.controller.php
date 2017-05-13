@@ -51,9 +51,9 @@ include 'common.php';
 		if($_POST['recordame']=="si"){
 			//genero 2 cookies, una con el usuario y otra con el largo de la password
 			$expira= time()+ (60*60*24*365);
-			setcookie('usuario', $_POST['usuario'], $expira);
+			setcookie("usuario", $_POST['usuario'], $expira);
 			$largoPass=strlen($_POST['password']);
-			setcookie('recordame', $largoPass, $expira);
+			setcookie("recordame", $largoPass, $expira);
 		}
 
 		header('location: ../../index.php');
