@@ -103,6 +103,16 @@
         return $errores;
     }
 
+//LOGIN-controller, validar usuario
+    function validarDatosLogin(){
+        $errores= '';
+        $usuario= trim($_POST['usuario']);
+        if ($usuario=="") {
+            $errores="Faltó ingresar un Usuario";
+        }
+        return $errores;
+    }
+//si existe el usuario lo devuelve, sino devuelve false
     function usernameExists ($path){
         $users = getUsers($path);
     	$found = false;
@@ -113,7 +123,7 @@
     	}
     	return $found;
     }
-
+//ABM del Json de usuarios
     function updateUser($path){
         $users = getUsers($path);
         $currUser = false;

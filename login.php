@@ -19,7 +19,7 @@
 <body>
 	<?php
 		session_start();
-		include 'php/controllers/common.php';
+		//include 'php/controllers/common.php';
 		
 		$usuario= "";
 		$errorUsuario= "";
@@ -35,16 +35,15 @@
 				$valorPass= $valorPass.'*';
 				$i++;
 			}
-		}
-
-		//verificar usuario y contraseña 
-		if(isset($_SESSION['erroresUsuario'])){
-			$errorUsuario= $_SESSION['erroresUsuario'];
-			$usuario= "";
-		}
-		if(isset($_SESSION['erroresPass'])){
-			$errorPass= $_SESSION['erroresPass'];
-			$usuario= $_SESSION['usuario'];
+		} else {
+			//verificar usuario y contraseña 
+			if(isset($_SESSION['erroresUsuario'])){
+				$errorUsuario= $_SESSION['erroresUsuario'];
+			}
+			if(isset($_SESSION['erroresPass'])){
+				$errorPass= $_SESSION['erroresPass'];
+				$usuario= $_SESSION['usuario'];
+			}
 		}
 		session_destroy();
 
