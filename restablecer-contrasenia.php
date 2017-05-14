@@ -15,43 +15,43 @@
 <body>
 	<?php
 		session_start();
-		if(isset($_SESSION['errores'])){ 
-			if(isset($_SESSION['errores']['usuario'])){
-				$error = $_SESSION['errores']['usuario'];
-			}else if(isset($_SESSION['errores']['mail'])){
-				$error = $_SESSION['errores']['mail'];
-			}else{
-				$error = "";
-			}
-			session_destroy();
-		}else{
-			$error = "";
-		}
-		if(isset($_SESSION['enviado'])){
-			$enviado = $_SESSION['enviado'];
-			session_destroy();
-		}else{
-			$enviado = "";
+		$_SESSION['usuario'] = "";
+		include('php/controllers/common.php');
+		
+		if(!isset($_GET['hash'])){
+			header('Location: index.php');
+			exit();
 		}
 		
-		$activePage = 'recuperar-contrasenia.php'; 
-		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
-		if ($userLogin) {
-			header('location: index.php');
+		$hash = $_GET['hash'];
+		$existeHash = false;
+		$usuarios = getUsersRecuperar('php/users/');
+		
+		foreach ($usuarios as $key => $value) {
+			if($value['hash'] == $hash){
+				$existeHash = true;
+				$_SESSION['usuario'] = $value['usuario'];
+				break;
+			}	
 		}
-		include('php/header.include.php');
+		
+		if(!$existeHash){
+			header('Location: index.php');
+			exit();	
+		}
+
 	?>
 	<div class="form-container">
 		<div class="form-recuperar-container">
 			<div class="form-recuperar-shadow"></div>
 			<div class="form-recuperar-titleCont">
-				<h1 class="form-recuperar-title">Recuperar Contraseña</h1>
+				<h1 class="form-recuperar-title">Restablecer Contraseña</h1>
 				<a class="form-recuperar-icon"><i class="fa fa-question fa-5x" aria-hidden="true"></i></a>
 			</div>
-			<form action="php/controllers/recuperar.controller.php" method="post" class="form-recuperar-inputs">
-				<input class="form-recuperar-txtUsuario" type="text" id="usuario" name="usuario"  placeholder="Usuario"	value="" required>
-				<span> <?php echo $error;?></span>
-				<span> <?php echo $enviado;?></span>
+			<form action="php/controllers/restablecer.controller.php" method="post" class="form-recuperar-inputs">
+				<input class="form-recuperar-txtUsuario" type="password" id="password" name="password"  placeholder="Contraseña"	value="" required>
+				<input class="form-recuperar-txtUsuario" type="password" id="password2" name="password2"  placeholder="Repita Contraseña"	value="" required>
+				<input type="hidden" name="hash" value=<?php echo $hash; ?>>
 				<button class="form-button-recuperar standard-button button-cyan" type="submit">Enviar Mail</button>
 			</form>
 			</div>

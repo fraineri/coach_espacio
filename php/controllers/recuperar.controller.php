@@ -11,10 +11,17 @@
 
 	if(usernameExists('../users')){
 		$users = getUsers('../users');
-		foreach ($users as $user => $values) {
+		foreach ($users as $values) {
 			if($_POST['usuario'] == $values['usuario']){
-				echo $values['email'];
-				$_SESSION['email'] = $values['email'];
+				
+				$recuperar['usuario'] = $values['usuario'];
+				$recuperar['email'] = $values['email'];
+				$recuperar['hash'] = md5(uniqid(rand()));
+				$_SESSION['recuperar'] = $recuperar;
+
+				$recuperarArr = getUsersRecuperar('../users');
+				saveRecuperar('../users');
+
 				header('Location: ../enviar-mail.php');
 			}
 		}

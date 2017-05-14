@@ -30,17 +30,22 @@ $mail->Password = "digitalhouse";
 $mail->setFrom('coachespacio@gmail.com', 'Recordar Contraseña'); 
  
 //A quien enviarle el email 
-$mail->addAddress($_SESSION['email']); 
+$mail->addAddress($_SESSION['recuperar']['email']); 
 //El asunto del email 
 $mail->Subject = 'Recordar contraseña'; 
 //Cuerpo del mail 
-$mail->Body = 'Cuerpo!coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40coachespacio40'; 
+$mail->Body = 'Link: http://localhost/DigitalHouse/proyecto/coach_espacio/restablecer-contrasenia.php?hash='.$_SESSION['recuperar']['hash']; 
  
+$_SESSION['recuperar'] = "";
 //Debug 
 if (!$mail->send()) { 
     echo "Mailer Error: " . $mail->ErrorInfo; 
+    $errores['mail'] = "Problema al enviar el mail. Intente mas tarde.";
+    $_SESSION['errores'] = $errores;
+    header('Location: ../recuperar-contrasenia.php');
 } else { 
     echo "Message sent!";
-	header('Location: ../login.php');
+    $_SESSION['enviado'] = "Mail enviado! Recuerde revisar su Correo no Deseado.";
+	header('Location: ../recuperar-contrasenia.php');
     exit();
 }

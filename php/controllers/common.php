@@ -180,4 +180,51 @@
         }
         file_put_contents($path.'/usuarios.json', json_encode($users));
     }
+
+
+    function saveRecuperar($path){
+        $usuariosRecuperar = getUsersRecuperar($path);
+        $new = [
+            'email' => $_SESSION['recuperar']['email'],
+            'usuario'=> $_SESSION['recuperar']['usuario'],
+            'hash' => $_SESSION['recuperar']['hash']
+        ];
+        foreach ($usuariosRecuperar as $user => $value) {
+            if($value['usuario'] == $new['usuario']){
+                $usuariosRecuperar[$user]['email'] = $_SESSION['recuperar']['email'];
+                $usuariosRecuperar[$user]['hash'] = $_SESSION['recuperar']['hash'];
+
+                file_put_contents($path.'/recuperar.json', json_encode($usuariosRecuperar));
+                return;
+            }
+        }
+
+        $usuariosRecuperar[] = $new;
+        file_put_contents($path.'/recuperar.json', json_encode($usuariosRecuperar));
+    }
+
+    function getUsersRecuperar($path){
+        $usuarios = @file_get_contents($path.'/recuperar.json');
+        if (!$usuarios) {
+            $usuarios = [];
+        }else{
+            $usuarios = json_decode($usuarios,true);
+        }
+        return $usuarios;
+    }
+
+    function updatePass($path){
+        if(isset($_POST['password'])){
+            $users = getUsers($path);
+            foreach ($users as $user => $value) {
+                if($value['usuario'] == $_SESSION['usuario']){
+                    echo $_POST['password']."<br>";
+                    $users[$user]['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                }
+            }
+        }
+        file_put_contents($path.'/usuarios.json', json_encode($users));
+
+    }
+    
 ?>

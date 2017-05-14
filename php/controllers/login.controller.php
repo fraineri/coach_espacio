@@ -13,7 +13,7 @@ if ((isset($_COOKIE["ususario"])) && (isset($_COOKIE["recordame"]))) {
 		exit();
 	}
 
-	$path= dirname(__FILE__).'\..\users';
+	$path= dirname(__FILE__).'/../users';
 	$user= usernameExists($path);
 	
 	if($user== false){
