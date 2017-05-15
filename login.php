@@ -19,7 +19,6 @@
 <body>
 	<?php
 		session_start();
-		//include 'php/controllers/common.php';
 		
 		$usuario= "";
 		$errorUsuario= "";
@@ -35,6 +34,7 @@
 				$valorPass= $valorPass.'*';
 				$i++;
 			}
+
 		} else {
 			//verificar usuario y contraseña 
 			if(isset($_SESSION['erroresUsuario'])){
@@ -63,11 +63,11 @@
 				<a class="form-login-icon" href="register.php"><i class="fa fa-user-o fa-5x" aria-hidden="true"></i></a>
 			</div>
 			<form action="php/controllers/login.controller.php" method="post" class="form-login-inputs">
-				<input required class="form-login-txtUsuario" type="text" id="ingreso" name="usuario"  placeholder="Usuario"	value=<?php echo $usuario;?> >
+				<input required class="form-login-txtUsuario" type="text" id="ingreso" name="usuario"  placeholder="Usuario"	value=<?php echo $usuario;?>>
 				<span class="lbl-error"> <?php echo $errorUsuario;?>
 				</span>
 		
-				<input required class="form-login-txtPass" type="password" id="contraseña" name="password" placeholder="Contraseña" value=<?php echo $valorPass; ?>>
+				<input required class="form-login-txtPass" type="password" id="contraseña" name="password" placeholder="Contraseña" value=<?php echo $valorPass;?>>
 				<span class="lbl-error"> <?php echo $errorPass;?>
 				</span>
 				

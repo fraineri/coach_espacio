@@ -2,7 +2,16 @@
 session_start();
 include ('common.php');
 
-if ((isset($_COOKIE["ususario"])) && (isset($_COOKIE["recordame"]))) {
+if (isset($_COOKIE["usuario"])) {
+	
+	$path= dirname(__FILE__).'/../users';
+	$user= usernameExists($path);
+		$_SESSION['usuario'] = $user['usuario'];
+		$_SESSION['nombre'] = $user['nombre'];
+		$_SESSION['apellido'] = $user['apellido'];
+		$_SESSION['email'] = $user['email'];
+		$_SESSION['picture'] = $user['picture'];
+		
 	header('location: ../../index.php');
 } else {
 
@@ -33,9 +42,10 @@ if ((isset($_COOKIE["ususario"])) && (isset($_COOKIE["recordame"]))) {
 		if(isset($_POST['recordame']) && ($_POST['recordame']=="si")) {
 				//genero 2 cookies, una con el usuario y otra con el largo de la password
 				$expira= time()+ (60*60*24*365);
-				setcookie("usuario", $_POST['usuario'], $expira);
+				setcookie("usuario", $_POST['usuario'], $expira,'/');
 				$largoPass=strlen($_POST['password']);
-				setcookie("recordame", $largoPass, $expira);
+				setcookie("recordame", $largoPass, $expira,'/');
+				//setcookie("hash", $user['password'], $expira, '/');
 			
 		}
 

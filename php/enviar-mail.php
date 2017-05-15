@@ -34,7 +34,7 @@ $mail->addAddress($_SESSION['recuperar']['email']);
 //El asunto del email 
 $mail->Subject = 'Recordar contraseña'; 
 //Cuerpo del mail 
-$mail->Body = 'Link: http://localhost/DigitalHouse/proyecto/coach_espacio/restablecer-contrasenia.php?hash='.$_SESSION['recuperar']['hash']; 
+$mail->Body = 'Link: http://localhost/coach_espacio/restablecer-contrasenia.php?hash='.$_SESSION['recuperar']['hash']; 
  
 $_SESSION['recuperar'] = "";
 //Debug 
