@@ -2,10 +2,10 @@
 session_start();
 include ('common.php');
 
-if (isset($_COOKIE["usuario"])) {
-	
 	$path= dirname(__FILE__).'/../users';
 	$user= usernameExists($path);
+if (isset($_COOKIE["usuario"]) && ($_COOKIE["passHash"]==$user['password'])) {
+
 		$_SESSION['usuario'] = $user['usuario'];
 		$_SESSION['nombre'] = $user['nombre'];
 		$_SESSION['apellido'] = $user['apellido'];
@@ -22,8 +22,8 @@ if (isset($_COOKIE["usuario"])) {
 		exit();
 	}
 
-	$path= dirname(__FILE__).'/../users';
-	$user= usernameExists($path);
+	//$path= dirname(__FILE__).'/../users';
+	//$user= usernameExists($path);
 	
 	if($user== false){
 		$_SESSION['erroresUsuario'] = "El usuario es inexistente";
@@ -45,7 +45,7 @@ if (isset($_COOKIE["usuario"])) {
 				setcookie("usuario", $_POST['usuario'], $expira,'/');
 				$largoPass=strlen($_POST['password']);
 				setcookie("recordame", $largoPass, $expira,'/');
-				//setcookie("hash", $user['password'], $expira, '/');
+				setcookie("passHash", $user['password'], $expira, '/');
 			
 		}
 
