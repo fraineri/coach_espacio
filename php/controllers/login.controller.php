@@ -4,7 +4,7 @@ include ('common.php');
 
 	$path= dirname(__FILE__).'/../users';
 	$user= usernameExists($path);
-if (isset($_COOKIE["usuario"]) && ($_COOKIE["passHash"]==$user['password'])) {
+if (isset($_COOKIE["usuario"]) && ($_COOKIE["passHash"]==$user['password']) && ($_COOKIE["usuario"]==$_POST['usuario'])) {
 
 		$_SESSION['usuario'] = $user['usuario'];
 		$_SESSION['nombre'] = $user['nombre'];
