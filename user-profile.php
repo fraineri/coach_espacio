@@ -65,22 +65,22 @@
 		<div class = "form-profile-container">
 			<h1 class="form-profile-title"><?php echo $nombre.' '.$apellido ?></h1>
 			<form class="form-profile-inputs" method="POST" action="php/controllers/user-profile.controllers.php" enctype="multipart/form-data">
-				<label>Usuario</label>
+				<label class="form-profile-label">Usuario</label>
 				<p class="form-profile-txtUsuario"> <?php echo $usuario ?> </p>
 
-				<label for ="email">Mail</label>
+				<label class="form-profile-label" for ="email">Mail</label>
 				<input class="form-profile-txtEmail" type="email" name="email" value ="<?php echo $email ?>">
 				<span class="lbl-error"> <?php echo $errores['email'];?> </span>
 
-				<label for ="nombre">Nombre</label>
+				<label class="form-profile-label" for ="nombre">Nombre</label>
 				<input class="form-profile-txtNombre" type="text" name="nombre" value ="<?php echo $nombre ?>">
 				<span class="lbl-error"> <?php echo $errores['nombre'];?> </span>
 			
-				<label for ="apellido">Apellido</label>
+				<label class="form-profile-label" for ="apellido">Apellido</label>
 				<input class="form-profile-txtApellido" type="text" name="apellido" value="<?php echo $apellido ?>">		
 				<span class="lbl-error"> <?php echo $errores['apellido'];?> </span>
 
-				<label for ="profile-picture">Foto de perfil</label>
+				<label class="form-profile-label" for ="profile-picture">Foto de perfil</label>
 				<?php 
 					if ($_SESSION['picture'] != 'default.png') {
 						$name = $_SESSION['picture'];

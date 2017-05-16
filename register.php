@@ -3,8 +3,6 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/register.css">
-	<link rel="stylesheet" type="text/css" media="only screen and (min-width:481px) and (max-width:750px)" href="css/sign-in-up-750.css">
-	<link rel="stylesheet" type="text/css" media="only screen and (max-width:480px)" href="css/sign-in-up-480.css">
 
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"> 
@@ -30,7 +28,8 @@
 			$errores['email'] 	  = isset($_SESSION['errores']['email'])?$_SESSION['errores']['email']:"";
 			$errores['usuario']	  = isset($_SESSION['errores']['usuario'])?$_SESSION['errores']['usuario']:"";
 			$errores['password']  = isset($_SESSION['errores']['password'])?$_SESSION['errores']['password']:"";
-			$errores['password2'] = isset($_SESSION['errores']['password2'])?$_SESSION['errores']['password2']:"";
+
+			$errores['password2'] = (isset($_SESSION['errores']['password2'])&&isset($_SESSION['errores']['password']))?"":$_SESSION['errores']['password2'];
 
 			$regDatos['nombre']    = isset($_SESSION['regDatos']['nombre'])?$_SESSION['regDatos']['nombre']:"";
 			$regDatos['apellido']  = isset($_SESSION['regDatos']['apellido'])?$_SESSION['regDatos']['apellido']:"";

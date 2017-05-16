@@ -185,7 +185,7 @@
 	font-size: 1.2em;
 	font-weight: normal;
 	padding: 5px;
-	margin-bottom: 50px;
+	margin-top: 50px;
 }
 
 .form-login-remember{
@@ -199,7 +199,8 @@
 	font-size: 1.2em;
 	font-weight: normal;
 	padding: 5px;
-	margin-bottom: 50px;
+	margin-top: 60px;
+	margin-bottom: 10px;
 	display: inline-block;
 }
 
@@ -292,7 +293,7 @@
 	font-size: 1.7em;
 	font-weight: normal;
 	padding: 5px;
-	margin-bottom: 50px;
+	margin-top: 50px;
 }
 
 .form-logup-txtNombre,
@@ -326,4 +327,174 @@
 	margin-top: 20px;
 	margin-bottom: 5px;
 	font-size: 2em;
+}
+
+@media (max-width: 750px){
+	.form-container{
+		width: 100vw;
+		height: 100%;
+		padding-bottom: 0;	
+	}
+
+	.form-container > .form-login-container,
+	.form-container > .form-register-container{
+		margin-top: 0;
+	}
+
+
+	/*---------------------------
+		LOGIN
+	---------------------------*/
+	.form-login-container{
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	.form-login-titleCont{
+		text-align: center;
+		padding-bottom: 150px;
+	}
+
+	.form-login-title{
+		font-size: 3em;
+		padding-left: 0;
+	}
+
+	.form-login-icon{
+		top: 130px;
+		left: 50%;
+	}
+
+	.form-login-txtUsuario,
+	.form-login-txtPass{
+		text-align: center;
+		font-size: 2em;
+	}
+
+	.form-login-remember{
+		text-align: center;
+	}
+
+	/*---------------------------
+		LOG UP
+	---------------------------*/
+	.form-logup-container{
+		width: 100%;
+		height: 100%;
+	}
+
+	.form-logup-titleCont{
+		padding-bottom: 180px;
+	}
+
+	.form-logup-title{
+		font-size: 3em;
+		line-height: 2.3em;
+		text-align: center;
+	}
+
+	.form-logup-txtUsuario,
+	.form-logup-txtPass,
+	.form-logup-txtRePass,
+	.form-logup-txtNombre,
+	.form-logup-txtApellido,
+	.form-logup-txtEmail{
+		font-size: 5vw;
+		text-align: center;
+	}
+
+}
+
+@media (max-width: 480px){
+	.form-container{
+		width: 100vw;
+		height: 100%;
+		padding-bottom: 0;
+	}
+
+	.form-container > .form-login-container,
+	.form-container > .form-register-container{
+		margin-top: 0;
+	}
+
+	/*---------------------------
+		LOGIN
+	---------------------------*/
+	.form-login-container{
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	.form-login-titleCont{
+		text-align: center;
+		padding-bottom: 150px;
+	}
+
+	.form-login-title{
+		font-size: 3em;
+		padding-left: 0;
+	}
+
+	.form-login-icon{
+		width: 100%;
+		height: 80px;
+		border-radius: 0;
+		line-height: 70px;
+
+		top: 150px;
+		left: 50%;
+	}
+
+	.form-login-txtUsuario,
+	.form-login-txtPass{
+		text-align: center;
+		font-size: 2em;
+	}
+
+	.form-login-remember{
+		text-align: center;
+	}
+
+
+	.form-button-login{
+		width: 100%;
+		border-radius: 0;
+	}
+
+	/*---------------------------
+		LOG UP
+	---------------------------*/
+	.form-logup-container{
+		width: 100%;
+		height: 100%;
+	}
+
+	.form-logup-titleCont{
+		padding-bottom: 180px;
+	}
+
+	.form-logup-title{
+		font-size: 3em;
+		text-align: center;
+	}
+
+	.form-logup-txtUsuario,
+	.form-logup-txtPass,
+	.form-logup-txtRePass,
+	.form-logup-txtNombre,
+	.form-logup-txtApellido,
+	.form-logup-txtEmail{
+		font-size: 5.5vw;
+		text-align: center;
+	}
+
+	.form-button-next,
+	.form-button-back,
+	.form-button-logup{
+		text-align: center;
+		width: 100%;
+		border-radius: 0;
+	}
 }

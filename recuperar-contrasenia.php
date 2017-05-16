@@ -50,8 +50,8 @@
 			</div>
 			<form action="php/controllers/recuperar.controller.php" method="post" class="form-recuperar-inputs">
 				<input class="form-recuperar-txtUsuario" type="text" id="usuario" name="usuario"  placeholder="Usuario"	value="" required>
-				<span> <?php echo $error;?></span>
-				<span> <?php echo $enviado;?></span>
+				<span class="lbl-error"> <?php  echo $error;?></span>
+				<span class="lbl-confirm"> <?php echo $enviado;?></span>
 				<button class="form-button-recuperar standard-button button-cyan" type="submit">Enviar Mail</button>
 			</form>
 			</div>
