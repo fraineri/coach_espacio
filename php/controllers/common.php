@@ -25,11 +25,13 @@
             $usuario = limpiarDato($_POST['usuario']);
             if($usuario == ""){ $errores['usuario'] = "Falta usuario.";}
             if(strlen($usuario) > 20){ $errores['usuario'] = "Usuario mayor a 20 caracteres.";}
+            if(strlen($usuario) < 6){ $errores['usuario'] = "Usuario menor a 6 caracteres.";}
         }
         if(isset($_POST['password'])){
             $password = $_POST['password'];
             if($password == ""){ $errores['password'] = "Falta contraseña.";}
             if(strlen($password) > 30){ $errores['password'] = "contraseña mayor a 30 caracteres.";}
+            if(strlen($password) < 8){ $errores['password'] = "contraseña menor a 8 caracteres.";}
         }
         if(isset($_POST['password2'])){
             $password2 = $_POST['password2'];

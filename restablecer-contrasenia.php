@@ -14,6 +14,13 @@
 </head>
 <body>
 	<?php
+		$activePage = 'restablecer-contrasenia.php'; 
+		$userLogin = isset($_SESSION['nombre'])?$_SESSION['nombre']:null;
+		if ($userLogin) {
+			header('location: index.php');
+		}
+		include('php/header.include.php');
+
 		session_start();
 		$_SESSION['usuario'] = "";
 		include('php/controllers/common.php');
@@ -34,7 +41,18 @@
 				break;
 			}	
 		}
-		
+
+		$errores['password'] = "";
+		$errores['password2'] = "";
+		if(isset($_SESSION['errores'])){ 
+			$errores['password'] = isset($_SESSION['errores']['password'])?$_SESSION['errores']['password']:"";
+			if(!isset($_SESSION['errores']['password'])){
+				$errores['password2'] = isset($_SESSION['errores']['password2'])?$_SESSION['errores']['password2']:"";
+			}
+
+			session_destroy();
+		}
+
 		if(!$existeHash){
 			header('Location: index.php');
 			exit();	
@@ -50,7 +68,10 @@
 			</div>
 			<form action="php/controllers/restablecer.controller.php" method="post" class="form-recuperar-inputs">
 				<input class="form-recuperar-txtUsuario" type="password" id="password" name="password"  placeholder="Contraseña"	value="" required>
+				<span class="lbl-error"> <?php echo $errores['password'];?></span>
 				<input class="form-recuperar-txtUsuario" type="password" id="password2" name="password2"  placeholder="Repita Contraseña"	value="" required>
+				<span class="lbl-error"> <?php echo $errores['password2'];?></span>
+
 				<input type="hidden" name="hash" value=<?php echo $hash; ?>>
 				<button class="form-button-recuperar standard-button button-cyan" type="submit">Enviar Mail</button>
 			</form>

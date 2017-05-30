@@ -38,6 +38,7 @@ $mail->Body = 'Link: http://localhost/coach_espacio/restablecer-contrasenia.php?
  
 $_SESSION['recuperar'] = "";
 //Debug 
+
 if (!$mail->send()) { 
     echo "Mailer Error: " . $mail->ErrorInfo; 
     $errores['mail'] = "Problema al enviar el mail. Intente mas tarde.";

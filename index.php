@@ -135,7 +135,7 @@
 				</div>
 			</div>
 				<div class ="about-buttonCont">
-					<a class ="standard-button button-red" href="contact.html">Contacto</a>
+					<a class ="standard-button button-red" href="contact.php">Contacto</a>
 					<a class ="standard-button button-red" href="#">Portfolio</a>
 				</div>
 			</div>			

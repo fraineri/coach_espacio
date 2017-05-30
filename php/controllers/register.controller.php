@@ -49,7 +49,9 @@
 
 		header('location: ../../index.php');
 	}else{
-		echo "El nombre de usuario ingresado ya existe";
-		$errores[] = "El nombre de usuario ingresado ya existe";
+		$errores['usuario'] = "El nombre de usuario ingresado ya existe";
+		$_SESSION['errores'] = $errores;
+		header('Location: ../../register.php');
+
 	}
 ?>
