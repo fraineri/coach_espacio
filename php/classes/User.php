@@ -72,8 +72,8 @@ class User extends Model{
 		$usuarioArray['password'] = $this->password;
 		return $usuarioArray;
 	}
-	public function toModel($data)
-	{	
+	
+	public function toModel($data){	
 		//De array asociativo a model (user)
 		$this->setNombre($data['nombre']);
 		$this->setApellido($data['apellido']);
@@ -83,11 +83,11 @@ class User extends Model{
 		$this->password = $data['password'];
 		$this->setUsername($data['nombre']);
 	}
-
+							 //upload
 	public function saveImage($avatar,$path){
-		if ($avatar['error'] == UPLOAD_ERR_OK) {
-            $nombre = $avatar['name'];
-            $archivo = $avatar['tmp_name'];
+		if ($_FILES[$avatar]['error'] == UPLOAD_ERR_OK) {
+            $nombre = $_FILES[$avatar]['name'];
+            $archivo = $_FILES[$avatar]['tmp_name'];
             $ext = pathinfo($nombre,PATHINFO_EXTENSION);
 
             if($ext !='png' && $ext != 'jpg'){
