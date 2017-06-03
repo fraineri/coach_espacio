@@ -3,20 +3,21 @@
 class Auth{
 	private $user;
 
-	function __construct ($user){
+	function __construct ($user=null){
 		$this->user = $user;
 	}
 
 	public function loguear(){
-		//session
-	}
-
-	public function traerUsuarioLogueado(){
-		//Buscar usuario en repo acorde a su primaryvalue
+		$_SESSION['usuario'] = $user->'usuario';
+		$_SESSION['nombre'] = $user->'nombre';
+		$_SESSION['apellido'] = $user->'apellido';
+		$_SESSION['email'] = $user->'email';
+		$_SESSION['picture'] = $user->'picture';
 	}
 
 	public function estaLogueado(){
 		//isset session and session[username] === user->username
+		return (isset($_SESSION['username']) && $_SESSION['username'] == $this->user->getUsername());
 	}
 
 	public function saveCookies(){
@@ -33,16 +34,13 @@ class Auth{
 		return (isset($_COOKIE["usuario"]) && ($_COOKIE["passHash"]==$user['password']) && ($_COOKIE["usuario"]==$_POST['usuario']));
 	}
 
-	public function autoLoguear(){
-
-	}
-
 	public function logOut(){
-		//Unset session
+		session_unset();
 	}
 
 	public function unsetCookie(){
-
+		unset($_COOKIE['usuario']);
+		unset($_COOKIE['recordame']);
+		unset($_COOKIE['passHash'])
 	}
-
 }
