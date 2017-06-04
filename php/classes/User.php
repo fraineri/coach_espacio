@@ -13,10 +13,24 @@ class User extends Model{
 	public static $primaryKey = 'username';
 	public static $tableName = 'users';
 
-	public function __construct($db){
+	public function __construct($db,$username=false){
 		//Se le asigna la base que se utilizara 
 		//a Model (parámetro $db)
 		parent::__construct($db);
+		if ($username) {
+			$this->setUsername($username);
+		}
+	}
+
+	public function setAllValues($nom,$ap,$email,$pass,$avatar,$path,$user=false){
+		if ($user) {
+			$this->setUsername();
+		}
+		$this->setNombre($nom);
+		$this->setApellido($ap);
+		$this->setEmail($email);
+		$this->setPassword($pass);
+		$this->setAvatar($avatar,$path);
 	}
 
 	public function setNombre($nom){
@@ -35,8 +49,11 @@ class User extends Model{
 		$this->password = password_hash($pass, PASSWORD_DEFAULT);
 	}
 	public function setAvatar($avatar,$path){
-		//Usar saveImage
-		$this->avatar = $avatar;
+		$pictureName = 'default.png';
+		if (isset($_FILES[$avatar]) && ($result = $this->saveImage($avatar,$path))  {
+			$this->avatar = $result;
+		}
+		$this->avatar = $pictureName;
 	}
 
 	public function getPrimaryValue(){
@@ -95,11 +112,11 @@ class User extends Model{
             } else {
             	$fileName = $this->getUsername().'.'.$ext;
                 move_uploaded_file($archivo, $this->getPath().$fileName);
-                $this->avatar = $fileName;
+				return $fileName;
             }
 		} else{
 	            $errores[] = "No se pudo guardar la foto";
 	    }
-		return $errores;
+		return false;
 	}
 }
