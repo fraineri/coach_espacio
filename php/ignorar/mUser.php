@@ -2,8 +2,12 @@
 
 class mUser extends Manager{
 	
-	function __construct($usuario){
-		$this->model = $usuario;
+	private $user;
+
+	function __construct($user,$db){
+		$this->user = $user;
+		$this->db = $db;
+		$this->model = $user;
 	}
 
 	public function getByEmail(){

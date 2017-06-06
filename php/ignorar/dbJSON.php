@@ -1,10 +1,10 @@
 <?php
 
-class dbSQL extends DataBase{
-	public $pdo;
+class dbJSON extends Database{
+	private $path;
 
-	function __construct ($table){
-		$this->$tableName = $table;
+	function __construct ($path){
+		$this->$path = $path;
 		$this->setPrimaryKey();
 	}
 
@@ -18,12 +18,12 @@ class dbSQL extends DataBase{
 		//UPDATE
 	}
 	public function find($value){
-		//FIND WHERE primaryKey = $value;
+		//FIND
 	}
 	public function findAll(){
-		//SELECT ALL
+		//FIND ALL
 	}
-	public function findClause($campu, $value){
-		//SELECT MODIFICADO
+	public function findClause($campo, $value){
+		//FIND WHERE (?)
 	}
-}
+	
