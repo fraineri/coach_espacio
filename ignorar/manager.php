@@ -10,10 +10,14 @@ abstract class Manager{
 	public function update($model){
 		$this->db->update($model);
 	}
-	public function getId($id){
-		return $this->db->getId($id);
+	public function find($value){
+		return $this->db->find($value);
 	}
-	public function getAll(){
-		return $this->db->getAll();
+	public function findClause($campo, $value){
+		return $this->db->findClause($campo, $value);
 	}
+	public function findAll(){
+		return $this->db->findAll();
+	}
+
 }

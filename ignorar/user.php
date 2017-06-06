@@ -1,22 +1,20 @@
 <?php
 
 class User extends Model{
-	protected $id;
-	protected $tableName  = "usuarios"
-	protected $primaryKey = "usuario"
-
 	public $usuario;
 	public $nombre;
 	public $apellido;
 	public $email;
 	public $password;
+	public $avatar;
 
 	function __construct(arguments){
 		/* Setear valores */
 		$this->setUsuario();
-		$this->setUsuario();
-		$this->setUsuario();
-		$this->setUsuario();
+		$this->setNombre();
+		$this->setApellido();
+		$this->setEmail();
+		$this->setPassword();
 	}
 
 	public function setUsuario($usuario){};
@@ -25,8 +23,6 @@ class User extends Model{
 	public function setEmail($email){};
 	public function setPassword($password){};
 
-	public function getTable(){return $this->$tableName;}
-	public function getKey(){return $this->$primaryKey;}
 
 
 }

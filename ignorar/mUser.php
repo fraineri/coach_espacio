@@ -2,18 +2,14 @@
 
 class mUser extends Manager{
 	
-	function __construct($usuario)
-	{
-		$this->model = $usuario
-	}
-
-	public function getByUser(){
-		/* TABLE - REGISTRO - VALOR DE BUSQUEDA  */
-		$this->db->getBy($this->model->getTable(), 'user', $this->model->user);
+	function __construct($usuario){
+		$this->model = $usuario;
 	}
 
 	public function getByEmail(){
-		/* TABLE - REGISTRO - VALOR DE BUSQUEDA  */
-		$this->db->getBy($this->model->getTable(), 'email', $this->model->email);
+		$this->db->findClause("name", $value);
+	}
+	public function getByNombre(){
+		$this->db->findClause("name", $value);
 	}
 }
