@@ -5,7 +5,7 @@ require_once 'database.php';
 class dbSQL extends Database{
 	public $pdo;
 
-	function __construct ($table){
+/*va public o private acá?*/function __construct ($table){
 		$this->$tableName = $table;
 		//2- ¿me falta un this??
 		try { $pdo = new PDO('mysql:host=localhost;dbname=db_coach_espacio;charset=utf8mb4','root','123456');
@@ -19,12 +19,12 @@ class dbSQL extends Database{
 		/*necesito un parámetro que sea tipo array para AGREGARLO o Modificar la tabla, 
 		pero no TODO el array de array. Si regrabo toda la tabla creo q tardaría mucho*/
 		$queIns= $pdo->query('INSERT INTO $tableName (id_usuarios, nombre, apellido, 
-			usuario, email, password, cambiar_pass, path, picture, mailing) 
+			usuario, email, password, cambiar_pass, path /*lo pone como funcion, ¿cambiar nombre del campo???*/, picture, mailing) 
 			VALUES (default,/* 3- ¿faltan los valores???*/)');
 	}
 
-	public function update($model){
-		//UPDATE
+	/*no funca*/public function update($model){
+		$query = $pdo->query('UPDATE $tableName set /*campo = nuevo valor*/ WHERE primaryKey = $model->username');
 	}
 
 	public function find($value){
@@ -51,5 +51,11 @@ class dbSQL extends Database{
 		$results = $query->fetch(PDO::FETCH_ASSOC);
 		/* devuelve array*/
 		return $results;
+	}
+
+	public function jsonToSql($json){
+//decode json 
+//pasarlo a array de array
+//forEach array de jason hacer Insert en tabla		
 	}
 }
