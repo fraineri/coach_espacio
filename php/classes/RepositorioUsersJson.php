@@ -2,9 +2,14 @@
 require_once("RepositorioUsers.php");
 
 class RepositorioUsersJSON extends RepositorioUsers {
+    private $userRoute;
+    
+    public function __construct(){
+        $this->userRoute = $_SERVER['DOCUMENT_ROOT'].'/php/coach_espacio/php/users/';
+    }
 
 	public function findAll() {
-        $usuarios = @file_get_contents(/*path.*/'usuarios.json');
+        $usuarios = @file_get_contents($this->userRoute.'usuarios.json');
         if (!$usuarios) {
             $finalUsers = [];
         } else {
@@ -19,9 +24,9 @@ class RepositorioUsersJSON extends RepositorioUsers {
     }
 
     public function save(User $usuario) {
-        $file = @file_get_contents('usuarios.json');
+        $file = @file_get_contents($this->userRoute.'usuarios.json');
         $users = json_decode($file,true);
         $users[] = $usuario->toArray();
-        file_put_contents("usuarios.json", json_encode($users));
+        file_put_contents($this->usersRoute."usuarios.json", json_encode($users));
     }
 }

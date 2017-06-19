@@ -8,7 +8,11 @@ class User {
 	private $password;
 	private $avatar;
 
+	private $pictureRoute;
+
+
 	function __construct($username = false){
+		$this->pictureRoute = $_SERVER['DOCUMENT_ROOT'].'/php/coach_espacio/php/users/pictures/';
 		if ($username) {
 			$this->setUsername($username);
 		}
@@ -22,7 +26,7 @@ class User {
 		$this->setApellido($ap);
 		$this->setEmail($email);
 		$this->setPassword($pass);
-		$this->setAvatar($avatar,'');
+		$this->setAvatar($avatar);
 	}
 
 
@@ -48,7 +52,7 @@ class User {
 	}
 
 							 //upload
-	public function saveImage($avatar,$path){
+	public function saveImage($avatar){
 		if ($avatar['error'] == UPLOAD_ERR_OK) {
             $nombre = $avatar['name'];
             $archivo = $avatar['tmp_name'];
@@ -58,7 +62,7 @@ class User {
                 $errores[]='No se puede subir un archivo con este formato';
             } else {
             	$fileName = $this->getUsername().'.'.$ext;
-                move_uploaded_file($archivo, $this->getPath().$fileName);
+                move_uploaded_file($archivo, $this->pictureRoute.$fileName);
 				return $fileName;
             }
 		} else{
@@ -88,12 +92,12 @@ class User {
 	public function setPassword($pass){
 		$this->password = password_hash($pass, PASSWORD_DEFAULT);
 	}
-	public function setAvatar($avatar,$path){
+	public function setAvatar($avatar){
 		/*Avatar es el $_FILES['avatar']*/
 		$pictureName = 'default.png';
 		
-		if (($avatar) && ($result = $this->saveImage($avatar,$path) ))  {
-			$this->avatar = $result;
+		if ($avatar){
+			$pictureName = $this->saveImage($avatar);
 		}
 		$this->avatar = $pictureName;
 	}

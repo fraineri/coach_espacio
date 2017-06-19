@@ -50,7 +50,7 @@
 		if ($userLogin) {
 			header('location: index.php');
 		}
-		include('php/header.include.php');
+		//include('php/header.include.php');
 	?>
 
 	<div class="form-container">

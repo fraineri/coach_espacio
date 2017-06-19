@@ -37,11 +37,10 @@
 	    }
 
 
-	    public function guardarCookie(User $usuario) {
+	    public function guardarCookie(User $usuario,$largoContra) {
 	        $expira= time()+ (60*60*24*365);
 			setcookie("usuario", $usuario->getUsername(), $expira,'/');
-			$largoPass=strlen($usuario->getPassword());
-			setcookie("recordame", $largoPass, $expira,'/');
+			setcookie("recordame", $largoContra, $expira,'/');
 			setcookie("passHash", $usuario->getPassword(), $expira, '/');
 	    }
 
@@ -49,19 +48,18 @@
 	        session_start();
 	        if (!$this->estaLogueado()) {
 	            if (isset($_COOKIE["username"])) {
-	                $usuario = $repo->traerUsuarioPorEmail($_COOKIE["username"]);
+	                $usuario = $repo->getUser($_COOKIE["usuario"]);
 
 	                $this->loguear($usuario);
 	            }
 	        }
     	}
 
-    	public function checkCookies(User $usuario){
-			//Chequea si existen y si son los mismos datos 
-			//correspondientes al usuario
+    	public function checkCookies($user,$repo){
+			$u = $repo->getRepositorioUsuarios()->getUser($user);
 			return (isset($_COOKIE["usuario"]) && 
-				($_COOKIE["passHash"]==$usuario->getPassword()) && 
-				($_COOKIE["usuario"]==$usuario->getUsername()));
+				($_COOKIE["usuario"]==$user) && 
+				($u->getPassword() == $_COOKIE["passHash"])) ;
 		}
 
 		public function logout(){

@@ -9,26 +9,23 @@ class ValidadorLogin extends Validador {
 		$repoUsuarios = $repo->getRepositorioUsuarios();
 		$usuario;
 		$errores = [];
+        echo"HOLA";
 
-	 	if (empty($this->sanitizarDatos($datos['usuario']))){
-            $errores["usuario"] = "Por favor ingrese el usuario";
+        if ((!$this->sanitizarDatos($datos["password"]))){
+            $errores["erroresPass"] = "Por favor ingrese la contraseña";
         }
 
-        if (empty($this->sanitizarDatos($datos["password"]))){
-            $errores["password"] = "Por favor ingrese la contraseña";
-        }
-
-        
-        if (!($usuario = $repoUsuarios->getUser($datos["usuario"]) ) ){
-            $errores["usuario"] = "El usuario no existe";
+	 	if ((!$this->sanitizarDatos($datos['usuario'])) ) {
+            $errores["erroresUsuario"] = "Por favor ingrese el usuario";
+        } else if (!($usuario = $repoUsuarios->getUser($datos["usuario"]) ) ){
+            $errores["erroresUsuario"] = "El usuario no existe";
         }
 
         if(!$errores) {
             if (!password_verify($datos["password"], $usuario->getPassword())) {
-                $errores["password"] ="La contraseña es incorrecta";
+                $errores["erroresPass"] ="La contraseña es incorrecta";
             }
         }
-
         return $errores;
 	}
 }

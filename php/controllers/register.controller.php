@@ -1,14 +1,19 @@
 <?php
-	/*var_dump($_POST); prueba de que register y controller están enlazados*/
-	session_start();
-	include('common.php');
+	
+	require_once ('DatabaseSupport.php');
+	require_once("../classes/validadorUsuario.php");
+	@session_start();
 
-	/*validar los datos del register.php a traves de la funcion validarDatos del common.php*/
-	//$errores= validarDatos();
+	$repoUsuarios = $repo->getRepositorioUsuarios();
+    if ($auth->estaLogueado()) {
+        header("Location: ../../index.php");
+        exit;
+    }
+
+    $validador = new ValidadorUsuario();
 	$errores = [];
-	$errores = validarDatos();
-
-	/*si hay errores de validacion, se redirige al register.php para pedirlos*/
+	
+	$errores = $validador->validar($_POST, $repo);
 	if(count($errores)){
 		//Mantengo los datos que no tienen errores.
 		$regDatos = [];
@@ -24,34 +29,18 @@
 		exit();
 	}
 
-	$path= dirname(__FILE__).'/../users';
-	if(!usernameExists($path)){
-		$pictureName = 'default.png';
-		if(isset($_FILES['avatar'])){
-			if(saveImage('avatar',$path."/pictures/",$_POST['usuario']) == null ){
-				//se subio la imagen sin errores
-				$pictureName= $_POST['usuario'].'.'.pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
-			}
-		}
-
-
-		saveUser($path,$pictureName);
-	/*	echo "<pre>";
-		var_dump($path);
-		echo "</pre>";
-		exit();*/
-		/*Inicio de sesión exitosa*/
-		$_SESSION['usuario'] = $_POST['usuario'];
-		$_SESSION['nombre'] = $_POST['nombre'];
-		$_SESSION['apellido'] = $_POST['apellido'];
-		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['picture'] = $pictureName;
-
-		header('location: ../../index.php');
-	}else{
-		$errores['usuario'] = "El nombre de usuario ingresado ya existe";
-		$_SESSION['errores'] = $errores;
-		header('Location: ../../register.php');
-
-	}
+	/*No hay errores, agrego al usuario*/
+	$usuario = new User($_POST["usuario"]);
+    $usuario->setAllValues(
+        $_POST['nombre'],
+        $_POST['apellido'],
+        $_POST['email'],
+        $_POST['password'],
+        $_FILES['avatar']
+    );
+    
+    $usuario->save($repoUsuarios);
+    $auth->loguear($usuario);
+	header('Location: ../../index.php');
+	exit();
 ?>
