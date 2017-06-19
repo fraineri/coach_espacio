@@ -33,7 +33,29 @@ class ValidadorUsuario extends Validador {
 			$errores['password2'] = $error;
 		}
 
+		
+		if ($datos['actPsw']) {
+			if ($error = $this->checkUserPassword($_SESSION['usuario'],$datos['actPsw'],$repoUsuarios)) {
+
+				$errores['actPsw'] = $error;
+			} else if($error = $this->validarPassword($datos['newPsw']) ) {
+				$errores['newPsw'] = $error;
+			} else if ($error = $this->validarRePassword($datos['newPsw'], $datos['reNewPsw'])){
+				$errores['newPsw'] = $error;
+			}
+		}
+		
         return $errores;
+	}
+
+	public function checkUserPassword($username,$contra,$repo){
+		$error = "";
+		$user = $repo->getUser($username);
+
+		if(!password_verify($contra,$user->getPassword()) ) {
+			$error = "La contraseña es incorrecta";
+		}
+		return $error;
 	}
 
 	public function validarUsername($dato,$repo){
@@ -112,12 +134,13 @@ class ValidadorUsuario extends Validador {
 	public function validarRePassword($contra, $dato){
 		$error ="";
 		$password2 = $dato;
-
+	
 		if($password2 == ""){ 
 			$error = "Debe reingresar la contraseña.";
 		}else if($password2 != $contra){ 
-			$error = "Contraseñas distntas.";
+			$error = "Las contraseñas no coinciden.";
 		}
+		return $error;
 	}
 
 }

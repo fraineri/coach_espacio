@@ -1,7 +1,5 @@
 <?php 
-	session_start();
-	var_dump($_SESSION);
-	session_unset();
-	var_dump($_SESSION);
-	header('location: ../index.php');
+	require_once("controllers/DatabaseSupport.php");
+	$auth->logout();
+	header("Location: ../index.php");
 	exit;

@@ -27,6 +27,22 @@ class RepositorioUsersJSON extends RepositorioUsers {
         $file = @file_get_contents($this->userRoute.'usuarios.json');
         $users = json_decode($file,true);
         $users[] = $usuario->toArray();
-        file_put_contents($this->usersRoute."usuarios.json", json_encode($users));
+        file_put_contents($this->userRoute."usuarios.json", json_encode($users));
+    }
+
+    public function updateUser(User $usuario){
+        $updated = $usuario->toArray();
+        $file = @file_get_contents($this->userRoute.'usuarios.json');
+        $users = json_decode($file,true);
+        foreach ($users as $user => $value) {
+            if ($value['usuario'] == $updated['usuario']) {
+                $users[$user]['nombre'] = $updated['nombre'];
+                $users[$user]['apellido'] = $updated['apellido'];
+                $users[$user]['email'] = $updated['email'];
+                $users[$user]['password'] = $updated['password'];
+                $users[$user]['avatar'] = $updated['avatar'];
+            }
+        }
+        file_put_contents($this->userRoute."usuarios.json", json_encode($users));
     }
 }

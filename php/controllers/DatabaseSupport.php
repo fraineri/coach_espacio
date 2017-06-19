@@ -1,6 +1,6 @@
 <?php
-	require_once("../classes/Auth.php");
-	require_once("../classes/RepositorioJSON.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/php/coach_espacio/php/classes/Auth.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/php/coach_espacio/php/classes/RepositorioJSON.php");
 
 	$tipoRepositorio = "json";
 

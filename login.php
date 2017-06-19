@@ -24,7 +24,7 @@
 		$valorPass= "";
 
 		//verificar si existe cookie RECORDAME 
-		if (isset($_COOKIE["usuario"]) && isset($_COOKIE["recordame"])) {
+		if ((!(isset($_SESSION['erroresPass']) || isset($_SESSION['erroresUsuario'])) && !isset($_SESSION['erroresPass']))  && isset($_COOKIE["usuario"]) && isset($_COOKIE["recordame"])) {
 			$usuario= $_COOKIE["usuario"];
 			//armo un string de asteriscos q tenga el largo de la contraseña
 			$i= 1;
@@ -32,15 +32,15 @@
 				$valorPass= $valorPass.'*';
 				$i++;
 			}
-
 		} else {
 			//verificar usuario y contraseña 
 			if(isset($_SESSION['erroresUsuario'])){
+				$usuario= $_SESSION['usuario'];
 				$errorUsuario= $_SESSION['erroresUsuario'];
 			}
 			if(isset($_SESSION['erroresPass'])){
-				$errorPass= $_SESSION['erroresPass'];
 				$usuario= $_SESSION['usuario'];
+				$errorPass= $_SESSION['erroresPass'];
 			}
 		}
 		session_destroy();

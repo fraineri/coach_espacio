@@ -14,20 +14,19 @@ if ($auth->checkCookies($_POST['usuario'],$repo)) {
 	header('Location: ../../index.php');
 	exit;
 }
+
 $validador = new ValidadorLogin();
 $errores = $validador->validar($_POST, $repo);
 
 if(count($errores)){
+	$_SESSION['usuario'] = $_POST['usuario'];
 	if (isset($errores['erroresUsuario'])) {
 		$_SESSION['erroresUsuario'] = $errores['erroresUsuario'];
-		
 	}
 
 	if (isset($errores['erroresPass'])) {
-		$_SESSION['usuario'] = $_POST['usuario'];
 		$_SESSION['erroresPass'] = $errores['erroresPass'];
 	}
-
 	header('Location: ../../login.php');
 	exit();
 }

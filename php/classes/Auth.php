@@ -57,9 +57,9 @@
 
     	public function checkCookies($user,$repo){
 			$u = $repo->getRepositorioUsuarios()->getUser($user);
-			return (isset($_COOKIE["usuario"]) && 
+			return ($u && isset($_COOKIE["usuario"]) && 
 				($_COOKIE["usuario"]==$user) && 
-				($u->getPassword() == $_COOKIE["passHash"])) ;
+				(($u->getPassword()) == $_COOKIE["passHash"])) ;
 		}
 
 		public function logout(){
