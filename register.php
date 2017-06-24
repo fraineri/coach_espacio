@@ -65,22 +65,22 @@
 					<div class="form-register-icon" ><i class="fa fa-pencil fa-5x" aria-hidden="true"></i></div>
 				</div>
 				<form class="form-register-inputs" action="php/controllers/register.controller.php" method="post" enctype="multipart/form-data">
-					<input class="form-register-txtNombre" type="text" name="nombre" placeholder="Nombre" required value=<?php echo $regDatos['nombre'];?>>
+					<input id="txtName" class="form-register-txtNombre" type="text" name="nombre" placeholder="Nombre"  value=<?php echo $regDatos['nombre'];?>>
 					<span class="lbl-error"> <?php echo $errores['nombre'];?> </span>
 
-					<input required class="form-register-txtApellido" type="text" name="apellido" placeholder="Apellido" required value=<?php echo $regDatos['apellido'];?>>		
+					<input id="txtSurname" class="form-register-txtApellido" type="text" name="apellido" placeholder="Apellido"  value=<?php echo $regDatos['apellido'];?>>		
 					<span class="lbl-error"> <?php echo $errores['apellido'];?> </span>
 
-					<input class="form-register-txtEmail" type="email" name="email" placeholder="tu@email" required value=<?php echo $regDatos['email'];?>>
+					<input id="txtEmail" class="form-register-txtEmail" type="text" name="email" placeholder="tu@email"  value=<?php echo $regDatos['email'];?>>
 					<span class="lbl-error"> <?php echo $errores['email'];?> </span>
 
-					<input class="form-register-txtUsuario" type="text" name="usuario" placeholder="Usuario" required value=<?php echo $regDatos['usuario']; ?>>
+					<input id="txtUser" class="form-register-txtUsuario" type="text" name="usuario" placeholder="Usuario"  value=<?php echo $regDatos['usuario']; ?>>
 					<span class="lbl-error"> <?php echo $errores['usuario'];?> </span>
 					
-					<input class="form-register-txtPass" type="password" name="password" placeholder="Contraseña" required>
+					<input id="txtPass" class="form-register-txtPass" type="password" name="password" placeholder="Contraseña" >
 					<span class="lbl-error"> <?php echo $errores['password'];?> </span>
 
-					<input class="form-register-txtRePass" type="password" name="password2" placeholder="Repita su contraseña" required>
+					<input id="txtRePass" class="form-register-txtRePass" type="password" name="password2" placeholder="Repita su contraseña" >
 					<span class="lbl-error"> <?php echo $errores['password2'];?> </span>
 
 					<label for="avatar" class="form-register-label-foto">Foto de perfil</label>
@@ -93,3 +93,4 @@
 	</div>
 </body>
 </html>
+<script src="js/registerValidation.js"></script>
