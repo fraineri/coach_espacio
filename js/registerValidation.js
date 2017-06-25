@@ -6,6 +6,7 @@ window.onload = function(){
 	var txtPass 	= document.getElementById('txtPass');
 	var txtRePass 	= document.getElementById('txtRePass');
 	var button 		= document.getElementsByTagName('button')[0];
+	var input = document.querySelector(".form-register-txtUsuario");
 
 
 //Validador Nombre
@@ -97,4 +98,27 @@ window.onload = function(){
 
 	button.addEventListener('click',function(e){
 	});
+
+//Validador usuario existente
+	input.addEventListener('change', function(e){
+		document.getElementById("user-lbl-error").innerHTML = " ";
+		document.getElementById("user-lbl-ok").innerHTML = " ";
+		if (input.value && input.value.length>6 && input.value.length<20) {
+			var users;
+
+			var req = new XMLHttpRequest();
+			req.open("GET", "js/findUser.php?username="+input.value);
+			req.send();
+			req.onreadystatechange = function() {
+				if (req.readyState == 4 && req.status == 200) {
+					$response = JSON.parse(req.responseText);
+					if ($response['exists']) {
+						document.getElementById("user-lbl-error").innerHTML = "El usuario ingresado ya se encuentra en uso";
+					} else{
+						document.getElementById("user-lbl-ok").innerHTML = "El usuario esta disponible!";
+					}
+				}
+			};	
+		}
+	})	
 }

@@ -75,7 +75,8 @@
 					<span class="lbl-error"> <?php echo $errores['email'];?> </span>
 
 					<input id="txtUser" class="form-register-txtUsuario" type="text" name="usuario" placeholder="Usuario"  value=<?php echo $regDatos['usuario']; ?>>
-					<span class="lbl-error"> <?php echo $errores['usuario'];?> </span>
+					<span id="user-lbl-error" class="lbl-error"> <?php echo $errores['usuario'];?> </span>
+					<span id="user-lbl-ok" class="lbl-ok"></span>
 					
 					<input id="txtPass" class="form-register-txtPass" type="password" name="password" placeholder="Contraseña" >
 					<span class="lbl-error"> <?php echo $errores['password'];?> </span>

@@ -263,6 +263,14 @@ ol,ul{
 	font-size: 1em;
 }
 
+.lbl-ok{
+	width: 70%;
+	color: green;
+	opacity: .7;
+	text-align: left;
+	font-size: 1.2em;
+}
+
 .lbl-confirm{
 	width: 70%;
 	color: #2da209;
