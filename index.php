@@ -27,11 +27,21 @@
 		?>
 		<!-- Home Header -->
 		<div class ="banner">
+			<div class ="banner-images">
+				<ul class ="images-list">
+					<li class ="banner-image"><img class ="test" src="images/backgrounds/0-Main8.jpg"></li>
+					<li class ="banner-image"><img class ="test" src="images/backgrounds/image1.jpg"></li>
+					<li class ="banner-image"><img class ="test" src="images/backgrounds/closet-1.jpg"></li>
+				</ul>
+			</div>
 			<div>
-				<h1 class ="banner-title">Coach de Espacios </h1>
+				<h1 class ="banner-title">Coach de Espacios</h1>
 			</div>
 			<div class="banner-knowus">
 				<a href="#knowus"><i class="banner-arrow fa fa-arrow-down fa-4x" aria-hidden="true"></i></a>
+			</div>
+			<div class ="container-dots">
+				<ul class = "galery-dots"></ul>
 			</div>
 		</div>
 
@@ -144,4 +154,5 @@
 		<!--FOOTER-->
 		<?php include('php/footer.include.php') ?>
 	</body>
+	<script src="js/slide.js"></script>
 </html>
