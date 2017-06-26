@@ -26,14 +26,9 @@
 			
 		?>
 		<!-- Home Header -->
-		<div class ="banner">
-			<div class ="banner-images">
-				<ul class ="images-list">
-					<!--<li class ="banner-image"><img class ="test" src="images/backgrounds/0-Main8.jpg"></li>
-					<li class ="banner-image"><img class ="test" src="images/backgrounds/image1.jpg"></li>
-					<li class ="banner-image"><img class ="test" src="images/backgrounds/closet-1.jpg"></li>-->
-				</ul>
-			</div>
+		<div class ="banner">	
+		</div>
+		<div class ="banner-things">
 			<div>
 				<h1 class ="banner-title">Coach de Espacios</h1>
 			</div>
@@ -155,4 +150,5 @@
 		<?php include('php/footer.include.php') ?>
 	</body>
 	<script src="js/slide.js"></script>
+	
 </html>

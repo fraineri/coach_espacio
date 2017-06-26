@@ -6,7 +6,7 @@
 				'index.php#knowus' => 'Quiénes somos',
 				/*'productos.php' => 'Productos',*/
 				/*'curses.php' => 'Cursos',*/
-				'contact.php' => 'Contactame',
+				'contact.php' => 'Contactanos',
 				'faq.php' => 'FAQ'
 			];
 
@@ -53,3 +53,4 @@
 	</nav>
 
 </header>
+<script src="js/menu-style.js"></script>

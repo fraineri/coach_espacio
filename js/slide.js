@@ -1,12 +1,16 @@
 
 var cons = 0;
 
-function slide_show(){
+function slide_show(isFirst = false){
 	if(cons >= listImages.length){
 		cons = 0;		
 	}
 
+	//fadeOut();
 	document.querySelector(".banner").style.backgroundImage = 'url('+listImages[cons]+')';
+	if (!isFirst) {
+		fadeIn();
+	}
 
 	//Modifico Dot
 	var dots = document.querySelector(".galery-dots").getElementsByTagName("li");
@@ -20,6 +24,19 @@ function slide_show(){
 	cons++;
 }
 
+function fadeIn() {
+    var op = 0.1;  // initial opacity
+    var element = document.querySelector(".banner");
+    element.style.opacity = 0;
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 35);
+}
 
 function createDots(){
 	var cant = listImages.length;
@@ -50,12 +67,21 @@ var listImages=[];
 var respImages=[
 	'images/backgrounds/bg-small.jpg',
 	'images/backgrounds/bg-small4.jpg',
-	'images/backgrounds/bg-small3.jpg'
+	'images/backgrounds/bg-small3.jpg',
+	'images/backgrounds/contact-banner-3-op.png',
+	'images/backgrounds/dt.common.streams.StreamServer.jpg',
+	'images/backgrounds/indice.jpg',
+	'images/backgrounds/cute-kids-room.jpg',
+	'images/backgrounds/study.jpg'
 ];
 var desktopImages=[
 	'images/backgrounds/0-Main8.jpg',
 	'images/backgrounds/image1.jpg',
-	'images/backgrounds/closet-1.jpg'
+	'images/backgrounds/closet-21.jpg',
+	'images/backgrounds/contact-banner-3-op.png',
+	'images/backgrounds/contact-banner.jpg',
+	'images/backgrounds/CpCoYGxWYAAVslc.jpg',
+	'images/backgrounds/cuteLiving.jpg'
 ];
 
 window.onload = function(){
@@ -69,5 +95,5 @@ window.onload = function(){
 
 	createDots();
 	timer = setInterval(slide_show,time);
-	slide_show();
+	slide_show(true);
 }

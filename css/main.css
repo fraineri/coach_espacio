@@ -73,6 +73,7 @@ ol,ul{
 	top: 0;
 	display: flex;
 	justify-content: space-between;
+	transition: background-color .5s;
 }
 
 .horizontal-menu a{

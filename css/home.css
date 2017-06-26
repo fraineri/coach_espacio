@@ -23,12 +23,13 @@ button:hover{
 }
 
 .banner{
+	background-color:grey;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	width: 100%;
 	height: 100vh;
-	transition: all 1s ease-in-out 0s;
+	/*transition: all 1s ease-in-out 0s;*/
 }
 
 .banner-image{
@@ -353,7 +354,12 @@ button:hover{
 
 
 @media(max-width: 480px){
-
+	.container-dots{
+		display: none;
+	}
+	.banner-title{
+		font-size: 2.2em;
+	}
 	.work-step-title{
 		font-size:1.3em;
 	}
