@@ -29,9 +29,9 @@
 		<div class ="banner">
 			<div class ="banner-images">
 				<ul class ="images-list">
-					<li class ="banner-image"><img class ="test" src="images/backgrounds/0-Main8.jpg"></li>
+					<!--<li class ="banner-image"><img class ="test" src="images/backgrounds/0-Main8.jpg"></li>
 					<li class ="banner-image"><img class ="test" src="images/backgrounds/image1.jpg"></li>
-					<li class ="banner-image"><img class ="test" src="images/backgrounds/closet-1.jpg"></li>
+					<li class ="banner-image"><img class ="test" src="images/backgrounds/closet-1.jpg"></li>-->
 				</ul>
 			</div>
 			<div>

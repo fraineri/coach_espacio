@@ -2,34 +2,27 @@
 var cons = 0;
 
 function slide_show(){
-	var elemento = document.querySelector('.images-list').getElementsByTagName('li');	
-	if(cons >= elemento.length){
+	if(cons >= listImages.length){
 		cons = 0;		
 	}
 
-	for(var n = cons; n < elemento.length; n++){
-		elemento[n].className = 'selected';
-		
-		//Modifico Dot
-		var dots = document.querySelector(".galery-dots").getElementsByTagName("li");
-		dots[cons].childNodes[0].className="image-dot current";
+	document.querySelector(".banner").style.backgroundImage = 'url('+listImages[cons]+')';
 
-		for(var i = 0; i<dots.length; i++){
-			if(i!=cons){
-				elemento[i].className = 'noselected';
-				dots[i].childNodes[0].className="image-dot";
-			}
+	//Modifico Dot
+	var dots = document.querySelector(".galery-dots").getElementsByTagName("li");
+	for(var i = 0; i<dots.length; i++){
+		if(i!=cons){
+			dots[i].childNodes[0].className="image-dot";
+		} else{
+			dots[cons].childNodes[0].className="image-dot current";
 		}
-		cons++;
-		break;
 	}
+	cons++;
 }
 
-var time = 5000;
-var timer;
 
 function createDots(){
-	var cant = document.querySelector('.images-list').getElementsByTagName('li').length;
+	var cant = listImages.length;
 	var lista = document.querySelector(".galery-dots");
 	for (var i = 0; i < cant; i++) {
 		var li = document.createElement("li");
@@ -51,10 +44,30 @@ function createDots(){
 	}
 }
 
+var time = 5000;
+var timer;
+var listImages=[];
+var respImages=[
+	'images/backgrounds/bg-small.jpg',
+	'images/backgrounds/bg-small4.jpg',
+	'images/backgrounds/bg-small3.jpg'
+];
+var desktopImages=[
+	'images/backgrounds/0-Main8.jpg',
+	'images/backgrounds/image1.jpg',
+	'images/backgrounds/closet-1.jpg'
+];
 
-window.onload = function(){	
+window.onload = function(){
+ 	var resp1 = window.matchMedia("(max-width: 480px)");
+ 	if (resp1.matches) {
+ 		listImages = respImages;
+ 	}
+ 	else{
+ 		listImages = desktopImages;
+ 	}
+
 	createDots();
-	//start();
 	timer = setInterval(slide_show,time);
 	slide_show();
 }
