@@ -118,7 +118,7 @@ ol,ul{
 .desplegable-user.desplegable-user{
 	padding: 0;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	height: 74.8px;
 	width: 100%;

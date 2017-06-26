@@ -53,4 +53,3 @@
 	</nav>
 
 </header>
-<script src="js/menu-style.js"></script>

@@ -150,5 +150,6 @@
 		<?php include('php/footer.include.php') ?>
 	</body>
 	<script src="js/slide.js"></script>
-	
+	<script src="js/menu-style.js"></script>
+
 </html>

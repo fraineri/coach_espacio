@@ -1,7 +1,3 @@
-
-var menu = document.querySelector(".home-header");
-console.log(menu);	
-
 var resp1 = window.matchMedia("(max-width: 900px)");
 if (!resp1.matches) {
 	document.querySelector(".horizontal-menu").style.backgroundColor = "transparent";

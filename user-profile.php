@@ -89,22 +89,23 @@
 				?>
 				<input type="file" name="avatar">
 
-				<div class ="change-psw">
+				<div class ="button-change-psw">
 					<label for ="change-psw">Contraseña</label>	
-					<button class="standard-button button-red" type="button" name="but-change-psw">Cambiar contraseña</button>
+					<button id="button-psw" class="standard-button button-red" type="button" name="but-change-psw">Cambiar contraseña</button>
 				</div>
 
-				<label for ="actPsw">Ingrese su contraseña actual</label>
-				<input class="form-profile-txtPass" type="password" name="actPsw">
-				<span class="lbl-error"> <?php echo $errores['actPsw'];?> </span>	
+				<div class ="div-change-psw">
+					<label for ="actPsw">Ingrese su contraseña actual</label>
+					<input class="form-profile-txtPass" type="password" name="actPsw">
+					<span class="lbl-error" id ="actPsw"><?php echo $errores['actPsw'];?></span>
 
-				<label for ="actPsw">Ingrese su nueva contraseña</label>
-				<input class="form-profile-txtPass" type="password" name="newPsw">
+					<label for ="actPsw">Ingrese su nueva contraseña</label>
+					<input class="form-profile-txtPass" type="password" name="newPsw">
 
-				<label for ="actPsw">Reingrese la contraseña nueva</label>
-				<input class="form-profile-txtPass" type="password" name="reNewPsw">
-				<span class="lbl-error"> <?php echo $errores['newPsw'];?> </span>	
-				
+					<label for ="actPsw">Reingrese la contraseña nueva</label>
+					<input class="form-profile-txtPass" type="password" name="reNewPsw">
+					<span class="lbl-error" id="reNewPsw"><?php echo $errores['newPsw'];?></span>	
+				</div>
 
 				<button class="form-profile-send standard-button button-cyan" type="submit">ACTUALIZAR DATOS</button>
 
@@ -114,4 +115,5 @@
 
 		<?php include('php/footer.include.php') ?>
 	</body>
+	<script src="js/profile-changepsw.js"></script>
 </html>
