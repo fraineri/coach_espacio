@@ -22,8 +22,10 @@
 					<a <?php if($url === $activePage){echo 'class ="page-active"';}?> href="<?php echo $url; ?>"><?php echo $title ?></a>
 				</li>
 			<?php endforeach; ?>
+			<li onclick='cambioTema()'><a href="#">Cambio Tema</a></li>
 		</ul>
 
+		
 		
 		<ul class ="horizontal-menu-log">
 			<?php if($userLogin == null){ ?>
@@ -51,5 +53,5 @@
 		</ul>
 
 	</nav>
-
+	<script src="js/cambiar_tema.js"></script>
 </header>
