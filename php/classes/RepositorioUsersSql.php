@@ -3,13 +3,16 @@ require_once ('RepositorioUsers.php');
 
 class RepositorioUsersSql extends RepositorioUsers {
 	public $pdo;
-//creo q tengo q sacar el construct y establecer la conexion en cada metodo: save, findAll updateUser 
-/*public function __construct (){
-		try { $pdo = new PDO("mysql:host=localhost;dbname=db_coach_espacio;charset=utf8mb4;port=3306",'root','');
-			} catch (PDOException $e) {
+	//creo q tengo q sacar el construct y establecer la conexion en cada metodo: save, findAll updateUser
+	#No es necesario establecer la conexion en cada consulta. En casa pagina se utiliza el Controllers/DatabaseSupport
+	#que se encarga de hacer la conexión. Esta conexión dura en la navegación de una página.
+	public function __construct (){
+		try { 
+			$pdo = new PDO("mysql:host=localhost;dbname=db_coach_espacio;charset=utf8mb4;port=3306",'root','');
+		} catch (PDOException $e) {
 			echo "<h1>La base de datos no está disponible</h1>";
-			}
-	}*/
+		}
+	}
 
 	public function save(User $usuario){
 		//establecer conexion
@@ -18,10 +21,8 @@ class RepositorioUsersSql extends RepositorioUsers {
 			VALUES (default,/* sacar valores de $usuario*/)');
 	}
 
-	}
 
 	public function findAll(){
-		//establecer conexion
 		$query = $pdo->query('SELECT * FROM $tableName');
 		/*devuelve objeto, con Fetch_Assoc lo paso a un 
 		Array de Arrays cuyos índices son los nombres de las columnas de la Tabla*/
@@ -31,7 +32,6 @@ class RepositorioUsersSql extends RepositorioUsers {
 	}
 
     public function updateUser(User $usuario){
-    	//establecer conexion
     	$query = $pdo->query('UPDATE $tableName set /*campo = nuevo valor de TODO $usuario*/ WHERE primaryKey = $usuario->username');
 
     }

@@ -29,8 +29,7 @@
 	            return null;
 	        }
 	        $username = $_SESSION["username"];
-	        return $repo->traerUsuarioPorEmail($username);
-	        //el metodo traerUsuarioPorEmail no se llama getUser en nuestro modelo?
+	        return $repo->getUser($username);
 	    }
 
 	    public function estaLogueado() {
@@ -50,7 +49,7 @@
 	        if (!$this->estaLogueado()) {
 	            if (isset($_COOKIE["username"])) {
 	                $usuario = $repo->getUser($_COOKIE["usuario"]);
-	                //usamos getUser o traeUsuarioPorEmail??
+	                
 	                $this->loguear($usuario);
 	            }
 	        }
@@ -65,7 +64,8 @@
 
 		public function logout(){
 			session_destroy();
-		//dario hace un $this-> unsetCookie acá, hace falta??
+			//dario hace un $this-> unsetCookie acá, hace falta??
+			#->No, nose si lo habrá planteado mal, pero no debería ir
 		}
 
 		private function unsetCookie(){
