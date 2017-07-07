@@ -4,10 +4,7 @@
 
 	$repoUsers = $repo->getRepositorioUsuarios();
 
-	$repoUsers->getUser($_GET['username']);
-
-	$usersNumber = json_decode($nameUsers);
-
-	echo count($usersNumber);
-
+	$users = $repoUsers->findAll();
+	header("Content-type:application/json");
+	print json_encode(['count'=>count($users)]);
 ?>

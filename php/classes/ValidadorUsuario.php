@@ -1,6 +1,7 @@
 <?php
-require_once("validador.php");
-require_once("repositorio.php");
+
+require_once("Validador.php");
+require_once("Repositorio.php");
 
 class ValidadorUsuario extends Validador {
 	public function validar(Array $datos, Repositorio $repo) {

@@ -12,7 +12,7 @@ class User {
 
 
 	function __construct($username = false){
-		$this->pictureRoute = $_SERVER['DOCUMENT_ROOT'].'/php/coach_espacio/php/users/pictures/';
+		$this->pictureRoute = $_SERVER['DOCUMENT_ROOT'].'/DigitalHouse/proyecto/coach_espacio/php/users/pictures/';
 		if ($username) {
 			$this->setUsername($username);
 		}

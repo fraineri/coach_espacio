@@ -1,8 +1,8 @@
 <?php
 	
 	require_once ('DatabaseSupport.php');
-	require_once("../classes/validadorUsuario.php");
-	@session_start();
+	require_once("../classes/ValidadorUsuario.php");
+	session_start();
 
 	$repoUsuarios = $repo->getRepositorioUsuarios();
     if ($auth->estaLogueado()) {

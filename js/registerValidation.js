@@ -155,8 +155,6 @@ window.onload = function(){
 	});
 
 
-
-
 	button.addEventListener('click',function(e){
 		hayError = checkErrores();
 		if(!hayError && checkFlags()){

@@ -1,7 +1,7 @@
 <?php
 
 require_once("Repositorio.php");
-require_once("RepositorioUsersJSON.php");
+require_once("RepositorioUsersJson.php");
 class RepositorioJSON extends Repositorio {
 
 	public function __construct() {

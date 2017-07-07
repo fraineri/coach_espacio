@@ -1,6 +1,6 @@
 <?php
-require_once("validador.php");
-require_once("repositorio.php");
+require_once("Validador.php");
+require_once("Repositorio.php");
 
 class ValidadorLogin extends Validador {
 	

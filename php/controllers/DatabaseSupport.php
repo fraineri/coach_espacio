@@ -1,8 +1,9 @@
 <?php
-	require_once($_SERVER['DOCUMENT_ROOT']."/php/coach_espacio/php/classes/Auth.php");
-	require_once($_SERVER['DOCUMENT_ROOT']."/php/coach_espacio/php/classes/RepositorioJSON.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/DigitalHouse/proyecto/coach_espacio/php/classes/Auth.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/DigitalHouse/proyecto/coach_espacio/php/classes/RepositorioJson.php");
 
 	$tipoRepositorio = "json";
+
 
 	switch($tipoRepositorio) {
 		case "json":

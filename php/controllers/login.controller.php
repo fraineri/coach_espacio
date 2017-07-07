@@ -1,6 +1,6 @@
 <?php
 require_once ('DatabaseSupport.php');
-require_once("../classes/validadorLogin.php");
+require_once("../classes/ValidadorLogin.php");
 @session_start();
 
 if ($auth->estaLogueado()) {

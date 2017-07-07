@@ -10,8 +10,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<script src="http://code.jquery.com/jquery-latest.min.js"
-        type="text/javascript"></script>	
+		
 		<title>Coaching | Home</title>
 	</head>
 	<body>
@@ -30,10 +29,10 @@
 		</div>
 		<div class ="banner-things">
 			<div>
-				<h1 class ="banner-title">Coach de Espacios</h1>
+				<h1 class ="banner-title">Coach de Espacios <br> Ya somos</h1>
 			</div>
 			<div class="banner-knowus">
-				<a href="#knowus"><i class="banner-arrow fa fa-arrow-down fa-4x" aria-hidden="true"></i></a>
+				<!--<a href="#knowus"><i class="banner-arrow fa fa-arrow-down fa-4x" aria-hidden="true"></i></a>-->
 			</div>
 			<div class ="container-dots">
 				<ul class = "galery-dots"></ul>

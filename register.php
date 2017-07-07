@@ -66,23 +66,23 @@
 				</div>
 				<form class="form-register-inputs" action="php/controllers/register.controller.php" method="post" enctype="multipart/form-data">
 					<input id="txtName" class="form-register-txtNombre" type="text" name="nombre" placeholder="Nombre"  value=<?php echo $regDatos['nombre'];?>>
-					<span class="lbl-error"> <?php echo $errores['nombre'];?> </span>
+					<span class="lbl-error"><?php echo $errores['nombre'];?></span>
 
 					<input id="txtSurname" class="form-register-txtApellido" type="text" name="apellido" placeholder="Apellido"  value=<?php echo $regDatos['apellido'];?>>		
-					<span class="lbl-error"> <?php echo $errores['apellido'];?> </span>
+					<span class="lbl-error"><?php echo $errores['apellido'];?></span>
 
 					<input id="txtEmail" class="form-register-txtEmail" type="text" name="email" placeholder="tu@email"  value=<?php echo $regDatos['email'];?>>
-					<span class="lbl-error"> <?php echo $errores['email'];?> </span>
+					<span class="lbl-error"><?php echo $errores['email'];?></span>
 
 					<input id="txtUser" class="form-register-txtUsuario" type="text" name="usuario" placeholder="Usuario"  value=<?php echo $regDatos['usuario']; ?>>
-					<span id="user-lbl-error" class="lbl-error"> <?php echo $errores['usuario'];?> </span>
+					<span id="user-lbl-error" class="lbl-error"><?php echo $errores['usuario'];?></span>
 					<span id="user-lbl-ok" class="lbl-ok"></span>
 					
 					<input id="txtPass" class="form-register-txtPass" type="password" name="password" placeholder="Contraseña" >
-					<span class="lbl-error"> <?php echo $errores['password'];?> </span>
+					<span class="lbl-error"><?php echo $errores['password'];?></span>
 
 					<input id="txtRePass" class="form-register-txtRePass" type="password" name="password2" placeholder="Repita su contraseña" >
-					<span class="lbl-error"> <?php echo $errores['password2'];?> </span>
+					<span class="lbl-error"><?php echo $errores['password2'];?></span>
 
 					<label for="avatar" class="form-register-label-foto">Foto de perfil</label>
 					<input class="form-register-foto" type="file" name="avatar">

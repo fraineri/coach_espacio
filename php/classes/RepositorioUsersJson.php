@@ -5,7 +5,7 @@ class RepositorioUsersJSON extends RepositorioUsers {
     private $userRoute;
     
     public function __construct(){
-        $this->userRoute = $_SERVER['DOCUMENT_ROOT'].'/php/coach_espacio/php/users/';
+        $this->userRoute = $_SERVER['DOCUMENT_ROOT'].'/DigitalHouse/proyecto/coach_espacio/php/users/';
     }
 
 	public function findAll() {

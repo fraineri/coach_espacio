@@ -97,3 +97,4 @@ window.onload = function(){
 	timer = setInterval(slide_show,time);
 	slide_show(true);
 }
+
