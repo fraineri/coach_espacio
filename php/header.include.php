@@ -54,4 +54,5 @@
 
 	</nav>
 	<script src="js/cambiar_tema.js"></script>
+	<script src="js/contarUsuarios.js"></script>		
 </header>
