@@ -125,13 +125,18 @@ window.onload = function(){
 		flags[4] = false;
 		errores[4] = true;
 		var lblError = this.nextElementSibling;
+		hayError = checkErrores();
 		if(this.value == ""){
 			lblError.innerHTML = "Contraseña obligatoria";
 		}else if(this.value.length > 30){
-			lblError.innerHTML = "Contraseña mayor a 20 caracteres";
+			lblError.innerHTML = "Contraseña mayor a 30 caracteres";
 		}else if(this.value.length < 8){
 			lblError.innerHTML = "Contraseña menor a 8 caracteres";
-		}else{
+		}else if(this.value != txtRePass.value){
+			var lblError = txtRePass.nextElementSibling;
+			lblError.innerHTML = "Contraseñas distintas";
+		}
+		else{
 			var lblError = this.nextElementSibling;
 			lblError.innerHTML = "";
 			errores[4] = false;
@@ -144,6 +149,7 @@ window.onload = function(){
 		flags[5] = false;
 		errores[5] = true;
 		var lblError = this.nextElementSibling;
+		hayError = checkErrores();
 		if(this.value != txtPass.value || this.value == ""){
 			lblError.innerHTML = "Contraseñas distintas";
 		}else{
