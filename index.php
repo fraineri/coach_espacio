@@ -150,5 +150,5 @@
 	</body>
 	<script src="js/slide.js"></script>
 	<script src="js/menu-style.js"></script>
-
+	<script src="js/contarUsuarios.js"></script>
 </html>

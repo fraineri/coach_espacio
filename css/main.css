@@ -65,12 +65,19 @@ ol,ul{
 /*===============================
  HORIZONTAL MENU BAR > nav & log
 =================================*/
+.main-menu{
+	display: flex; 
+	flex-direction: column; 
+	width:100%;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+}
 .horizontal-menu{
-	z-index: 99;
 	width: 100%;
 	background-color: rgba(250,250,250,1);
-	position: fixed;
-	top: 0;
+	/*position: fixed;
+	z-index: 99;*/
 	display: flex;
 	justify-content: space-between;
 	transition: background-color .5s;
@@ -82,7 +89,7 @@ ol,ul{
 	text-transform: uppercase;
 }
 
-.horizontal-menu a:hover{
+.horizontal-menu .selectable:hover{
 	background-color: rgba(100,200,228,.8);
 }
 
@@ -90,9 +97,14 @@ ol,ul{
 	display: inline-block;
 }
 
+.horizontal-menu-log{
+	display: flex;
+	justify-content: space-around;
+	width: 30vw;
+}
+
 .desplegable{
 	position: relative;
-	width: 180px;
 }
 
 .menu-log-user{
@@ -112,7 +124,6 @@ ol,ul{
 	margin-left: 5px;
 	text-align: left;
 	text-transform: uppercase;
-	width: 100px;
 }
 
 .desplegable-user.desplegable-user{
@@ -121,7 +132,6 @@ ol,ul{
 	justify-content: space-around;
 	align-items: center;
 	height: 74.8px;
-	width: 100%;
 }
 
 .options{
@@ -146,8 +156,24 @@ ol,ul{
 	visibility: visible;
 }
 
+.shop-cart-menu{
+	width: 74.8px;
+	text-align: center;
+}
 
+.shop-cart{
+	color: #444;
+	transition: all .3s;
+}
 
+.shop-cart-menu:hover .shop-cart{
+	color: rgb(100,200,228);
+}
+
+.products{
+	border-top: .5px solid #eee;
+	justify-content: center; 
+}
 /*===============================
  FOOTER > footer-nav
 =================================*/
@@ -352,9 +378,13 @@ ol,ul{
 
 /*********************MENU************************/
 @media (max-width: 900px){
-	.horizontal-menu{
+	.main-menu{
 		position: static;
 		display: inline-block;
+	}
+
+	.horizontal-menu{
+		flex-direction: column;
 	}
 
 	.horizontal-menu li{
@@ -379,6 +409,7 @@ ol,ul{
 
 	.horizontal-menu-log{
 		margin-top: 30px;
+		width:100%;
 	}
 
 	.desplegable-user.desplegable-user{
