@@ -5,8 +5,7 @@
 				$pagesNav= [
 					'index.php' => 'Home',
 					'index.php#knowus' => 'Quiénes somos',
-					'productos.php' => 'Comprar',
-					/*'curses.php' => 'Cursos',*/
+					'tienda.php' => 'Comprar',
 					'contact.php' => 'Contactanos',
 					'faq.php' => 'FAQ'
 				];
@@ -19,12 +18,17 @@
 			
 			<ul class ="horizontal-menu-nav">
 				<?php foreach ($pagesNav as $url => $title): ?>
-					<li>
-						<a <?php if($url === $activePage){echo 'class ="page-active"';}?> class = "selectable" href="<?php echo $url; ?>"><?php echo $title ?></a>
+					<li <?php if($url === $activePage){echo 'class ="page-active"';}?>  >
+						<a class = "selectable" href="<?php echo $url; ?>"><?php echo $title ?></a>
 					</li>
 				<?php endforeach; ?>
-				<li onclick='cambioTema()'><a class = "selectable" href="#">Cambiar tema</a></li>
+				<?php
+				if ($activePage === "index.php") {
+				 	echo "<li onclick='cambioTema()' ><a class='selectable' href='#'>Cambiar tema</a></li>";
+				} 
+				?>
 			</ul>
+
 
 			
 			
@@ -54,19 +58,41 @@
 					<li class ="shop-cart-menu">
 						<a href="#">
 							<div>
-								<i class="fa fa-shopping-cart fa-lg shop-cart" aria-hidden="true"> 2</i>
+								<i class="fa fa-shopping-cart fa-lg shop-cart" aria-hidden="true"> </i>
 							</div>
 						</a>
 					</li>
 			</ul>
 		</div>
+
 		<?php if($activePage == 'productos.php'): ?>
-			<div class ="horizontal-menu products">
-				<ul class='horizontal-menu-nav'>
-					<li><a href="">Categorías</a></li>
-					<li><a href="">Cursos</a></li>
-					<li><a href="">Productos</a></li>
-				</ul>	
+			<div class="menu-products">
+				<div>
+					<ul class='menu-section'>
+						<?php $array = [
+							0 => 'Almohadones', 
+							1 => 'Baño',
+							2 => 'Deco',
+							3 => 'Luz',
+							4 => 'Macetas',
+							5 => 'Muebles',
+							6 => 'Percheros',
+							7 => 'Relojes',
+							8 => 'Otros'
+						]?>
+						<?php foreach ($array as $key => $value): ?>
+							<li><a class="product-category" href="/categoria/<?=$key?>"><?=$value?></a></li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+				<div>
+					<ul class='menu-section'>
+						<?php if ($activePage ==="productos.php"): ?>
+							<li><a class="product-category" href="cursos.php">Ir a ver nuestros cursos</a></li>	
+						<?php endif ?>
+					</ul>
+					
+				</div>	
 			</div>
 		<?php endif; ?>
 	</nav>

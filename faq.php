@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/faq.css">
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	
 	<title>Coaching | Preguntas Frecuentes</title>
 

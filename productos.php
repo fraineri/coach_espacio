@@ -6,6 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/productos.css">
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 	<title>Coaching | productos</title>
 </head>
@@ -49,8 +53,10 @@
 			</div>
 
 			<div class ="product-title"><p>Maceta guerrero Zen Crudo</p></div>
-			<div class ="product-price"><p>$420.00</p></div>
-			<div class ="product-option"></div>
+			<div class ="info-container" >
+				<div class ="product-price"><p>$420.00</p></div>
+				<div class ="product-option">+ VER MÁS</div>
+			</div>
 		</a>
 		<a href="" class = "product-item">
 			<div class ="product-image">
@@ -63,8 +69,10 @@
 			</div>
 
 			<div class ="product-title"><p>Torre Eifel de metal de 25cm</p></div>
-			<div class ="product-price"><p>$420.00</p></div>
-			<div class ="product-option"></div>
+			<div class ="info-container" >
+				<div class ="product-price"><p>$420.00</p></div>
+				<div class ="product-option">+ VER MÁS</div>
+			</div>
 		</a>
 		<a href="" class = "product-item">
 			<div class ="product-image">
@@ -75,8 +83,10 @@
 			<div class ="product-special"></div>
 
 			<div class ="product-title"><p>Reloj auto flip</p></div>
-			<div class ="product-price"><p>$468.00</p></div>
-			<div class ="product-option"></div>
+			<div class ="info-container" >
+				<div class ="product-price"><p>$468.00</p></div>
+				<div class ="product-option">+ VER MÁS</div>
+			</div>
 		</a>
 		<a href="" class = "product-item">
 			<div class ="product-image">
@@ -87,8 +97,10 @@
 			<div class ="product-special"></div>
 
 			<div class ="product-title"><p>Lámpara de madera unicornio</p></div>
-			<div class ="product-price"><p>$1490.00</p></div>
-			<div class ="product-option"></div>
+			<div class ="info-container" >
+				<div class ="product-price"><p>$1490.00</p></div>
+				<div class ="product-option">+ VER MÁS</div>
+			</div>
 		</a>
 		<a href="" class = "product-item">
 			<div class ="product-image">
@@ -99,8 +111,10 @@
 			<div class ="product-special"></div>
 
 			<div class ="product-title"><p>Portaretratos anteojos negro</p></div>
-			<div class ="product-price"><p>$266.00</p></div>
-			<div class ="product-option"></div>
+			<div class ="info-container" >
+				<div class ="product-price"><p>$266.00</p></div>
+				<div class ="product-option">+ VER MÁS</div>
+			</div>
 		</a>
 		<a href="" class = "product-item">
 			<div class ="product-image">
@@ -111,8 +125,10 @@
 			<div class ="product-special"></div>
 
 			<div class ="product-title"><p>Fanal Love</p></div>
-			<div class ="product-price"><p>$575.00</p></div>
-			<div class ="product-option"></div>
+			<div class ="info-container" >
+				<div class ="product-price"><p>$575.00</p></div>
+				<div class ="product-option">+ VER MÁS</div>
+			</div>
 		</a>
 		<a href="" class = "product-item">
 			<div class ="product-image">
@@ -123,8 +139,10 @@
 			<div class ="product-special"></div>
 
 			<div class ="product-title"><p>Mini almohadones panda X3</p></div>
-			<div class ="product-price"><p>$276.00</p></div>
-			<div class ="product-option"></div>
+			<div class ="info-container" >
+				<div class ="product-price"><p>$276.00</p></div>
+				<div class ="product-option">+ VER MÁS</div>
+			</div>
 		</a>
 	</div>
 

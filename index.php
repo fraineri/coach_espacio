@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
 		<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -149,6 +150,6 @@
 		<?php include('php/footer.include.php') ?>
 	</body>
 	<script src="js/slide.js"></script>
-	<script src="js/menu-style.js"></script>
+	<script src="js/menu-styled.js"></script>
 	<script src="js/contarUsuarios.js"></script>
 </html>

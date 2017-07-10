@@ -1,0 +1,43 @@
+.container{
+	width: 80%;
+	margin:auto;
+	margin-top: 80px;
+}
+.items-container{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.item{
+	margin-top: 20px;
+	position: relative;
+	transition: all .5s;
+}
+
+.item:hover .item-image{
+	opacity: 1;
+}
+
+.item:hover .item-title{
+	background-color: rgba(130,210,232,1);
+}
+
+.item-image{
+	width: 100%;
+	background-color: white;
+	opacity: .8;
+	transition: all .5s;
+}
+
+.item-title{
+	position: absolute;
+	top:50%;
+	right:0;
+	font-size: 2.5em;
+	color: white;
+	background-color: rgba(130,210,232,.7);
+	width: 80%;
+	font-weight: bold;
+	transition: all .7s;
+}
