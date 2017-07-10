@@ -13,18 +13,38 @@
 }
 
 .contact-ppal-text{
-	/*font-family: monospace;*/
+	
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
-
+	width: 100%;
 	text-align: center;
-	letter-spacing: 7px;
-	font-size: 4.5em;
-	
+	transform: translate(-50%,-50%);
+	font-size: 4em;
 	background-color: rgba(255,255,255,.6);
 	color: black;
+
+ 	letter-spacing: 7px;
+ 	margin: 0 auto;
+ 	white-space: nowrap;
+ 	overflow: hidden;
+ 	letter-spacing: .15em;
+	animation: typing 3.5s steps(40, end),
+    			blink .75s step-end infinite;
+}
+
+.blink{
+  animation: blink 1s infinite;
+}
+
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink {
+	to{opacity: .0;}
 }
 
 .contact-ppal-description{
@@ -38,8 +58,11 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	color:white;
+}
+.contact-ppal-description h2 {
+	margin-top: 10vh;
 }
 
 /******************************************/
@@ -121,12 +144,19 @@
 }
 
 @media(max-width: 634px){
+	.contact-ppal-text{
+		animation:none;
+		font-size: 2.7em;
+		
+	}
+	.blink{
+		animation:none;
+	}
+	.contact-ppal-description h2 {
+		margin:0;
+	}
 	.form-contact-container{
 		width: 100%;
-	}
-
-	.contact-ppal-text{
-		font-size: 4em;
 	}
 
 	.form-contact-txtNombre,
@@ -141,7 +171,7 @@
 
 @media(max-width: 450px){
 	.contact-ppal-text{
-		font-size: 3em;
+		font-size: 2.3em;
 	}
 
 	.form-contact-txtNombre,
@@ -163,6 +193,6 @@
 
 @media(max-width: 340px){
 	.contact-ppal-text{
-		font-size: 2.5em;
+		font-size: 1.6em;
 	}
 }

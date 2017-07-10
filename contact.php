@@ -24,7 +24,7 @@
 
 		<div class ="contact-ppal">
 			<div class ="contact-ppal-image">
-				<p class ="contact-ppal-text">Contactanos_</p>
+				<p class ="contact-ppal-text">Contactanos<span class="blink">_</span></p>
 			</div>
 
 			<div class ="contact-ppal-description">
@@ -58,5 +58,6 @@
 		</div>
 
 		<?php include('php/footer.include.php') ?>
+
 </body>
 </html>

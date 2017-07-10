@@ -82,12 +82,12 @@ ol,ul{
 }
 
 .horizontal-menu ul:after {
-  content: " ";
-  display: block;
-  font-size: 0;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+	content: " ";
+	display: block;
+	font-size: 0;
+	height: 0;
+	clear: both;
+	visibility: hidden;
 }
 
 
@@ -107,43 +107,45 @@ ol,ul{
 }
 
 .horizontal-menu a:hover:before {
-  width: 100%;
+	width: 100%;
 }
 
-.horizontal-menu a:after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: -3px;
-  top: 19px;
-  height: 6px;
-  width: 6px;
-  background: black;
-  opacity: .5;
-}
 
 .horizontal-menu a:before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 0;
-  background-color: rgba(100,200,228,.6);
-  transition: width .25s;
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 0;
+	background-color: rgba(100,200,228,.6);
+	transition: width .25s;
 }
 
+.horizontal-menu-nav a:after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: -3px;
+	top: 19px;
+	height: 6px;
+	width: 6px;
+	background: black;
+	opacity: .5;
+}
+
+
 .page-active a {
-  color: rgba(100,200,228,1);
+	color: rgba(100,200,228,1);
 }
 
 .page-active a:before {
-  width: 100%;
+	width: 100%;
 }
 
 .horizontal-menu li:last-child > a:after {
-  display: none;
+	display: none;
 }
 
 .horizontal-menu li{
@@ -153,7 +155,7 @@ ol,ul{
 .horizontal-menu-log{
 	display: flex;
 	justify-content: space-around;
-	width: 30vw;
+	align-items: center;
 }
 
 .desplegable{
@@ -179,12 +181,11 @@ ol,ul{
 	text-transform: uppercase;
 }
 
-.desplegable-user.desplegable-user{
+.desplegable-user{
 	padding: 0;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	height: 74.8px;
 }
 
 .options{
@@ -197,11 +198,7 @@ ol,ul{
 	margin-left:0;
 	width: 180px;
 	text-align: center;
-	background-color: rgba(100,200,228,.7);
-}
-
-.options li:hover{
-	text-decoration: underline;
+	background-color: white;
 }
 
 .desplegable:hover .options{

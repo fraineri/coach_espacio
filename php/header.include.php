@@ -70,15 +70,16 @@
 				<div>
 					<ul class='menu-section'>
 						<?php $array = [
-							0 => 'Almohadones', 
-							1 => 'Baño',
-							2 => 'Deco',
-							3 => 'Luz',
-							4 => 'Macetas',
-							5 => 'Muebles',
-							6 => 'Percheros',
-							7 => 'Relojes',
-							8 => 'Otros'
+							0 => 'Todos',
+							1 => 'Almohadones', 
+							2 => 'Baño',
+							3 => 'Deco',
+							4 => 'Luz',
+							5 => 'Macetas',
+							6 => 'Muebles',
+							7 => 'Percheros',
+							8 => 'Relojes',
+							9 => 'Otros'
 						]?>
 						<?php foreach ($array as $key => $value): ?>
 							<li><a class="product-category" href="/categoria/<?=$key?>"><?=$value?></a></li>
@@ -87,9 +88,7 @@
 				</div>
 				<div>
 					<ul class='menu-section'>
-						<?php if ($activePage ==="productos.php"): ?>
-							<li><a class="product-category" href="cursos.php">Ir a ver nuestros cursos</a></li>	
-						<?php endif ?>
+						<li><a class="product-category" href="cursos.php">Ir a ver nuestros cursos</a></li>	
 					</ul>
 					
 				</div>	
